@@ -1,6 +1,6 @@
 """LOGOS DDA benchmark report, typeset: data/*.json -> figures (matplotlib, PDF) + LaTeX -> PDF (XeLaTeX).
 
-Usage: python3 build_report.py            (writes LOGOS-DDA-benchmarks.pdf beside this script)
+Usage: python3 build_report.py            (writes LOGOS-DDA-benchmarks.pdf at the repository root)
 Needs matplotlib and a TeX Live with pdflatex, lmodern, booktabs, tabularx, caption, microtype, enumitem.
 """
 import json, pathlib, re, shutil, subprocess, tempfile
@@ -469,7 +469,7 @@ with tempfile.TemporaryDirectory() as tmp:
         if r.returncode:
             print(r.stdout[-3000:])
             raise SystemExit("pdflatex failed")
-    out = HERE / "LOGOS-DDA-benchmarks.pdf"
+    out = HERE.parent / "LOGOS-DDA-benchmarks.pdf"
     shutil.copy(tmp / "report.pdf", out)
     shutil.copy(tmp / "report.tex", HERE / "LOGOS-DDA-benchmarks.tex")
     warn = [l for l in (tmp / "report.log").read_text(errors="ignore").splitlines() if "Overfull" in l or "Missing character" in l]

@@ -5,6 +5,7 @@ Every row names the run and arms it comes from; build_report.py reads the JSON t
 hand edit to a number cannot survive a build.
 """
 import json
+import re
 import statistics
 import sys
 from pathlib import Path
@@ -156,9 +157,11 @@ def claims(sp, id_rows):
     ib = {r["key"]: r for r in id_rows}
     x = lambda a, b: "--" if not (a and b) else f"{a / b:.1f}x"
     s = lambda v: "--" if v is None else f"{v:.2f} s"
-    out = ["| Benchmark | Node | LOGOS CPU | LOGOS GPU | Sage | Speed-up CPU / GPU | Run |", "|---|---|---|---|---|---|---|"]
+    cpu = lambda v: re.sub(r" \d+-Core Processor| CPU @.*", "", v.replace("AMD ", "").replace("Intel(R) ", "").replace("(R)", ""))
+    gpu = lambda v: "--" if not v else v.replace("NVIDIA ", "").replace(" Blackwell", "")
+    out = ["| Benchmark | CPU / GPU | LOGOS CPU | LOGOS GPU | Sage | Speed-up CPU / GPU | Run |", "|---|---|---|---|---|---|---|"]
     for r in sp:
-        out.append(f"| {r['benchmark']} | {r['node']} | {s(r['logos_cpu_s'])} | {s(r['logos_gpu_s'])} | {s(r['sage_s'])} | "
+        out.append(f"| {r['benchmark']} | {cpu(r['cpu'])} / {gpu(r['gpu'])} | {s(r['logos_cpu_s'])} | {s(r['logos_gpu_s'])} | {s(r['sage_s'])} | "
                    f"{x(r['sage_s'], r['logos_cpu_s'])} / {x(r['sage_s'], r['logos_gpu_s'])} | [{r['run']}](runs/{r['run']}) |")
     out += ["", "| Benchmark | Engine | Sequences at 1% FDR | Entrapment arm: sequences, FDP | Source |", "|---|---|---|---|---|"]
     for r in id_rows:
