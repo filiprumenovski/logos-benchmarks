@@ -6,7 +6,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{microtype}
 \usepackage[table]{xcolor}
-\usepackage{booktabs,tabularx,array}
+\usepackage{booktabs,tabularx,array,longtable}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
@@ -37,12 +37,12 @@ Measurements were taken through 31 October 2026 on the Warrior cluster at Wayne 
 \section{Across datasets}
 Figure~\ref{fig:force} sets LOGOS against the strongest tool or published result available on each benchmark: Sage where Sage was run on the same files and node, the authors' deposited search where that is the reference, and CHIMERYS, a chimeric-spectrum engine, where its deposits exist. Counts are distinct sequences or PSMs at 1\% FDR under one counting rule; a filled marker means LOGOS's count is the entrapment-validated one. Table~\ref{tab:board} gives the numbers behind every bar.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htb]\centering
 \includegraphics[width=\linewidth]{fig-force.pdf}\par
 \caption{(a) LOGOS identifications relative to the strongest comparator on 13 benchmarks across 6 public datasets, 4 instrument families and 9 search tasks. Dark bars: ahead by more than 1\%; light: within 1\%; hatched: behind. Filled marker: entrapment-validated LOGOS count; open: target-decoy only. (b) Wall-time speed-up over Sage; the whisker spans the three nodes measured for open search (Section~\ref{sec:sage}). Rows marked GPU compare one GPU with Sage on CPU.}\label{fig:force}
 \end{figure}
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Scoreboard: LOGOS against the strongest comparator on each benchmark. Status gives the date of the measurement; rows from 31 October were rerun on the current build.}\label{tab:board}
 \scriptsize\setlength{\tabcolsep}{2.6pt}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{1.15in} >{\raggedright\arraybackslash}m{0.98in} >{\raggedright\arraybackslash}m{0.86in} rr r L >{\raggedright\arraybackslash}m{0.62in}@{}}
@@ -71,14 +71,14 @@ Ion trap HCD, 0.4 Th & PXD053241\newline Orbitrap Eclipse & CHIMERYS (recounted)
 \section{Speed and scale}\label{sec:scale}
 Figure~\ref{fig:power} collects every speed comparison in the record in which LOGOS and another tool did the same work on the same input. The search rows are the Sage comparisons of Section~\ref{sec:sage}. Rescoring is 11--34$\times$ faster than C++ Percolator on the same input, and the MSBooster features are 75$\times$ faster with byte-identical output. LOGOS searches a RAW file to identifications 94$\times$ faster than ThermoRawFileParser converts that file to the mzML other engines read.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htb]\centering
 \includegraphics[width=\linewidth]{fig-power.pdf}\par
 \caption{Speed-up of LOGOS over each comparator, as the comparator's time divided by LOGOS's, on the same input and work. Search: wall time against Sage 0.14.7 on CPU on the same node, LOGOS on CPU (dark) or on one GPU (light). Rescoring and features: CPU, same PIN input; MSBooster's 58.29\,s includes about 26\,s of Java start-up. Whole pipeline: LOGOS's full search of one Astral file from RAW against ThermoRawFileParser converting that file alone; LOGOS's median search call per MS2 (search only, $\pm$50\,ppm precursor window, CPU, 4,096 MS2 of PXD017823) against Orbiter's published 17\,ms median, on different hardware.}\label{fig:power}
 \end{figure}
 
 Where no other engine has been run on the same input, Table~\ref{tab:scale} reports absolute throughput. LOGOS searches the 24-file HEK293 deposit of Chick et al.\ (PXD001468, 79.70\,GB) in an open search in 12.13\,s on one GPU, reporting 132,592 sequences at an entrapment-measured 1.03\%. It searches one gut-metaproteome run against the 111.5 million sequences of ComPIL~2.0, scoring 178.9 billion candidates, in 20.26\,s on an L40S as recorded on 18 September; the current build takes 65.05\,s on an RTX PRO 4500 with identical identifications.
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Throughput at scale and latency in real time. Inputs staged in RAM; GPU counts are physical devices. Rows were recorded on earlier builds before 31 October 2026 and not rerun on the current build.}\label{tab:scale}
 \scriptsize\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{1.75in} >{\raggedright\arraybackslash}m{1.2in} L >{\raggedright\arraybackslash}m{0.95in} >{\raggedright\arraybackslash}m{0.85in}@{}}
@@ -99,7 +99,7 @@ Astral TMTpro, PXD058160: 15 RAW, 39.5 GB & 20.91 s; 113 GB/\allowbreak{}min & 3
 
 The cascade asks what share of every MS2 spectrum in PXD001468 can be explained at controlled error. Each layer searches only the spectra that every earlier layer left unexplained. One learner scores the rows of all layers, and target-decoy competition runs per spectrum across layers. The error is measured on a separate entrapment arm that runs the whole layered pipeline. Figure~\ref{fig:cascade} shows the result: 939,455 of 1,121,149 spectra (83.8\%) explained at an overall entrapment FDP of 0.87\%.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htb]\centering
 \includegraphics[width=\linewidth]{fig-cascade.pdf}\par
 \caption{The HEK293 cascade on all 24 files of PXD001468. Each bar is the share of all MS2 that a layer explains, placed after the layers before it; the label gives spectra explained and that layer's own entrapment FDP. Hatched layers run above 1\% on their own (1.04--1.39\%); without the two highest, Unimod offsets and missed cleavage, the cascade explains 918,865 spectra (82.0\%). Of the spectra left unexplained, about half are chimeric and a third carry too little information for any engine; well-formed spectra that stay unexplained are 3.3\% of the total (6-file subset).}\label{fig:cascade}
 \end{figure}
@@ -109,12 +109,12 @@ In real-time search the instrument asks, for every MS2 it records, whether to sp
 
 On the TKO file a decision takes a median 0.884\,ms and 1.205\,ms at the 99th percentile on one RTX PRO 4500, over three interleaved runs of 27,674 decisions, every one of which equals the offline reference. The previous binary measured 0.925\,ms in the same job. One of the 83,022 timed decisions exceeded the 80\,ms budget Thermo's implementation sets, a single 11.3\,s host stall; on the HYpro file 19 of 96,600 did. On the Astral file, whose recorded MS2 arrive a median 24.8\,ms apart, the median decision takes 1.98\,ms and none of 135,711 exceeds 80\,ms, from a single run.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htb]\centering
 \includegraphics[width=\linewidth]{fig-realtime.pdf}\par
 \caption{(a) The median time of each stage of a TKO decision; the stage medians sum to 0.87\,ms, slightly less than the median whole decision, as medians do. (b) Each replay's median (filled) and 99th-percentile (open) decision time against its own budget (bar): the median time to the next MS2 for the Orbitrap Ascend files, the median recorded MS2 gap for the Astral file. The dashed line is the 80\,ms cap of Thermo's real-time search.}\label{fig:rt}
 \end{figure}
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Decision latency, recomputed from raw per-MS2 samples (runs \texttt{2026-10-22-rts-latency}, \texttt{2026-10-22-astral-latency}; job 40703237, RTX PRO 4500, EPYC 9454). Times in ms; over-80\,ms counts are over all runs.}\label{tab:rtlat}
 \scriptsize\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{@{}L l r r r r >{\raggedright\arraybackslash}m{1.05in} r@{}}
@@ -130,7 +130,7 @@ HYpro, Orbitrap Ascend (32,200 MS2) & s7 & 3 & 1.237 & 1.868 & 19 of 96,600 & 32
 
 Speed matters only if the decisions are good. Replaying all 24 PXD043660 acquisitions with the authors' own database, and trigger rules chosen on files other than the one being replayed, LOGOS triggers on more of the authors' passing scans with fewer MS3 scans, and the scans it triggers carry an entrapment-measured FDP of 0.56\% where Thermo's recorded triggers carry 2.95\%, lower in all 24 files (sign test $p = 1.2\times10^{-7}$). It does not win everywhere: raw protein counts tie at 5,442, which the rule we set ourselves counts as a loss, both HYpro regimes trail by up to 10 proteins, and LOGOS has more proteins in only 6 of the 24 files. This replay and the latency runs use different recipes (the authors' database and v11 rules here; an earlier database and v8 rules for the timing), so neither number is claimed for the other.
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Replay of 24 Thermo real-time-search acquisitions (PXD043660), LOGOS / Thermo recorded; bold where LOGOS is higher. Entrapment FDP in percent, of the triggered scans' identifications, both masks classified by the same scorer. Recorded 21 October 2026 (run \texttt{2026-10-21-rts-replay}).}\label{tab:rtreplay}
 \scriptsize\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{@{}L r r r r r@{}}
@@ -151,7 +151,7 @@ On the 12 Orbiter acquisitions of PXD017823 the trigger rules were chosen retros
 \section{Head to head with Sage on the current build}\label{sec:sage}
 Both engines ran in the same Slurm job on the same node, interleaved with the order rotated between repeats; times are medians of three or more wall-clock measurements from input file to identifications, container start included. Sage's speed varies by a factor of 2.8 between these nodes, so every ratio is taken within one node.
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Wall time per search (seconds, median) and speed relative to Sage on the same node.}\label{tab:speed}
 \footnotesize\setlength{\tabcolsep}{4pt}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{1.35in}>{\raggedright\arraybackslash}m{1.18in} rrr rr lL@{}}
@@ -171,7 +171,7 @@ Open \ensuremath{-}100 to +500 Da, LFQ human & arw3 \textperiodcentered{} Gold 6
 
 Identification counts use one rule for both engines: Sage's results are converted to the same input format and counted by the same program, the open counter \texttt{eval/count.py}, which gives exactly the engine's integers on every counted run (run \texttt{2026-11-01-eval-parity}). The entrapment arm adds a second database, equal in size and absent from the sample, to each search; every accepted hit to it is a known false discovery, and $\mathrm{FDP} = N_e(1 + 1/r)/(N_t + N_e)$, with the ratio $r$ of entrapment to target sequence space computed from each search's own digestion (1.0606 for the LFQ human database, 0.9998 for the Astral mouse database).
 
-\begin{table}[H]\centering
+\begin{table}[!htb]\centering
 \caption{Identifications at 1\% FDR on the target database alone and in the entrapment arm, at sequence and PSM level. FDP in percent.}\label{tab:ids}
 \footnotesize\setlength{\tabcolsep}{2.6pt}
 \begin{tabularx}{\linewidth}{@{}L rr c rrr c rrr@{}}
@@ -199,7 +199,7 @@ Engine & Sequences & PSMs && $N_t$ & $N_e$ & FDP && $N_t$ & $N_e$ & FDP\\
 
 LDA rescoring alone raises the open-search error to 1.10\%; with mass calibration it holds 1.04\%, the configuration reported. On Astral TMTpro LOGOS reports more sequences at lower error, while at the PSM level Sage is the more conservative.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htb]\centering
 \includegraphics[width=\linewidth]{fig-throughput.pdf}\par
 \caption{(a) Wall time per file when several Astral TMTpro files are searched in one run; each file's output is byte-identical to that file searched alone (jobs 40912674, 40912675, 40911945). (b) ThermoRawFileParser 2.0.0-dev converting one 2.6 GB Astral file to the mzML that Sage reads, alone and six at once (job 40913997), against LOGOS's whole search of that file from RAW.}\label{fig:thru}
 \end{figure}
@@ -220,13 +220,15 @@ LOGOS trails CHIMERYS on ion-trap HCD ($-8.5$\%), on three PTM sets ($-5.8$\% co
 \section{Scope of the record}
 Table~\ref{tab:cover} lists the public datasets behind the benchmark record and the tools each was compared against.
 
-\begin{table}[H]\centering
-\caption{Public datasets in the benchmark record. Rows counts the recorded measurements that cite the accession.}\label{tab:cover}
-\scriptsize\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{1.05in} >{\raggedright\arraybackslash}m{1.2in} >{\raggedright\arraybackslash}m{0.75in} r L >{\raggedright\arraybackslash}m{1.2in} r@{}}
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}m{1.05in} >{\raggedright\arraybackslash}m{1.2in} >{\raggedright\arraybackslash}m{0.75in} r >{\raggedright\arraybackslash}m{1.4in} >{\raggedright\arraybackslash}m{1.2in} r@{}}
+\caption{Public datasets in the benchmark record. Rows counts the recorded measurements that cite the accession.}\label{tab:cover}\\
 \toprule
-Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\
-\midrule
+Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\ \midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\small\textit{Table~\ref{tab:cover}, continued}}\\ \toprule
+Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\ \midrule
+\endhead
 \rowcolor{zebra}PXD001468 & HEK293 proteome, Chick et al. 2015 & Q Exactive & 24 & Open search at scale, closed search, explaining every spectrum in layers & Published counts & 154\\
 PXD058160 & Astral TMTpro, four mouse tissues & Orbitrap Astral & 48 & TMT identification depth, speed vs Sage, multi-file throughput & Authors' Comet + LDA deposit; Sage 0.14.7 & 31\\
 \rowcolor{zebra}PXD043660 + PXD023203 + PXD017803 & Thermo real-time search runs, TMT SPS-MS3 & Orbitrap Eclipse and Ascend & 32 & Real-time acquisition decisions replayed, error rate of triggered MS3 & Thermo's recorded real-time search triggers & 73\\
@@ -241,7 +243,6 @@ PXD022433 / MSV000082943 & ComPIL 2.0 gut metaproteome & Orbitrap & 1 & Search a
 \midrule
 \rowcolor{zebra}Total & & & 216 & & & \\
 \bottomrule
-\end{tabularx}
-\end{table}
+\end{longtable}}
 
 \end{document}

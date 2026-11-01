@@ -7,11 +7,10 @@ or one GPU. Filip Rumenovski develops it at Wayne State University.
 **Report: [LOGOS-DDA-benchmarks.pdf](LOGOS-DDA-benchmarks.pdf)** (7 pages, A4): every benchmark
 with figures, methods and limitations.
 
-LOGOS has not been released, so this repository holds the evidence and not the code. Every
-input is pinned by SHA-256 to a public deposit, and every benchmarked binary is pinned by hash
-to its source commit. Every run has a record, and the counting rule is open Python that
-reproduces the engine's own integers. [METHODOLOGY.md](METHODOLOGY.md) explains how each number
-was produced.
+LOGOS has not been released, so this repository holds the evidence and not the code. Inputs are
+pinned by SHA-256 to public deposits and benchmarked binaries by hash to their source commits.
+Each Slurm job left a run record, and the counting rule is open Python that reproduces the
+engine's own integers. [METHODOLOGY.md](METHODOLOGY.md) explains how each number was produced.
 
 ## Results
 
@@ -25,7 +24,7 @@ was produced.
 | Against Sage 0.14.7 on the same node, interleaved | **12.2×** faster closed on CPU; open search **5.3 to 9.4×** on CPU across three nodes and **16.6×** on one GPU; **10.9× / 15.5×** (CPU / GPU) on an Astral TMTpro file; more sequences on all three | EPYC 9454 with RTX PRO 4500; EPYC 9374F; Xeon Gold 6326 | [Table below](#head-to-head-with-sage-0147) |
 | Astral TMTpro study PXD058160, 48 files | **1,700,508 PSMs** at 0.997% entrapment FDP, against the authors' 1,333,804 from Comet with LDA; ahead in all 48 files | RTX PRO 4500 | Earlier build; notes |
 | Real-time acquisition decision, one MS2 at a time, against Thermo's 80 ms budget | **0.884 ms** median, 1.205 ms at p99; all 27,674 decisions equal the offline reference | RTX PRO 4500 | [2026-10-22-rts-latency](runs/2026-10-22-rts-latency) |
-| Replay of the 24 real-time-search acquisitions in PXD043660, on the authors' database | Triggered scans at **0.56%** entrapment FDP, against 2.95% for the instrument's recorded triggers; lower in all 24 files, with fewer MS3 scans in each | RTX PRO 4500 | [2026-10-21-rts-replay](runs/2026-10-21-rts-replay) |
+| Replay of the 24 real-time-search acquisitions in PXD043660, on the authors' database | LOGOS triggers **fewer MS3 scans with lower error in all 24 files**: pooled entrapment FDP 0.56%, where the instrument's recorded triggers reach 2.95% | RTX PRO 4500 | [2026-10-21-rts-replay](runs/2026-10-21-rts-replay) |
 
 FDP is the false-discovery proportion measured by entrapment (see [Error control](#error-control)).
 
@@ -34,8 +33,9 @@ hashes, configuration, each repeat's wall time, and the hash of the counted outp
 "notes" was recorded with an earlier build. Its date, hardware and settings are in the report,
 but the run log behind it is private, so it carries no hashes here.
 
-The ComPIL 2.0 gap is open. The RTX PRO 4500 has 82 streaming multiprocessors and the L40S has
-142, which accounts for about 1.7× of the 3.2× difference. Whether the remaining 1.9× is the
+On ComPIL 2.0 the current build is 3.2× slower than the recorded one, on different hardware, and
+the cause is open. The RTX PRO 4500 has 82 streaming multiprocessors to the L40S's 142, which
+accounts for about 1.7×. Whether the remaining 1.9× is the
 hardware generation or a regression is not yet known, because the current build has not been run
 on an L40S.
 
@@ -50,18 +50,18 @@ conversion time is not counted. Every count comes from the same open counting ru
 <!-- claims:begin -->
 | Benchmark | CPU / GPU | LOGOS CPU | LOGOS GPU | Sage | Speed-up CPU / GPU | Run |
 |---|---|---|---|---|---|---|
-| Closed DDA, LFQ human | EPYC 9454 / RTX PRO 4500 | 1.41 s | 1.53 s | 17.25 s | 12.2x / 11.3x | [2026-11-01-h2h-current](runs/2026-11-01-h2h-current) |
-| Open −100 to +500 Da, LFQ human | EPYC 9454 / RTX PRO 4500 | 6.96 s | 2.79 s | 46.23 s | 6.6x / 16.6x | [2026-10-31-lfq-open-ymh4](runs/2026-10-31-lfq-open-ymh4) |
-| Open −100 to +500 Da, LFQ human | EPYC 9374F / -- | 7.08 s | -- | 37.79 s | 5.3x / -- | [2026-10-31-lfq-open-bbc1](runs/2026-10-31-lfq-open-bbc1) |
-| Open −100 to +500 Da, LFQ human | Xeon Gold 6326 / -- | 11.36 s | -- | 106.37 s | 9.4x / -- | [2026-10-31-lfq-open-arw3](runs/2026-10-31-lfq-open-arw3) |
-| Astral TMTpro, one file | EPYC 9454 / RTX PRO 4500 | 3.68 s | 2.58 s | 40.06 s | 10.9x / 15.5x | [2026-11-01-h2h-current](runs/2026-11-01-h2h-current) |
+| Closed DDA, LFQ human | EPYC 9454 / RTX PRO 4500 | 1.41 s | 1.53 s | 17.25 s | 12.2× / 11.3× | [2026-11-01-h2h-current](runs/2026-11-01-h2h-current) |
+| Open −100 to +500 Da, LFQ human | EPYC 9454 / RTX PRO 4500 | 6.96 s | 2.79 s | 46.23 s | 6.6× / 16.6× | [2026-10-31-lfq-open-ymh4](runs/2026-10-31-lfq-open-ymh4) |
+| Open −100 to +500 Da, LFQ human | EPYC 9374F / none | 7.08 s | n/a | 37.79 s | 5.3× / n/a | [2026-10-31-lfq-open-bbc1](runs/2026-10-31-lfq-open-bbc1) |
+| Open −100 to +500 Da, LFQ human | Xeon Gold 6326 / none | 11.36 s | n/a | 106.37 s | 9.4× / n/a | [2026-10-31-lfq-open-arw3](runs/2026-10-31-lfq-open-arw3) |
+| Astral TMTpro, one file | EPYC 9454 / RTX PRO 4500 | 3.68 s | 2.58 s | 40.06 s | 10.9× / 15.5× | [2026-11-01-h2h-current](runs/2026-11-01-h2h-current) |
 
 | Benchmark | Engine | Sequences at 1% FDR | Entrapment arm: sequences, FDP | Source |
 |---|---|---|---|---|
 | Closed DDA, LFQ human | LOGOS | 33,102 | 31,718, 1.24% | [2026-10-30-lfq-counts](runs/2026-10-30-lfq-counts) |
 | Closed DDA, LFQ human | Sage 0.14.7 | 32,453 | 31,489, 1.24% | [2026-10-30-lfq-sage-entrapment](runs/2026-10-30-lfq-sage-entrapment) |
 | Open −100 to +500 Da, LFQ human | LOGOS | 34,130 | 32,086, 1.00% | [2026-10-31-entrapment-arms](runs/2026-10-31-entrapment-arms) |
-| Open −100 to +500 Da, LFQ human | LOGOS + LDA rescoring | -- | 35,650, 1.10% | [2026-10-31-entrapment-arms](runs/2026-10-31-entrapment-arms) |
+| Open −100 to +500 Da, LFQ human | LOGOS + LDA rescoring | n/a | 35,650, 1.10% | [2026-10-31-entrapment-arms](runs/2026-10-31-entrapment-arms) |
 | Open −100 to +500 Da, LFQ human | LOGOS + calibration + LDA | 37,178 | 35,595, 1.04% | [2026-10-31-entrapment-arms](runs/2026-10-31-entrapment-arms) |
 | Open −100 to +500 Da, LFQ human | Sage 0.14.7 | 31,744 | 30,343, 0.90% | [2026-11-01-fill-gaps](runs/2026-11-01-fill-gaps) |
 | Astral TMTpro, one file | LOGOS | 7,769 | 7,568, 0.76% | [2026-10-31-entrapment-arms](runs/2026-10-31-entrapment-arms) |
@@ -77,9 +77,9 @@ higher error, 1.04%. In closed search both engines measure 1.24%.
 
 ## Where LOGOS loses
 
-- **Ion-trap spectra and modifications.** CHIMERYS, a chimeric-spectrum engine, identifies more
-  than LOGOS on ion-trap HCD spectra, where LOGOS has 8.5% fewer sequences. It also leads on three
-  PTM sets combined, by 5.8%, and narrowly on chimeric LFQ data.
+- **Ion-trap spectra and modifications.** On ion-trap HCD spectra LOGOS identifies 8.5% fewer
+  sequences than CHIMERYS, a chimeric-spectrum engine. CHIMERYS also leads on three PTM sets
+  combined, by 5.8%, and narrowly on chimeric LFQ data.
 - **Quantification.** On the LFQbench mixtures LOGOS quantifies 17,762 precursors to CHIMERYS's
   35,053 at equal accuracy.
 - **DDA+ on low-resolution data.** DDA+ is twelve times slower than the plain search on the LFQ
@@ -160,8 +160,8 @@ than estimated. The FDP formula and the counting rule are in [METHODOLOGY.md](ME
 
 ## Checking a claim
 
-1. Find the claim's run in `runs/`. `run.json` names the node, CPU and GPU, the LOGOS binary
-   and its hash, and the hash of every input. For every arm it gives the configuration hash,
+1. Find the claim's run in `runs/`. `run.json` names the node, CPU and GPU, and hashes the
+   LOGOS binary and every input. For every arm it gives the configuration hash,
    each repeat's wall time and peak memory, and the counts with the hash of the file they came
    from.
 2. Fetch the inputs with `python3 datasets/fetch.py DIR`. It keeps a file only if its size and

@@ -357,7 +357,7 @@ def floats(body):
         inner = m.group(1)
         kind = "figure" if r"\captionof{figure}" in inner else "table"
         inner = inner.replace(r"\captionof{" + kind + "}", r"\caption").replace(r"\centering", "")
-        spot = "H"
+        spot = "!htb"
         return rf"\begin{{{kind}}}[{spot}]\centering{inner}\end{{{kind}}}"
     return re.sub(r"\\begin\{center\}\\begin\{minipage\}\{\\linewidth\}(.*?)\\end\{minipage\}\\end\{center\}", one, body, flags=re.S)
 
@@ -411,7 +411,7 @@ DOC = r"""\documentclass[10pt,a4paper]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{microtype}
 \usepackage[table]{xcolor}
-\usepackage{booktabs,tabularx,array}
+\usepackage{booktabs,tabularx,array,longtable}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}

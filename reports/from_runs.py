@@ -155,10 +155,10 @@ def realtime():
 def claims(sp, id_rows):
     """The README's head-to-head table, in markdown, from the same rows as the report."""
     ib = {r["key"]: r for r in id_rows}
-    x = lambda a, b: "--" if not (a and b) else f"{a / b:.1f}x"
-    s = lambda v: "--" if v is None else f"{v:.2f} s"
+    x = lambda a, b: "n/a" if not (a and b) else f"{a / b:.1f}×"
+    s = lambda v: "n/a" if v is None else f"{v:.2f} s"
     cpu = lambda v: re.sub(r" \d+-Core Processor| CPU @.*", "", v.replace("AMD ", "").replace("Intel(R) ", "").replace("(R)", ""))
-    gpu = lambda v: "--" if not v else v.replace("NVIDIA ", "").replace(" Blackwell", "")
+    gpu = lambda v: "none" if not v else v.replace("NVIDIA ", "").replace(" Blackwell", "")
     out = ["| Benchmark | CPU / GPU | LOGOS CPU | LOGOS GPU | Sage | Speed-up CPU / GPU | Run |", "|---|---|---|---|---|---|---|"]
     for r in sp:
         out.append(f"| {r['benchmark']} | {cpu(r['cpu'])} / {gpu(r['gpu'])} | {s(r['logos_cpu_s'])} | {s(r['logos_gpu_s'])} | {s(r['sage_s'])} | "
@@ -166,7 +166,7 @@ def claims(sp, id_rows):
     out += ["", "| Benchmark | Engine | Sequences at 1% FDR | Entrapment arm: sequences, FDP | Source |", "|---|---|---|---|---|"]
     for r in id_rows:
         e = r["entrapment"]["sequences"]
-        out.append(f"| {r['benchmark']} | {r['engine']} | {'--' if r['sequences'] is None else f'{r[chr(115)+chr(101)+chr(113)+chr(117)+chr(101)+chr(110)+chr(99)+chr(101)+chr(115)]:,}'} | "
+        out.append(f"| {r['benchmark']} | {r['engine']} | {'n/a' if r['sequences'] is None else f'{r[chr(115)+chr(101)+chr(113)+chr(117)+chr(101)+chr(110)+chr(99)+chr(101)+chr(115)]:,}'} | "
                    f"{e['nt']:,}, {100 * e['fdp']:.2f}% | [{r['entrapment_source'].split('/')[0]}](runs/{r['entrapment_source'].split('/')[0]}) |")
     return "\n".join(out)
 

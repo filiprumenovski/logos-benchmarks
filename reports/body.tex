@@ -143,16 +143,17 @@ LOGOS trails CHIMERYS on ion-trap HCD ($-8.5$\%), on three PTM sets ($-5.8$\% co
 \section{Scope of the record}
 Table~\ref{tab:cover} lists the public datasets behind the benchmark record and the tools each was compared against.
 
-\begin{center}\begin{minipage}{\linewidth}
-\captionof{table}{Public datasets in the benchmark record. Rows counts the recorded measurements that cite the accession.}\label{tab:cover}
-\scriptsize\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{1.05in} >{\raggedright\arraybackslash}m{1.2in} >{\raggedright\arraybackslash}m{0.75in} r L >{\raggedright\arraybackslash}m{1.2in} r@{}}
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}m{1.05in} >{\raggedright\arraybackslash}m{1.2in} >{\raggedright\arraybackslash}m{0.75in} r >{\raggedright\arraybackslash}m{1.4in} >{\raggedright\arraybackslash}m{1.2in} r@{}}
+\caption{Public datasets in the benchmark record. Rows counts the recorded measurements that cite the accession.}\label{tab:cover}\\
 \toprule
-Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\
-\midrule
+Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\ \midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\small\textit{Table~\ref{tab:cover}, continued}}\\ \toprule
+Accession & Dataset & Instrument & RAW & Benchmarked & Compared against & Rows\\ \midrule
+\endhead
 COVER_BODY
 \midrule
 Total & & & @@TOTAL@@ & & & \\
 \bottomrule
-\end{tabularx}
-\end{minipage}\end{center}
+\end{longtable}}
