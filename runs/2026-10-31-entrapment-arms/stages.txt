@@ -1,0 +1,11 @@
+2026-10-31T23:51:34-0400 staged 3 files into lfq in 7 s: 3.5G
+2026-10-31T23:51:49-0400 staged 3 files into ast in 15 s: 4.6G
+2026-10-31T23:51:51-0400 inputs hashed: 8 files
+2026-10-31T23:52:49-0400 r lfq recorded=1.060595818801411 computed={"il_merged": false, "targets": 1253470, "entrapment": 1329748, "r": 1.060853470765156} | r astral=0.9998403161114782
+2026-10-31T23:53:01-0400 lfq-open-lean-E rc=0 | seqlvl Nt 32086 Ne 166 fdp 0.01 | psm Nt 65824 Ne 353 fdp 0.0104
+2026-10-31T23:53:11-0400 lfq-open-lda-E rc=0 | seqlvl Nt 35650 Ne 203 fdp 0.011 | psm Nt 73449 Ne 390 fdp 0.0103
+2026-10-31T23:53:21-0400 lfq-open-cal-lda-E rc=0 | seqlvl Nt 35595 Ne 192 fdp 0.0104 | psm Nt 73438 Ne 379 fdp 0.01
+2026-10-31T23:53:27-0400 astral-logos-E rc=0 | seqlvl Nt 7568 Ne 29 fdp 0.0076 | psm Nt 23364 Ne 124 fdp 0.0106
+2026-10-31T23:54:19-0400 astral-sage-E rc=0 | seqlvl Nt 7212 Ne 37 fdp 0.0102 | psm Nt 21649 Ne 94 fdp 0.0086
+2026-10-31T23:54:19-0400 ENTRAP DONE
+2026-10-31T23:54:20-0400 cleanup done (exit 0); /dev/shm now: 21G

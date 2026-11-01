@@ -1,0 +1,73 @@
+{
+ "name": "2026-10-30-lfq-sage-entrapment",
+ "measured": "LFQ human-01: Sage default with the entrapment database",
+ "slurm_job": 40901959,
+ "node": "ymh4",
+ "started": "2026-10-30T21:31:22-0400",
+ "job": "40901959",
+ "cpus": "22",
+ "mem": "49152",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df"
+ },
+ "inputs": {
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "target_entrap_human.fasta": "6a5a82aeae17927c97cd066932a7a518c2281a2644c06e27584ee0078438e6a5",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "sage2pin.py": "82a5ae4b61238cf72a94ed676384ba60d90d156e803e2f228ace22575566bc8f"
+ },
+ "arms": {
+  "sage-default-E": {
+   "config": "75edae455db93083",
+   "wall_s": 22.45,
+   "peak_rss_gb": 4.4,
+   "cpu_percent": 793,
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 56594,
+      "ne": 337,
+      "fdp": 0.0115
+     },
+     "seqlvl": {
+      "nt": 31489,
+      "ne": 202,
+      "fdp": 0.0124
+     },
+     "seqs": {
+      "nt": 32410,
+      "ne": 308,
+      "fdp": 0.0183
+     }
+    }
+   },
+   "counts": {
+    "candidate_rows": 103667,
+    "competed_psms": 103667,
+    "psms_q01": 56931,
+    "sequences_q01": 31691,
+    "peptidoforms_q01": 34072
+   },
+   "counted_pin_sha256": "f620db96fd77c927d88ac5af84c6d9fd21b75fcc19d3e0e93fe207ae94aaddcb",
+   "sage_results_sha256": "a06cb29e4093693f8cb52be51ff503bf1b90de8bb81c7cee35f37ca45c3b2fac"
+  }
+ }
+}

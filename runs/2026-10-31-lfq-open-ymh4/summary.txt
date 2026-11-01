@@ -1,0 +1,6 @@
+SUMMARY cpu  wall 6.96 [6.91..7.22]
+SUMMARY cuda wall 2.79 [2.73..2.89]
+SUMMARY sage wall 46.23 [45.94..47.34]
+RATIO sage/cpu 6.6x  sage/cuda 16.6x
+PARITY CPU==CUDA byte-identical
+IDS seq_tdc logos 34130 sage 31744  psms logos 70886 sage 73148

@@ -1,0 +1,13 @@
+SUMMARY lfq ROOT-sweep  wall 1.510 [1.440..1.580]  search 0.405 [0.397..0.503]  ingest 0.261
+SUMMARY lfq NEW-sweep   wall 1.510 [1.390..1.560]  search 0.414 [0.376..0.422]  ingest 0.240
+SUMMARY lfq ROOT-fi     wall 1.550 [1.430..1.600]  search 0.415 [0.394..0.428]  ingest 0.259
+SUMMARY lfq NEW-fi      wall 1.480 [1.470..1.550]  search 0.390 [0.386..0.416]  ingest 0.258
+PAIRED NEW-fi search faster than ROOT-fi in 4/5; wall in 3 /5
+PAIRED NEW-sweep search faster than ROOT-sweep in 2/5; wall in 3 /5
+SUMMARY gpu-ROOT wall 1.590
+SUMMARY gpu-NEW wall 1.560
+SUMMARY ddaplus ROOT-sweep  wall 17.25 search 11.54 ingest 0.261
+SUMMARY ddaplus NEW-sweep   wall 16.32 search 10.65 ingest 0.253
+SUMMARY ddaplus ROOT-fi     wall 17.26 search 11.60 ingest 0.245
+SUMMARY ddaplus NEW-fi      wall 16.28 search 10.68 ingest 0.246
+PARITY OK

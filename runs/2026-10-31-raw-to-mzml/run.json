@@ -1,0 +1,32 @@
+{
+ "name": "2026-10-31-raw-to-mzml",
+ "measured": "ThermoRawFileParser 2.0.0-dev converting Astral RAW files to mzML, one and six at once",
+ "slurm_job": 40913997,
+ "node": "ymh4",
+ "started": "2026-10-31T16:49:23-0400",
+ "job": "40913997",
+ "cpus": "22",
+ "mem": "112640",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "thermorawfileparser-2.0.0-dev/ThermoRawFileParser": "867095af5e4a72471e17ef7ec37a5ae7f7224b07642c95deba6026fd939c1414"
+ },
+ "arms": {}
+}

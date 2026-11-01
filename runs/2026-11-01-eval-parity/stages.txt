@@ -1,0 +1,23 @@
+2026-11-01T01:27:31-0400 staged 7 files into in in 34 s: 9.3G
+2026-11-01T01:27:35-0400 inputs hashed: 9 files
+2026-11-01T01:27:55-0400 lfq-open rc=0 wall=17.58 rss_gb=3.17
+2026-11-01T01:27:55-0400 lfq-open check: 
+2026-11-01T01:28:05-0400 lfq-closed rc=0 wall=8.97 rss_gb=1.45
+2026-11-01T01:28:05-0400 lfq-closed check: 
+2026-11-01T01:28:44-0400 astral-tmt rc=0 wall=38.19 rss_gb=2.79
+2026-11-01T01:28:44-0400 astral-tmt check: 
+2026-11-01T01:29:06-0400 lfq-open-cal-lda-E rc=0 wall=21.11 rss_gb=5.01
+2026-11-01T01:29:06-0400 lfq-open-cal-lda-E check: 
+2026-11-01T01:29:44-0400 astral-logos-E rc=0 wall=37.20 rss_gb=4.83
+2026-11-01T01:29:44-0400 astral-logos-E check: 
+2026-11-01T01:31:30-0400 sage-open rc=0 wall=100.09 rss_gb=2.91 check: {"verdict": "PASS"}
+2026-11-01T01:32:20-0400 sage-default rc=0 wall=45.72 rss_gb=2.85 check: {"verdict": "PASS"}
+2026-11-01T01:33:22-0400 sage-astral rc=0 wall=58.02 rss_gb=6.38 check: {"verdict": "PASS"}
+2026-11-01T01:35:28-0400 sage-astral-E rc=0 wall=121.86 rss_gb=10.41 check: {"verdict": "PASS"}
+2026-11-01T01:35:28-0400 EVAL-PARITY DONE; outputs kept in eval-parity-40930749
+2026-11-01T01:35:29-0400 cleanup done (exit 0); /dev/shm now: 0
+2026-11-01T01:36:30-0400 lfq-open check: {"verdict": "PASS"} 
+2026-11-01T01:36:32-0400 lfq-closed check: {"verdict": "PASS"} 
+2026-11-01T01:36:34-0400 astral-tmt check: {"verdict": "PASS"} 
+2026-11-01T01:36:39-0400 lfq-open-cal-lda-E check: {"verdict": "PASS"} 
+2026-11-01T01:36:44-0400 astral-logos-E check: {"verdict": "PASS"} 

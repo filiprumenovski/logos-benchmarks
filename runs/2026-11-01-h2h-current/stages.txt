@@ -1,0 +1,31 @@
+2026-11-01T01:34:31-0400 staged 5 files into in in 5 s: 9.2G
+2026-11-01T01:34:34-0400 inputs hashed: 6 files
+2026-11-01T01:34:36-0400 warm-lfq-cpu rc=0 wall=1.77 rss_gb=1.82 load=[51.12 51.06 51.20 -> 52.79 51.41 51.31] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:34:38-0400 warm-lfq-gpu rc=0 wall=1.47 rss_gb=1.75 load=[52.79 51.41 51.31 -> 52.79 51.41 51.31] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:34:55-0400 warm-sage-lfq rc=0 wall=17.04 rss_gb=2.84 load=[52.79 51.41 51.31 -> 54.22 51.77 51.43] tsv=d507734925d8
+2026-11-01T01:34:56-0400 lfq-cpu-1 rc=0 wall=1.40 rss_gb=1.67 load=[54.22 51.77 51.43 -> 53.96 51.76 51.43] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:34:58-0400 lfq-gpu-1 rc=0 wall=1.51 rss_gb=1.62 load=[53.96 51.76 51.43 -> 53.96 51.76 51.43] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:35:17-0400 lfq-sage-1 rc=0 wall=17.25 rss_gb=2.86 load=[53.96 51.76 51.43 -> 54.67 52.05 51.53] tsv=9c32be29cce8
+2026-11-01T01:35:35-0400 lfq-ddaplus-cpu-1 rc=0 wall=18.44 rss_gb=13.23 load=[54.67 52.05 51.53 -> 57.48 52.80 51.78] | 144925 PSMs, 40453 sequences ids=7bfb58a54798
+2026-11-01T01:35:53-0400 lfq-sage-2 rc=0 wall=17.67 rss_gb=2.86 load=[57.48 52.80 51.78 -> 57.39 53.05 51.88] tsv=439f825b1070
+2026-11-01T01:36:10-0400 lfq-ddaplus-cpu-2 rc=0 wall=17.00 rss_gb=13.42 load=[57.39 53.05 51.88 -> 57.68 53.33 51.99] | 144925 PSMs, 40453 sequences ids=7bfb58a54798
+2026-11-01T01:36:12-0400 lfq-gpu-2 rc=0 wall=1.64 rss_gb=1.89 load=[57.68 53.33 51.99 -> 55.95 53.04 51.91] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:36:14-0400 lfq-cpu-2 rc=0 wall=1.41 rss_gb=1.76 load=[55.95 53.04 51.91 -> 55.95 53.04 51.91] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:36:15-0400 lfq-gpu-3 rc=0 wall=1.53 rss_gb=1.85 load=[55.95 53.04 51.91 -> 55.95 53.04 51.91] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:36:17-0400 lfq-cpu-3 rc=0 wall=1.46 rss_gb=1.83 load=[55.95 53.04 51.91 -> 55.55 53.00 51.90] | 59769 PSMs, 33102 sequences ids=34d8c3cc9221
+2026-11-01T01:36:33-0400 lfq-ddaplus-cpu-3 rc=0 wall=16.46 rss_gb=13.59 load=[55.55 53.00 51.90 -> 58.23 53.73 52.16] | 144925 PSMs, 40453 sequences ids=7bfb58a54798
+2026-11-01T01:36:50-0400 lfq-sage-3 rc=0 wall=17.01 rss_gb=2.85 load=[58.23 53.73 52.16 -> 59.53 54.23 52.35] tsv=3d29f94469cc
+2026-11-01T01:36:54-0400 warm-astral-cpu rc=0 wall=4.11 rss_gb=3.86 load=[59.53 54.23 52.35 -> 60.77 54.57 52.47] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:36:57-0400 warm-astral-gpu rc=0 wall=2.55 rss_gb=3.33 load=[60.77 54.57 52.47 -> 60.63 54.65 52.50] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:37:37-0400 warm-sage-astral rc=0 wall=39.58 rss_gb=6.36 load=[60.63 54.65 52.50 -> 58.04 54.67 52.60] tsv=965070a14017
+2026-11-01T01:37:41-0400 astral-cpu-1 rc=0 wall=3.68 rss_gb=3.17 load=[58.04 54.67 52.60 -> 58.04 54.67 52.60] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:37:43-0400 astral-gpu-1 rc=0 wall=2.49 rss_gb=3.37 load=[58.04 54.67 52.60 -> 57.56 54.63 52.60] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:38:25-0400 astral-sage-1 rc=0 wall=40.06 rss_gb=6.45 load=[57.56 54.63 52.60 -> 56.54 54.67 52.69] tsv=e21719431d50
+2026-11-01T01:39:03-0400 astral-sage-2 rc=0 wall=38.35 rss_gb=6.39 load=[56.54 54.67 52.69 -> 55.72 54.66 52.77] tsv=1fa943347558
+2026-11-01T01:39:06-0400 astral-gpu-2 rc=0 wall=2.58 rss_gb=3.28 load=[55.72 54.66 52.77 -> 57.11 54.96 52.88] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:39:10-0400 astral-cpu-2 rc=0 wall=3.63 rss_gb=3.00 load=[57.11 54.96 52.88 -> 57.11 54.96 52.88] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:39:12-0400 astral-gpu-3 rc=0 wall=2.60 rss_gb=3.18 load=[57.11 54.96 52.88 -> 56.62 54.90 52.87] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:39:53-0400 astral-sage-3 rc=0 wall=40.07 rss_gb=6.37 load=[56.62 54.90 52.87 -> 55.54 54.78 52.91] tsv=e290dfd4d36c
+2026-11-01T01:39:56-0400 astral-cpu-3 rc=0 wall=3.69 rss_gb=3.20 load=[55.54 54.78 52.91 -> 56.85 55.07 53.01] | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-11-01T01:39:57-0400 H2H-CURRENT DONE
+2026-11-01T01:39:57-0400 cleanup done (exit 0); /dev/shm now: 21G

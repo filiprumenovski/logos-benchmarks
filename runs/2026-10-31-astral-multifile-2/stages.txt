@@ -1,0 +1,26 @@
+2026-10-31T16:43:17-0400 staged 8 files into in in 2 s: 20G
+2026-10-31T16:43:19-0400 inputs hashed: 9 files
+2026-10-31T16:43:23-0400 warm-OLD rc=0 wall=4.07 user=51.89 sys=1.74 rss=4006096 ids=281adfa2 
+2026-10-31T16:43:27-0400 warm-NEW rc=0 wall=3.54 user=50.01 sys=1.69 rss=3358016 ids=281adfa2 
+2026-10-31T16:43:31-0400 OLD-N1-1 rc=0 wall=3.55 user=49.86 sys=1.57 rss=3312008 ids=281adfa2 
+2026-10-31T16:43:34-0400 NEW-N1-1 rc=0 wall=3.66 user=49.79 sys=1.70 rss=3280764 ids=281adfa2 
+2026-10-31T16:43:45-0400 OLD-N4-1 rc=0 wall=10.64 user=197.68 sys=5.33 rss=7448028 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:43:55-0400 NEW-N4-1 rc=0 wall=10.45 user=197.73 sys=5.42 rss=6952932 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:43:59-0400 NEW-N1-2 rc=0 wall=3.61 user=49.91 sys=1.56 rss=3167680 ids=281adfa2 
+2026-10-31T16:44:03-0400 OLD-N1-2 rc=0 wall=3.52 user=50.01 sys=1.48 rss=3177128 ids=281adfa2 
+2026-10-31T16:44:14-0400 NEW-N4-2 rc=0 wall=10.74 user=197.81 sys=5.27 rss=7451704 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:44:24-0400 OLD-N4-2 rc=0 wall=10.75 user=198.35 sys=5.76 rss=7298328 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:44:35-0400 OLD-N4-3 rc=0 wall=10.64 user=198.10 sys=5.29 rss=7459908 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:44:46-0400 NEW-N4-3 rc=0 wall=10.71 user=197.37 sys=5.57 rss=7301520 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:44:50-0400 OLD-N1-3 rc=0 wall=3.59 user=50.20 sys=1.65 rss=3183972 ids=281adfa2 
+2026-10-31T16:44:53-0400 NEW-N1-3 rc=0 wall=3.61 user=49.62 sys=1.60 rss=3386800 ids=281adfa2 
+2026-10-31T16:45:04-0400 NEW-N4-4 rc=0 wall=10.52 user=197.64 sys=5.38 rss=7067284 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:45:15-0400 OLD-N4-4 rc=0 wall=10.66 user=197.98 sys=5.68 rss=7144976 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:45:18-0400 NEW-N1-4 rc=0 wall=3.47 user=49.86 sys=1.63 rss=3217364 ids=281adfa2 
+2026-10-31T16:45:22-0400 OLD-N1-4 rc=0 wall=3.58 user=49.83 sys=1.48 rss=3238784 ids=281adfa2 
+2026-10-31T16:45:25-0400 OLD-N1-5 rc=0 wall=3.56 user=49.88 sys=1.55 rss=3268596 ids=281adfa2 
+2026-10-31T16:45:29-0400 NEW-N1-5 rc=0 wall=3.61 user=50.11 sys=1.49 rss=3177004 ids=281adfa2 
+2026-10-31T16:45:40-0400 OLD-N4-5 rc=0 wall=10.61 user=197.95 sys=5.58 rss=7361288 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:45:50-0400 NEW-N4-5 rc=0 wall=10.53 user=197.55 sys=5.35 rss=7361636 ids=281adfa2 911f6ff5 ab41118d f91ef426 
+2026-10-31T16:45:50-0400 AB-MULTI DONE
+2026-10-31T16:45:51-0400 cleanup done (exit 0); /dev/shm now: 21G

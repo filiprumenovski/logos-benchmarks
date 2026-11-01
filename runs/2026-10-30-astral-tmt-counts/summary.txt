@@ -1,0 +1,3 @@
+SUMMARY sage wall 39.40 [39.06..39.59]  logos-cpu 8.56 [8.49..8.58]  ratio 4.6x
+SUMMARY base-cpu 10.55  logos-gpu 2.88  ratio sage/gpu 13.7x
+SUMMARY ids seq_tdc logos 7769 sage 7470  psms logos 24167 sage 22409

@@ -1,0 +1,9 @@
+SUMMARY N1    files=1 wall 2.78 [2.57..8.49] per-file 2.78  avg-cores 6.0
+SUMMARY N2    files=2 wall 3.47 [3.43..3.63] per-file 1.74  avg-cores 9.6
+SUMMARY N4L3  files=4 wall 5.52 [5.46..6.66] per-file 1.38  avg-cores 11.9
+SUMMARY N4L1  files=4 wall 5.94 [5.45..6.06] per-file 1.49  avg-cores 11.2
+SUMMARY N4L2  files=4 wall 7.19 [5.80..7.86] per-file 1.80  avg-cores 9.6
+solo walls [7.29, 2.67, 2.83, 2.67]
+N4L3-2 {'ingest': (3.21, 4), 'output.rows': (1.12, 4), 'pipeline.drain_input_wait': (0.88, 5), 'pipeline.ingest_backpressure': (0.0, 4), 'pipeline.search_enqueue': (0.0, 4), 'pipeline.search_input_wait': (4.99, 7), 'search': (2.34, 4)}
+N4L1-2 {'ingest': (3.28, 4), 'output.rows': (1.25, 4), 'pipeline.drain_input_wait': (1.04, 5), 'pipeline.ingest_backpressure': (0.18, 4), 'pipeline.search_enqueue': (0.0, 4), 'pipeline.search_input_wait': (0.09, 5), 'search': (2.6, 4)}
+PARITY OK

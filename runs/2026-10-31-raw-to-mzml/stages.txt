@@ -1,0 +1,31 @@
+2026-10-31T16:49:26-0400 staged 8 files into in in 2 s: 20G
+2026-10-31T16:55:04-0400 single az01263_02152024 rc=0 5:38.06 user=332.79 sys=3.57 cpu=99% rss=3063460 size=2229320938
+2026-10-31T17:00:48-0400 single az01264_02152024 rc=0 5:43.74 user=342.03 sys=3.80 cpu=100% rss=3156588 size=2278416994
+2026-10-31T17:08:07-0400 batch az01269_02152024 rc=0 5:49.58 user=345.92 sys=3.90 cpu=100% rss=3121244 size=2279888570
+2026-10-31T17:08:08-0400 batch az01266_02152024 rc=0 5:49.12 user=344.16 sys=3.95 cpu=99% rss=3083628 size=2250353132
+2026-10-31T17:08:09-0400 batch az01265_02152024 rc=0 6:02.77 user=359.20 sys=4.48 cpu=100% rss=3314440 size=2386625402
+2026-10-31T17:08:09-0400 batch az01267_02152024 rc=0 5:59.74 user=353.47 sys=4.16 cpu=99% rss=3215044 size=2347168292
+2026-10-31T17:08:10-0400 batch az01270_02152024 rc=0 6:04.20 user=351.81 sys=4.52 cpu=97% rss=3242488 size=2333470420
+2026-10-31T17:08:10-0400 batch az01268_02152024 rc=0 7:16.83 user=341.75 sys=3.91 cpu=79% rss=3117640 size=2249594811
+2026-10-31T17:08:10-0400 BATCH six files in parallel: wall 439.7 s
+total 22419616
+drwxr-xr-x  2 user group       4096 Oct 31 17:12 .
+drwxr-xr-x 49 user group      16384 Oct 31 16:49 ..
+-rw-r--r--  1 user group 2229320966 Oct 31 00:15 az01263_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 00:15 az01263_02152024.mzML.sha256
+-rw-r--r--  1 user group 2278416994 Oct 31 17:08 az01264_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:09 az01264_02152024.mzML.sha256
+-rw-r--r--  1 user group 2386625402 Oct 31 17:09 az01265_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:09 az01265_02152024.mzML.sha256
+-rw-r--r--  1 user group 2250353132 Oct 31 17:10 az01266_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:10 az01266_02152024.mzML.sha256
+-rw-r--r--  1 user group 2347168292 Oct 31 17:10 az01267_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:10 az01267_02152024.mzML.sha256
+-rw-r--r--  1 user group 2249594811 Oct 31 17:11 az01268_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:11 az01268_02152024.mzML.sha256
+-rw-r--r--  1 user group 2279888570 Oct 31 17:11 az01269_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:11 az01269_02152024.mzML.sha256
+-rw-r--r--  1 user group 2333470420 Oct 31 17:12 az01270_02152024.mzML
+-rw-r--r--  1 user group        133 Oct 31 17:12 az01270_02152024.mzML.sha256
+2026-10-31T17:12:03-0400 TRFP DONE
+2026-10-31T17:12:05-0400 cleanup done (exit 0); /dev/shm now: 21G

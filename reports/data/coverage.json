@@ -1,0 +1,114 @@
+{
+ "rows": [
+  {
+   "key": "PXD001468",
+   "accession": "PXD001468",
+   "dataset": "HEK293 proteome, Chick et al. 2015",
+   "instrument": "Q Exactive",
+   "files": 24,
+   "benchmarked": "Open search at scale, closed search, explaining every spectrum in layers",
+   "comparators": "Published counts",
+   "ledger_rows": 154
+  },
+  {
+   "key": "PXD058160",
+   "accession": "PXD058160",
+   "dataset": "Astral TMTpro, four mouse tissues",
+   "instrument": "Orbitrap Astral",
+   "files": 48,
+   "benchmarked": "TMT identification depth, speed vs Sage, multi-file throughput",
+   "comparators": "Authors' Comet + LDA deposit; Sage 0.14.7",
+   "ledger_rows": 31
+  },
+  {
+   "key": "PXD043660",
+   "accession": "PXD043660 + PXD023203 + PXD017803",
+   "dataset": "Thermo real-time search runs, TMT SPS-MS3",
+   "instrument": "Orbitrap Eclipse and Ascend",
+   "files": 32,
+   "benchmarked": "Real-time acquisition decisions replayed, error rate of triggered MS3",
+   "comparators": "Thermo's recorded real-time search triggers",
+   "ledger_rows": 73
+  },
+  {
+   "key": "PXD017823",
+   "accession": "PXD017823",
+   "dataset": "Real-time search TMT study",
+   "instrument": "Orbitrap",
+   "files": 24,
+   "benchmarked": "Identification depth and protein-level error",
+   "comparators": "Authors' deposited passing scans",
+   "ledger_rows": 42
+  },
+  {
+   "key": "PXD058918",
+   "accession": "PXD058918",
+   "dataset": "Astral TMTpro18 fractions",
+   "instrument": "Orbitrap Astral",
+   "files": 24,
+   "benchmarked": "TMTpro18 identification depth",
+   "comparators": "Authors' deposited search",
+   "ledger_rows": 9
+  },
+  {
+   "key": "PXD046453",
+   "accession": "PXD046453",
+   "dataset": "Astral DDA, HEK 1 µg, 14/15/30-min gradients",
+   "instrument": "Orbitrap Astral",
+   "files": 15,
+   "benchmarked": "Chimeric DDA+ depth on Astral 14- and 30-minute gradients",
+   "comparators": "CHIMERYS (recounted)",
+   "ledger_rows": 107
+  },
+  {
+   "key": "PXD053241",
+   "accession": "PXD053241 (+ PXD023218, PXD013615)",
+   "dataset": "CHIMERYS benchmark deposits: LFQ human, wide-window mouse, ion trap, PTM",
+   "instrument": "Q Exactive HF-X, Orbitrap Eclipse",
+   "files": 21,
+   "benchmarked": "Wide-window chimeric DDA (8 widths), ion-trap HCD and CID (9), PTM sets (3), LFQ human",
+   "comparators": "CHIMERYS, Sequest HT, Comet, MS-GF+, MetaMorpheus deposits",
+   "ledger_rows": 72
+  },
+  {
+   "key": "PXD028735",
+   "accession": "PXD028735",
+   "dataset": "LFQbench three-species mixtures and LFQ human",
+   "instrument": "Q Exactive HF-X",
+   "files": 7,
+   "benchmarked": "Closed and open search speed and depth vs Sage; quantification accuracy and depth",
+   "comparators": "Sage 0.14.7, CHIMERYS, ProteoBench submissions",
+   "ledger_rows": 31
+  },
+  {
+   "key": "MSV000084172",
+   "accession": "MSV000084172",
+   "dataset": "HLA immunopeptidomics, 9 alleles",
+   "instrument": "Orbitrap",
+   "files": 18,
+   "benchmarked": "Non-specific peptide identification",
+   "comparators": "Deposited Spectrum Mill results",
+   "ledger_rows": 4
+  },
+  {
+   "key": "PXD022433",
+   "accession": "PXD022433 / MSV000082943",
+   "dataset": "ComPIL 2.0 gut metaproteome",
+   "instrument": "Orbitrap",
+   "files": 1,
+   "benchmarked": "Search against 111.5 M protein sequences",
+   "comparators": "Published ProLuCID / DTASelect peptides",
+   "ledger_rows": 15
+  },
+  {
+   "key": "PXD012986",
+   "accession": "PXD012986, PXD000612",
+   "dataset": "Mouse tissue; HeLa phospho",
+   "instrument": "Orbitrap",
+   "files": 2,
+   "benchmarked": "Rescoring models",
+   "comparators": "Percolator",
+   "ledger_rows": 10
+  }
+ ]
+}

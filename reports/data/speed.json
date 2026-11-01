@@ -1,0 +1,134 @@
+{
+ "rows": [
+  {
+   "key": "lfq-closed",
+   "benchmark": "Closed DDA, LFQ human",
+   "run": "2026-11-01-h2h-current",
+   "slurm_job": 40931267,
+   "node": "ymh4",
+   "cpu": "AMD EPYC 9454 48-Core Processor",
+   "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+   "logos_cpu_s": 1.41,
+   "logos_cpu_repeats_s": [
+    1.4,
+    1.41,
+    1.46
+   ],
+   "logos_gpu_s": 1.53,
+   "logos_gpu_repeats_s": [
+    1.51,
+    1.64,
+    1.53
+   ],
+   "sage_s": 17.25,
+   "sage_repeats_s": [
+    17.25,
+    17.67,
+    17.01
+   ],
+   "logos_binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  {
+   "key": "lfq-open-ymh4",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "run": "2026-10-31-lfq-open-ymh4",
+   "slurm_job": 40928343,
+   "node": "ymh4",
+   "cpu": "AMD EPYC 9454 48-Core Processor",
+   "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+   "logos_cpu_s": 6.96,
+   "logos_cpu_repeats_s": [
+    6.91,
+    6.96,
+    7.22
+   ],
+   "logos_gpu_s": 2.79,
+   "logos_gpu_repeats_s": [
+    2.89,
+    2.79,
+    2.73
+   ],
+   "sage_s": 46.23,
+   "sage_repeats_s": [
+    45.94,
+    46.23,
+    47.34
+   ],
+   "logos_binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  {
+   "key": "lfq-open-bbc1",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "run": "2026-10-31-lfq-open-bbc1",
+   "slurm_job": 40928337,
+   "node": "bbc1",
+   "cpu": "AMD EPYC 9374F 32-Core Processor",
+   "gpu": null,
+   "logos_cpu_s": 7.08,
+   "logos_cpu_repeats_s": [
+    7.08,
+    7.12,
+    7.02
+   ],
+   "logos_gpu_s": null,
+   "sage_s": 37.79,
+   "sage_repeats_s": [
+    37.79,
+    37.76,
+    39.39
+   ],
+   "logos_binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  {
+   "key": "lfq-open-arw3",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "run": "2026-10-31-lfq-open-arw3",
+   "slurm_job": 40928265,
+   "node": "arw3",
+   "cpu": "Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz",
+   "gpu": null,
+   "logos_cpu_s": 11.36,
+   "logos_cpu_repeats_s": [
+    11.33,
+    11.57,
+    11.36
+   ],
+   "logos_gpu_s": null,
+   "sage_s": 106.37,
+   "sage_repeats_s": [
+    106.37,
+    107.82,
+    102.41
+   ],
+   "logos_binary_sha256": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+  },
+  {
+   "key": "astral-tmt",
+   "benchmark": "Astral TMTpro, one file",
+   "run": "2026-11-01-h2h-current",
+   "slurm_job": 40931267,
+   "node": "ymh4",
+   "cpu": "AMD EPYC 9454 48-Core Processor",
+   "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+   "logos_cpu_s": 3.68,
+   "logos_cpu_repeats_s": [
+    3.68,
+    3.63,
+    3.69
+   ],
+   "logos_gpu_s": 2.58,
+   "logos_gpu_repeats_s": [
+    2.49,
+    2.58,
+    2.6
+   ],
+   "sage_s": 40.06,
+   "sage_repeats_s": [
+    40.06,
+    38.35,
+    40.07
+   ],
+   "logos_binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+2026-10-31T23:18:08-0400 staged 3 files into in in 2 s: 4.8G
+2026-10-31T23:18:13-0400 inputs hashed: 3 files
+2026-10-31T23:18:20-0400 warm-cpu rc=0 wall=7.21 cpu=1752% rss=3390772 load=[52.92 53.76 52.23 -> 55.85 54.36 52.44] | 70886 PSMs, 34130 sequences ids=583ae51be609 | open-preselect backend=cpu tasks=64317 keep=512 index_seconds=0.369 total_seconds=4.575 scored=10964192 survivors=10640311
+2026-10-31T23:18:23-0400 warm-gpu rc=0 wall=2.86 cpu=1122% rss=2301536 load=[55.85 54.36 52.44 -> 55.85 54.36 52.44] | 70886 PSMs, 34130 sequences ids=583ae51be609 | 
+2026-10-31T23:18:30-0400 cpu-1 rc=0 wall=6.91 cpu=1806% rss=3509612 load=[55.85 54.36 52.44 -> 58.34 54.94 52.65] | 70886 PSMs, 34130 sequences ids=583ae51be609 | open-preselect backend=cpu tasks=64317 keep=512 index_seconds=0.349 total_seconds=4.550 scored=10964192 survivors=10640311
+2026-10-31T23:18:33-0400 cuda-1 rc=0 wall=2.89 cpu=1094% rss=2510760 load=[58.34 54.94 52.65 -> 58.34 54.94 52.65] | 70886 PSMs, 34130 sequences ids=583ae51be609 | 
+2026-10-31T23:19:19-0400 sage-1 rc=0 wall=45.94 cpu=1614% rss=3073740 load=[58.34 54.94 52.65 -> 63.75 56.73 53.36] | - search:     31678 ms (3719 spectra/s) discovered 73878 target peptide-spectrum matches at 1% FDR discovered 34284 target peptides at 1% FDR discovered 5231 target proteins at 1% FDR 
+2026-10-31T23:19:20-0400 sage-1 count seq_tdc 31744 psms 73148
+2026-10-31T23:20:07-0400 sage-2 rc=0 wall=46.23 cpu=1615% rss=3036872 load=[62.73 56.64 53.35 -> 64.19 57.84 53.90] | - search:     32094 ms (3670 spectra/s) discovered 73878 target peptide-spectrum matches at 1% FDR discovered 34284 target peptides at 1% FDR discovered 5231 target proteins at 1% FDR 
+2026-10-31T23:20:10-0400 cuda-2 rc=0 wall=2.79 cpu=1147% rss=2334812 load=[64.19 57.84 53.90 -> 63.93 57.89 53.94] | 70886 PSMs, 34130 sequences ids=583ae51be609 | 
+2026-10-31T23:20:17-0400 cpu-2 rc=0 wall=6.96 cpu=1800% rss=3528272 load=[63.93 57.89 53.94 -> 64.66 58.14 54.05] | 70886 PSMs, 34130 sequences ids=583ae51be609 | open-preselect backend=cpu tasks=64317 keep=512 index_seconds=0.350 total_seconds=4.605 scored=10964192 survivors=10640311
+2026-10-31T23:20:19-0400 cuda-3 rc=0 wall=2.73 cpu=1165% rss=2272496 load=[64.66 58.14 54.05 -> 64.53 58.22 54.09] | 70886 PSMs, 34130 sequences ids=583ae51be609 | 
+2026-10-31T23:21:07-0400 sage-3 rc=0 wall=47.34 cpu=1587% rss=3062900 load=[64.53 58.22 54.09 -> 66.90 59.60 54.75] | - search:     32247 ms (3653 spectra/s) discovered 73878 target peptide-spectrum matches at 1% FDR discovered 34284 target peptides at 1% FDR discovered 5231 target proteins at 1% FDR 
+2026-10-31T23:21:14-0400 cpu-3 rc=0 wall=7.22 cpu=1734% rss=3368280 load=[66.90 59.60 54.75 -> 67.31 59.80 54.84] | 70886 PSMs, 34130 sequences ids=583ae51be609 | open-preselect backend=cpu tasks=64317 keep=512 index_seconds=0.358 total_seconds=4.769 scored=10964192 survivors=10640311
+2026-10-31T23:21:14-0400 OPEN-H2H DONE
+2026-10-31T23:21:14-0400 cleanup done (exit 0); /dev/shm now: 21G

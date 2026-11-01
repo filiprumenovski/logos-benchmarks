@@ -1,0 +1,8 @@
+file	bytes	sha256	description
+compil2_targets.fasta	41680313548	93ecb081b6eccd316fe77680ead5e2bd4f9d5d2e046d08c7f751dd4ce0eba938	ComPIL 2.0 targets: 111,478,540 records, the target part of MSV000082943 combined_reverse.fasta (split at the first >Reverse_ header)
+entrap.fasta		67c107e40fc36f80d4b33e7b0c63d0044228612392a9d5bae0290855307da102	derived: records of mouse-entrapment.fasta with the entrap_ prefix
+entrap_human.fasta	13446520	932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3	Entrapment for target_human_contam.fasta: every protein shuffled between tryptic cleavage sites (K/R and a leading M fixed), prefix entrap_; regenerate with build_entrap.py target_human_contam.fasta entrap_human.fasta 20260922
+mouse-entrapment.fasta	31440634	525a47b084e499142a1b7a6fb389c2acf053080d7719a016628280d30b9c8074	Astral TMTpro search database with its entrapment half (prefix entrap_) in one file
+target.fasta		c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0	derived: records of mouse-entrapment.fasta without the entrap_ prefix
+target_entrap_human.fasta		6a5a82aeae17927c97cd066932a7a518c2281a2644c06e27584ee0078438e6a5	derived: target_human_contam.fasta followed by entrap_human.fasta
+target_human_contam.fasta	13835321	ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798	LFQ human search database: 20,781 UniProt Swiss-Prot human entries

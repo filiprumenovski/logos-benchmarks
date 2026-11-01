@@ -1,0 +1,25 @@
+{
+ "rows": [
+  {
+   "key": "ptm",
+   "benchmark": "PTM sets: acetyl, phospho, ubiquitin",
+   "logos": "14,013 / 12,460 / 15,582",
+   "comparator": "CHIMERYS: 15,082 / 13,641 / 16,561",
+   "note": "Recorded; no entrapment arm"
+  },
+  {
+   "key": "iontrap-hcd",
+   "benchmark": "HCD ion trap, iw04 to iw50",
+   "logos": "46,340 at iw04",
+   "comparator": "CHIMERYS: 50,650 at iw04",
+   "note": "Recorded; gap widens with isolation width"
+  },
+  {
+   "key": "quant",
+   "benchmark": "LFQ quantification depth at equal error",
+   "logos": "17,762 precursors",
+   "comparator": "CHIMERYS: 35,053",
+   "note": "Recorded; error on par (0.175 vs 0.177)"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+2026-10-31T00:08:34-0400 staged 2 files into . in 312 s: 41G
+2026-10-31T00:08:34-0400 hashing the 41.7 GB FASTA (recorded once per job)
+2026-10-31T00:09:01-0400 inputs hashed: 2 files
+2026-10-31T00:10:19-0400 warm rc=0 wall=76.57 rss_gb=4.96 | 
+2026-10-31T00:11:28-0400 r1 rc=0 wall=65.05 rss_gb=3.55 | 
+2026-10-31T00:12:36-0400 r2 rc=0 wall=65.11 rss_gb=3.65 | 
+2026-10-31T00:13:42-0400 r3 rc=0 wall=64.96 rss_gb=3.47 | 
+2026-10-31T00:13:42-0400 B6 DONE (recorded sorted-row SHA256 04e82eb30946c13e69e7567a7396cde444b9a363fd58495a85e05dddb4e5b82c is for the 2026-09-18 binary; a 109c5ba4 difference is expected and must be explained, not hidden)
+2026-10-31T00:13:44-0400 cleanup done (exit 0); /dev/shm now: 21G

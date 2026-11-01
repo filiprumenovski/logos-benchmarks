@@ -1,0 +1,9 @@
+2026-11-01T01:47:27-0400 staged 4 files into in in 2 s: 4.8G
+2026-11-01T01:47:30-0400 inputs hashed: 5 files
+2026-11-01T01:47:48-0400 entrap_human rebuilt: 932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3 (manifest 932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3)
+2026-11-01T01:47:59-0400 open-cal-lda-1 rc=0 wall=10.02 rss_gb=3.25 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 77433 PSMs, 37178 sequences (seq_tdc) at q <= 0.01 in 0.41 s
+2026-11-01T01:48:09-0400 open-cal-lda-2 rc=0 wall=9.45 rss_gb=3.11 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 77433 PSMs, 37178 sequences (seq_tdc) at q <= 0.01 in 0.42 s
+2026-11-01T01:48:19-0400 open-cal-lda-3 rc=0 wall=9.42 rss_gb=3.20 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 77433 PSMs, 37178 sequences (seq_tdc) at q <= 0.01 in 0.37 s
+2026-11-01T01:50:55-0400 sage-open-E wall=151.21 rss_gb=4.77 | seqlvl {'nt': 30343, 'ne': 141, 'fdp_combined': 0.009, 'fdp_lower': 0.0046}
+2026-11-01T01:50:55-0400 FILL-GAPS DONE
+2026-11-01T01:50:55-0400 cleanup done (exit 0); /dev/shm now: 0

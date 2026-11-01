@@ -1,0 +1,212 @@
+{
+ "name": "2026-10-31-entrapment-arms",
+ "measured": "Entrapment arms: LFQ open (three rescoring settings), Astral TMTpro LOGOS and Sage",
+ "slurm_job": 40928398,
+ "node": "ymh4",
+ "started": "2026-10-31T23:51:25-0400",
+ "job": "40928398",
+ "cpus": "22",
+ "mem": "81920",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625"
+ },
+ "inputs": {
+  "entrap.fasta": "67c107e40fc36f80d4b33e7b0c63d0044228612392a9d5bae0290855307da102",
+  "target.fasta": "c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0",
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "mouse-entrapment.fasta": "525a47b084e499142a1b7a6fb389c2acf053080d7719a016628280d30b9c8074",
+  "az01263_02152024.mzML": "69725c5ab95e3e487dfb2b95deae586f6cb456191a28867a11da585e32ef4970",
+  "az01263_02152024.raw": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "astral-logos-E": {
+   "wall_s": 5.43,
+   "peak_rss_gb": 4.56,
+   "cpu_percent": 1496,
+   "counts": {
+    "candidate_rows": 110938,
+    "competed_psms": 110938,
+    "psms_q01": 23488,
+    "sequences_q01": 7597,
+    "peptidoforms_q01": 8248
+   },
+   "ids_json_sha256": "fe785ad99b7587a0f3511046657a8409c2f91872c342f6ae96b16d0f548803ac",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 23364,
+      "ne": 124,
+      "fdp": 0.0106
+     },
+     "seqlvl": {
+      "nt": 7568,
+      "ne": 29,
+      "fdp": 0.0076
+     },
+     "seqs": {
+      "nt": 7912,
+      "ne": 110,
+      "fdp": 0.0274
+     }
+    }
+   },
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-sage-E": {
+   "wall_s": 51.37,
+   "peak_rss_gb": 10.56,
+   "cpu_percent": 467,
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 21649,
+      "ne": 94,
+      "fdp": 0.0086
+     },
+     "seqlvl": {
+      "nt": 7212,
+      "ne": 37,
+      "fdp": 0.0102
+     },
+     "seqs": {
+      "nt": 7573,
+      "ne": 60,
+      "fdp": 0.0157
+     }
+    }
+   },
+   "counts": {
+    "candidate_rows": 104568,
+    "competed_psms": 104568,
+    "psms_q01": 21743,
+    "sequences_q01": 7249,
+    "peptidoforms_q01": 7870
+   },
+   "counted_pin_sha256": "5f176354d312b3a10c3fd83e8ca6bf188823058840a912f8e00343e14b8d50d9"
+  },
+  "lfq-open-cal-lda-E": {
+   "wall_s": 10.14,
+   "peak_rss_gb": 5.37,
+   "cpu_percent": 1780,
+   "counts": {
+    "candidate_rows": 117340,
+    "competed_psms": 117340,
+    "psms_q01": 73817,
+    "sequences_q01": 35787,
+    "peptidoforms_q01": 49173
+   },
+   "ids_json_sha256": "9e42b3c24abca213fdf16aef34aad3a51d7bb6cbdf72dc9a54ed352eeea18574",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 73438,
+      "ne": 379,
+      "fdp": 0.01
+     },
+     "seqlvl": {
+      "nt": 35595,
+      "ne": 192,
+      "fdp": 0.0104
+     },
+     "seqs": {
+      "nt": 37005,
+      "ne": 354,
+      "fdp": 0.0184
+     }
+    }
+   },
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-open-lda-E": {
+   "wall_s": 10.12,
+   "peak_rss_gb": 5.45,
+   "cpu_percent": 1764,
+   "counts": {
+    "candidate_rows": 117335,
+    "competed_psms": 117335,
+    "psms_q01": 73839,
+    "sequences_q01": 35853,
+    "peptidoforms_q01": 49257
+   },
+   "ids_json_sha256": "ef34cbb6d75188a25cc4db36726cc4749099cd966d060445b42ebb997769d5d6",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 73449,
+      "ne": 390,
+      "fdp": 0.0103
+     },
+     "seqlvl": {
+      "nt": 35650,
+      "ne": 203,
+      "fdp": 0.011
+     },
+     "seqs": {
+      "nt": 37012,
+      "ne": 364,
+      "fdp": 0.0189
+     }
+    }
+   },
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-open-lean-E": {
+   "wall_s": 12.1,
+   "peak_rss_gb": 5.43,
+   "cpu_percent": 1696,
+   "counts": {
+    "candidate_rows": 117307,
+    "competed_psms": 117307,
+    "psms_q01": 66177,
+    "sequences_q01": 32252,
+    "peptidoforms_q01": 46736
+   },
+   "ids_json_sha256": "58010a803ebd3107319e10ddfe21e15349a88388f500844d157fc529ac9feabc",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 65824,
+      "ne": 353,
+      "fdp": 0.0104
+     },
+     "seqlvl": {
+      "nt": 32086,
+      "ne": 166,
+      "fdp": 0.01
+     },
+     "seqs": {
+      "nt": 33002,
+      "ne": 332,
+      "fdp": 0.0194
+     }
+    }
+   },
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  }
+ }
+}

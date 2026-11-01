@@ -1,0 +1,67 @@
+{
+ "rows": [
+  {
+   "key": "lfq-closed",
+   "benchmark": "LFQ human, closed",
+   "backend": "CPU",
+   "logos_s": 1.41,
+   "sage_s": 17.25,
+   "node": "ymh4",
+   "basis": "measured 2026-11-01",
+   "node_range": null,
+   "x": 12.2,
+   "run": "2026-11-01-h2h-current"
+  },
+  {
+   "key": "lfq-open-cpu",
+   "benchmark": "LFQ human, open",
+   "backend": "CPU",
+   "logos_s": 6.96,
+   "sage_s": 46.23,
+   "node": "ymh4",
+   "basis": "measured 2026-10-31",
+   "node_range": [
+    5.3,
+    9.4
+   ],
+   "x": 6.6,
+   "run": "2026-10-31-lfq-open-ymh4"
+  },
+  {
+   "key": "lfq-open-gpu",
+   "benchmark": "LFQ human, open",
+   "backend": "GPU",
+   "logos_s": 2.79,
+   "sage_s": 46.23,
+   "node": "ymh4",
+   "basis": "measured 2026-10-31",
+   "node_range": null,
+   "x": 16.6,
+   "run": "2026-10-31-lfq-open-ymh4"
+  },
+  {
+   "key": "astral-cpu",
+   "benchmark": "Astral TMTpro, one file",
+   "backend": "CPU",
+   "logos_s": 3.68,
+   "sage_s": 40.06,
+   "node": "ymh4",
+   "basis": "measured 2026-11-01",
+   "node_range": null,
+   "x": 10.9,
+   "run": "2026-11-01-h2h-current"
+  },
+  {
+   "key": "astral-gpu",
+   "benchmark": "Astral TMTpro, one file",
+   "backend": "GPU",
+   "logos_s": 2.58,
+   "sage_s": 40.06,
+   "node": "ymh4",
+   "basis": "measured 2026-11-01",
+   "node_range": null,
+   "x": 15.5,
+   "run": "2026-11-01-h2h-current"
+  }
+ ]
+}

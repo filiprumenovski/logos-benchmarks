@@ -1,0 +1,867 @@
+{
+ "name": "2026-11-01-eval-parity",
+ "measured": "Counting parity: every counted arm rerun on CPU; eval/count.py against the engine's counter and the record",
+ "slurm_job": 40930749,
+ "node": "arw3",
+ "started": "2026-11-01T01:26:44-0400",
+ "job": "40930749",
+ "cpus": "22",
+ "mem": "98304",
+ "cpu": "Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e",
+  "bin-a7418138/logos": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2",
+  "eval/check_logos.py": "544c2843486bf22df4642b7a3840756836504c7cf1a1041970bb3fe646983f5e",
+  "eval/check_sage.py": "8496ebf61ad1f9981eadff3a08d86c501812331311fae98ccb88f1992da8de45",
+  "eval/count.py": "ea5f5d8c3f14c9a29617d11b0e5bea3f39f9c209e181a96f5e5195a299ead82a",
+  "eval/entrapment_ratio.py": "b6ac14ba66ff9fc6732f77daad263829e9616fb24aa9b79ff81705ee690c200d",
+  "eval/sage_to_pin.py": "74cb973715d4126467ed9eccbc752d2a8145b81c00c0fecad25b071579a8552b"
+ },
+ "inputs": {
+  "entrap.fasta": "67c107e40fc36f80d4b33e7b0c63d0044228612392a9d5bae0290855307da102",
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target.fasta": "c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0",
+  "mouse-entrapment.fasta": "525a47b084e499142a1b7a6fb389c2acf053080d7719a016628280d30b9c8074",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "az01263_02152024.mzML": "69725c5ab95e3e487dfb2b95deae586f6cb456191a28867a11da585e32ef4970",
+  "az01263_02152024.raw": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "astral-logos-E": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config config.json --entrapment entrap.fasta --entrapment-ratio 0.9998403161114782",
+   "config": "6317e6afa15c795a",
+   "wall_s": 37.2,
+   "peak_rss_gb": 4.83,
+   "cpu_percent": 397,
+   "parity": {
+    "verdict": "PASS",
+    "ids_json_sha256": {
+     "rerun": "fe785ad99b7587a0f3511046657a8409c2f91872c342f6ae96b16d0f548803ac",
+     "recorded": "fe785ad99b7587a0f3511046657a8409c2f91872c342f6ae96b16d0f548803ac"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 110938,
+      "rerun": 110938,
+      "count.py": 110938
+     },
+     "competed_psms": {
+      "recorded": 110938,
+      "rerun": 110938,
+      "count.py": 110938
+     },
+     "psms_q01": {
+      "recorded": 23488,
+      "rerun": 23488,
+      "count.py": 23488
+     },
+     "sequences_q01": {
+      "recorded": 7597,
+      "rerun": 7597,
+      "count.py": 7597
+     },
+     "peptidoforms_q01": {
+      "recorded": 8248,
+      "rerun": 8248,
+      "count.py": 8248
+     }
+    },
+    "entrapment": {
+     "expmass.psm": {
+      "recorded": [
+       23364,
+       124,
+       0.0106
+      ],
+      "count.py": [
+       23364,
+       124,
+       0.0106
+      ]
+     },
+     "expmass.seqlvl": {
+      "recorded": [
+       7568,
+       29,
+       0.0076
+      ],
+      "count.py": [
+       7568,
+       29,
+       0.0076
+      ]
+     },
+     "expmass.seqs": {
+      "recorded": [
+       7912,
+       110,
+       0.0274
+      ],
+      "count.py": [
+       7912,
+       110,
+       0.0274
+      ]
+     },
+     "top1.psm": {
+      "recorded": [
+       23364,
+       124,
+       0.0106
+      ],
+      "count.py": [
+       23364,
+       124,
+       0.0106
+      ]
+     },
+     "top1.seqlvl": {
+      "recorded": [
+       7568,
+       29,
+       0.0076
+      ],
+      "count.py": [
+       7568,
+       29,
+       0.0076
+      ]
+     },
+     "top1.seqs": {
+      "recorded": [
+       7912,
+       110,
+       0.0274
+      ],
+      "count.py": [
+       7912,
+       110,
+       0.0274
+      ]
+     },
+     "native1.psm": {
+      "recorded": [
+       23364,
+       124,
+       0.0106
+      ],
+      "count.py": [
+       23364,
+       124,
+       0.0106
+      ]
+     },
+     "native1.seqlvl": {
+      "recorded": [
+       7568,
+       29,
+       0.0076
+      ],
+      "count.py": [
+       7568,
+       29,
+       0.0076
+      ]
+     },
+     "native1.seqs": {
+      "recorded": [
+       7912,
+       110,
+       0.0274
+      ],
+      "count.py": [
+       7912,
+       110,
+       0.0274
+      ]
+     },
+     "none.psm": {
+      "recorded": [
+       23364,
+       124,
+       0.0106
+      ],
+      "count.py": [
+       23364,
+       124,
+       0.0106
+      ]
+     },
+     "none.seqlvl": {
+      "recorded": [
+       7568,
+       29,
+       0.0076
+      ],
+      "count.py": [
+       7568,
+       29,
+       0.0076
+      ]
+     },
+     "none.seqs": {
+      "recorded": [
+       7912,
+       110,
+       0.0274
+      ],
+      "count.py": [
+       7912,
+       110,
+       0.0274
+      ]
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-tmt": {
+   "binary": "bin-a7418138/logos",
+   "command": "logos --config config.json --entrapment-ratio 1",
+   "config": "6317e6afa15c795a",
+   "wall_s": 38.19,
+   "peak_rss_gb": 2.79,
+   "cpu_percent": 541,
+   "parity": {
+    "verdict": "PASS",
+    "ids_json_sha256": {
+     "rerun": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+     "recorded": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 109406,
+      "rerun": 109406,
+      "count.py": 109406
+     },
+     "competed_psms": {
+      "recorded": 109406,
+      "rerun": 109406,
+      "count.py": 109406
+     },
+     "psms_q01": {
+      "recorded": 24167,
+      "rerun": 24167,
+      "count.py": 24167
+     },
+     "sequences_q01": {
+      "recorded": 7769,
+      "rerun": 7769,
+      "count.py": 7769
+     },
+     "peptidoforms_q01": {
+      "recorded": 8447,
+      "rerun": 8447,
+      "count.py": 8447
+     }
+    }
+   },
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "lfq-closed": {
+   "binary": "bin/logos",
+   "command": "logos --config config.json --entrapment-ratio 1",
+   "config": "4114f243cdc81b03",
+   "wall_s": 8.97,
+   "peak_rss_gb": 1.45,
+   "cpu_percent": 410,
+   "parity": {
+    "verdict": "PASS",
+    "ids_json_sha256": {
+     "rerun": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+     "recorded": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 105700,
+      "rerun": 105700,
+      "count.py": 105700
+     },
+     "competed_psms": {
+      "recorded": 105700,
+      "rerun": 105700,
+      "count.py": 105700
+     },
+     "psms_q01": {
+      "recorded": 59769,
+      "rerun": 59769,
+      "count.py": 59769
+     },
+     "sequences_q01": {
+      "recorded": 33102,
+      "rerun": 33102,
+      "count.py": 33102
+     },
+     "peptidoforms_q01": {
+      "recorded": 35517,
+      "rerun": 35517,
+      "count.py": 35517
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "lfq-open": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config config.json --entrapment-ratio 1",
+   "config": "b2c9a99e3ede9a00",
+   "wall_s": 17.58,
+   "peak_rss_gb": 3.17,
+   "cpu_percent": 997,
+   "parity": {
+    "verdict": "PASS",
+    "ids_json_sha256": {
+     "rerun": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+     "recorded": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 117238,
+      "rerun": 117238,
+      "count.py": 117238
+     },
+     "competed_psms": {
+      "recorded": 117238,
+      "rerun": 117238,
+      "count.py": 117238
+     },
+     "psms_q01": {
+      "recorded": 70886,
+      "rerun": 70886,
+      "count.py": 70886
+     },
+     "sequences_q01": {
+      "recorded": 34130,
+      "rerun": 34130,
+      "count.py": 34130
+     },
+     "peptidoforms_q01": {
+      "recorded": 49929,
+      "rerun": 49929,
+      "count.py": 49929
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-open-cal-lda-E": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config config.json --entrapment entrap_human.fasta --entrapment-ratio 1.060595818801411",
+   "config": "295b9fa4ef33bb80",
+   "wall_s": 21.11,
+   "peak_rss_gb": 5.01,
+   "cpu_percent": 1198,
+   "parity": {
+    "verdict": "PASS",
+    "ids_json_sha256": {
+     "rerun": "9e42b3c24abca213fdf16aef34aad3a51d7bb6cbdf72dc9a54ed352eeea18574",
+     "recorded": "9e42b3c24abca213fdf16aef34aad3a51d7bb6cbdf72dc9a54ed352eeea18574"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 117340,
+      "rerun": 117340,
+      "count.py": 117340
+     },
+     "competed_psms": {
+      "recorded": 117340,
+      "rerun": 117340,
+      "count.py": 117340
+     },
+     "psms_q01": {
+      "recorded": 73817,
+      "rerun": 73817,
+      "count.py": 73817
+     },
+     "sequences_q01": {
+      "recorded": 35787,
+      "rerun": 35787,
+      "count.py": 35787
+     },
+     "peptidoforms_q01": {
+      "recorded": 49173,
+      "rerun": 49173,
+      "count.py": 49173
+     }
+    },
+    "entrapment": {
+     "expmass.psm": {
+      "recorded": [
+       73438,
+       379,
+       0.01
+      ],
+      "count.py": [
+       73438,
+       379,
+       0.01
+      ]
+     },
+     "expmass.seqlvl": {
+      "recorded": [
+       35595,
+       192,
+       0.0104
+      ],
+      "count.py": [
+       35595,
+       192,
+       0.0104
+      ]
+     },
+     "expmass.seqs": {
+      "recorded": [
+       37005,
+       354,
+       0.0184
+      ],
+      "count.py": [
+       37005,
+       354,
+       0.0184
+      ]
+     },
+     "top1.psm": {
+      "recorded": [
+       73438,
+       379,
+       0.01
+      ],
+      "count.py": [
+       73438,
+       379,
+       0.01
+      ]
+     },
+     "top1.seqlvl": {
+      "recorded": [
+       35595,
+       192,
+       0.0104
+      ],
+      "count.py": [
+       35595,
+       192,
+       0.0104
+      ]
+     },
+     "top1.seqs": {
+      "recorded": [
+       37005,
+       354,
+       0.0184
+      ],
+      "count.py": [
+       37005,
+       354,
+       0.0184
+      ]
+     },
+     "native1.psm": {
+      "recorded": [
+       73438,
+       379,
+       0.01
+      ],
+      "count.py": [
+       73438,
+       379,
+       0.01
+      ]
+     },
+     "native1.seqlvl": {
+      "recorded": [
+       35595,
+       192,
+       0.0104
+      ],
+      "count.py": [
+       35595,
+       192,
+       0.0104
+      ]
+     },
+     "native1.seqs": {
+      "recorded": [
+       37005,
+       354,
+       0.0184
+      ],
+      "count.py": [
+       37005,
+       354,
+       0.0184
+      ]
+     },
+     "none.psm": {
+      "recorded": [
+       73438,
+       379,
+       0.01
+      ],
+      "count.py": [
+       73438,
+       379,
+       0.01
+      ]
+     },
+     "none.seqlvl": {
+      "recorded": [
+       35595,
+       192,
+       0.0104
+      ],
+      "count.py": [
+       35595,
+       192,
+       0.0104
+      ]
+     },
+     "none.seqs": {
+      "recorded": [
+       37005,
+       354,
+       0.0184
+      ],
+      "count.py": [
+       37005,
+       354,
+       0.0184
+      ]
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "sage-astral": {
+   "config": "304b6305352dfa72",
+   "wall_s": 58.02,
+   "peak_rss_gb": 6.38,
+   "cpu_percent": 372,
+   "parity": {
+    "verdict": "PASS",
+    "evidence_sha256": {
+     "recorded": "b5222d79a6063506216d5082036f7596b3f51a6f579933663036d9aee7c3c55b",
+     "rerun": "b5222d79a6063506216d5082036f7596b3f51a6f579933663036d9aee7c3c55b"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 100737,
+      "count-ids": 100737,
+      "count.py": 100737
+     },
+     "competed_psms": {
+      "recorded": 100737,
+      "count-ids": 100737,
+      "count.py": 100737
+     },
+     "psms_q01": {
+      "recorded": 22409,
+      "count-ids": 22409,
+      "count.py": 22409
+     },
+     "sequences_q01": {
+      "recorded": 7470,
+      "count-ids": 7470,
+      "count.py": 7470
+     },
+     "peptidoforms_q01": {
+      "recorded": 8109,
+      "count-ids": 8109,
+      "count.py": 8109
+     }
+    }
+   },
+   "sage_results_sha256": "ef05cf5a2d851b07c5fb55b21f98ed8b3c5f236524d5a20431cec0ea1b1d6be5"
+  },
+  "sage-astral-E": {
+   "config": "ef02cff195356ddf",
+   "wall_s": 121.86,
+   "peak_rss_gb": 10.41,
+   "cpu_percent": 287,
+   "parity": {
+    "verdict": "PASS",
+    "evidence_sha256": {
+     "recorded": "5f176354d312b3a10c3fd83e8ca6bf188823058840a912f8e00343e14b8d50d9",
+     "rerun": "5f176354d312b3a10c3fd83e8ca6bf188823058840a912f8e00343e14b8d50d9"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 104568,
+      "count-ids": 104568,
+      "count.py": 104568
+     },
+     "competed_psms": {
+      "recorded": 104568,
+      "count-ids": 104568,
+      "count.py": 104568
+     },
+     "psms_q01": {
+      "recorded": 21743,
+      "count-ids": 21743,
+      "count.py": 21743
+     },
+     "sequences_q01": {
+      "recorded": 7249,
+      "count-ids": 7249,
+      "count.py": 7249
+     },
+     "peptidoforms_q01": {
+      "recorded": 7870,
+      "count-ids": 7870,
+      "count.py": 7870
+     }
+    },
+    "entrapment": {
+     "expmass.psm": {
+      "recorded": [
+       21649,
+       94,
+       0.0086
+      ],
+      "count.py": [
+       21649,
+       94,
+       0.0086
+      ]
+     },
+     "expmass.seqlvl": {
+      "recorded": [
+       7212,
+       37,
+       0.0102
+      ],
+      "count.py": [
+       7212,
+       37,
+       0.0102
+      ]
+     },
+     "expmass.seqs": {
+      "recorded": [
+       7573,
+       60,
+       0.0157
+      ],
+      "count.py": [
+       7573,
+       60,
+       0.0157
+      ]
+     },
+     "top1.psm": {
+      "recorded": [
+       21649,
+       94,
+       0.0086
+      ],
+      "count.py": [
+       21649,
+       94,
+       0.0086
+      ]
+     },
+     "top1.seqlvl": {
+      "recorded": [
+       7212,
+       37,
+       0.0102
+      ],
+      "count.py": [
+       7212,
+       37,
+       0.0102
+      ]
+     },
+     "top1.seqs": {
+      "recorded": [
+       7573,
+       60,
+       0.0157
+      ],
+      "count.py": [
+       7573,
+       60,
+       0.0157
+      ]
+     },
+     "native1.psm": {
+      "recorded": [
+       21649,
+       94,
+       0.0086
+      ],
+      "count.py": [
+       21649,
+       94,
+       0.0086
+      ]
+     },
+     "native1.seqlvl": {
+      "recorded": [
+       7212,
+       37,
+       0.0102
+      ],
+      "count.py": [
+       7212,
+       37,
+       0.0102
+      ]
+     },
+     "native1.seqs": {
+      "recorded": [
+       7573,
+       60,
+       0.0157
+      ],
+      "count.py": [
+       7573,
+       60,
+       0.0157
+      ]
+     },
+     "none.psm": {
+      "recorded": [
+       21649,
+       94,
+       0.0086
+      ],
+      "count.py": [
+       21649,
+       94,
+       0.0086
+      ]
+     },
+     "none.seqlvl": {
+      "recorded": [
+       7212,
+       37,
+       0.0102
+      ],
+      "count.py": [
+       7212,
+       37,
+       0.0102
+      ]
+     },
+     "none.seqs": {
+      "recorded": [
+       7573,
+       60,
+       0.0157
+      ],
+      "count.py": [
+       7573,
+       60,
+       0.0157
+      ]
+     }
+    }
+   },
+   "sage_results_sha256": "629d0472d46cdf8c91be9b81472d2f37f589ed13c9539ac1914cab7dae71863c"
+  },
+  "sage-default": {
+   "config": "48430727792e7d37",
+   "wall_s": 45.72,
+   "peak_rss_gb": 2.85,
+   "cpu_percent": 313,
+   "parity": {
+    "verdict": "PASS",
+    "evidence_sha256": {
+     "recorded": "4e42a8068f5efd384b53996cb48616a510341c8af1416f673e7e374609969c02",
+     "rerun": "4e42a8068f5efd384b53996cb48616a510341c8af1416f673e7e374609969c02"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 99861,
+      "count-ids": 99861,
+      "count.py": 99861
+     },
+     "competed_psms": {
+      "recorded": 99861,
+      "count-ids": 99861,
+      "count.py": 99861
+     },
+     "psms_q01": {
+      "recorded": 58668,
+      "count-ids": 58668,
+      "count.py": 58668
+     },
+     "sequences_q01": {
+      "recorded": 32453,
+      "count-ids": 32453,
+      "count.py": 32453
+     },
+     "peptidoforms_q01": {
+      "recorded": 34875,
+      "count-ids": 34875,
+      "count.py": 34875
+     }
+    }
+   },
+   "sage_results_sha256": "6b4d29e9b2d4eddd543a16dbd48598d1817b427394bef902f2178104841a105d"
+  },
+  "sage-open": {
+   "config": "40696f5a1e215c99",
+   "wall_s": 100.09,
+   "peak_rss_gb": 2.91,
+   "cpu_percent": 1176,
+   "parity": {
+    "verdict": "PASS",
+    "evidence_sha256": {
+     "recorded": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71",
+     "rerun": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71"
+    },
+    "fields": {
+     "candidate_rows": {
+      "recorded": 116611,
+      "count-ids": 116611,
+      "count.py": 116611
+     },
+     "competed_psms": {
+      "recorded": 116611,
+      "count-ids": 116611,
+      "count.py": 116611
+     },
+     "psms_q01": {
+      "recorded": 73148,
+      "count-ids": 73148,
+      "count.py": 73148
+     },
+     "sequences_q01": {
+      "recorded": 31744,
+      "count-ids": 31744,
+      "count.py": 31744
+     },
+     "peptidoforms_q01": {
+      "recorded": 34070,
+      "count-ids": 34070,
+      "count.py": 34070
+     }
+    }
+   },
+   "sage_results_sha256": "060b2396a92313daafdc9f33168d2d1963b157fc42430ce759b7c7f075886691"
+  }
+ }
+}

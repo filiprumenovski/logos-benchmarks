@@ -1,0 +1,6 @@
+SUMMARY old  wall 8.74 [8.70..9.18]
+SUMMARY new  wall 7.08 [7.02..7.12]
+SUMMARY sage wall 37.79 [37.76..39.39]
+RATIO sage/new 5.34x  sage/old 4.32x  old/new 1.23x
+PARITY all LOGOS ids.json = 583ae51be609 (= CUDA)
+IDS seq_tdc logos 34130 sage 31744  psms logos 70886 sage 73148

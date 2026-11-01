@@ -1,0 +1,28 @@
+{
+ "rows": [
+  {
+   "key": "one",
+   "case": "One file at a time",
+   "seconds_per_file": 341.0,
+   "cores": 1
+  },
+  {
+   "key": "six",
+   "case": "Six files at once",
+   "seconds_per_file": 73.3,
+   "cores": 6
+  },
+  {
+   "key": "logos-cpu",
+   "case": "LOGOS whole search, CPU (no conversion)",
+   "seconds_per_file": 3.61,
+   "cores": 22
+  },
+  {
+   "key": "logos-gpu",
+   "case": "LOGOS whole search, GPU (no conversion)",
+   "seconds_per_file": 2.48,
+   "cores": 22
+  }
+ ]
+}

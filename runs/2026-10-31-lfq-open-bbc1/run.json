@@ -1,0 +1,182 @@
+{
+ "name": "2026-10-31-lfq-open-bbc1",
+ "measured": "LFQ human-01 open search on bbc1: LOGOS CPU and Sage, 3 interleaved repeats",
+ "slurm_job": 40928337,
+ "node": "bbc1",
+ "started": "2026-10-31T23:14:18-0400",
+ "job": "40928337",
+ "cpus": "22",
+ "mem": "65536",
+ "cpu": "AMD EPYC 9374F 32-Core Processor",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-6f323a4b/logos": "1ee255cfb73f1718faa458b087c27689c5762c17610d3104e8bcf69f18218040",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+ },
+ "inputs": {
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "new-1": {
+   "wall_s": 7.08,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1790,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "new-2": {
+   "wall_s": 7.12,
+   "peak_rss_gb": 3.11,
+   "cpu_percent": 1832,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "new-3": {
+   "wall_s": 7.02,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1833,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "old-1": {
+   "wall_s": 8.7,
+   "peak_rss_gb": 3.27,
+   "cpu_percent": 1884,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-6f323a4b/logos",
+   "binary_sha256": "1ee255cfb73f1718faa458b087c27689c5762c17610d3104e8bcf69f18218040"
+  },
+  "old-2": {
+   "wall_s": 9.18,
+   "peak_rss_gb": 3.13,
+   "cpu_percent": 1804,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-6f323a4b/logos",
+   "binary_sha256": "1ee255cfb73f1718faa458b087c27689c5762c17610d3104e8bcf69f18218040"
+  },
+  "old-3": {
+   "wall_s": 8.74,
+   "peak_rss_gb": 3.16,
+   "cpu_percent": 1895,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-6f323a4b/logos",
+   "binary_sha256": "1ee255cfb73f1718faa458b087c27689c5762c17610d3104e8bcf69f18218040"
+  },
+  "sage-1": {
+   "wall_s": 37.79,
+   "peak_rss_gb": 2.92,
+   "cpu_percent": 1472,
+   "counts": {
+    "candidate_rows": 116611,
+    "competed_psms": 116611,
+    "psms_q01": 73148,
+    "sequences_q01": 31744,
+    "peptidoforms_q01": 34070
+   },
+   "counted_pin_sha256": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71"
+  },
+  "sage-2": {
+   "wall_s": 37.76,
+   "peak_rss_gb": 2.89,
+   "cpu_percent": 1453
+  },
+  "sage-3": {
+   "wall_s": 39.39,
+   "peak_rss_gb": 2.9,
+   "cpu_percent": 1416
+  },
+  "warm-new": {
+   "wall_s": 7.14,
+   "peak_rss_gb": 3.24,
+   "cpu_percent": 1820,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-old": {
+   "wall_s": 9.41,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1753,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-6f323a4b/logos",
+   "binary_sha256": "1ee255cfb73f1718faa458b087c27689c5762c17610d3104e8bcf69f18218040"
+  }
+ }
+}

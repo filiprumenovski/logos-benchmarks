@@ -1,0 +1,187 @@
+{
+ "name": "2026-11-01-fill-gaps",
+ "measured": "LOGOS open + calibration + LDA on the target database alone (3 repeats); Sage open with the entrapment database; entrapment database rebuilt from its generator",
+ "slurm_job": 40931332,
+ "node": "arw3",
+ "started": "2026-11-01T01:47:24-0400",
+ "job": "40931332",
+ "cpus": "22",
+ "mem": "65536",
+ "cpu": "Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e",
+  "eval/build_entrap.py": "53eae171cded24b2e7cc51b1513e27f1a6c2b4959394c547f5437a514aff8fd7",
+  "eval/check_logos.py": "3c9aac19a9af638ddffcb60bf75588296fa2d8fddccd7c016e2499363afec694",
+  "eval/check_sage.py": "8496ebf61ad1f9981eadff3a08d86c501812331311fae98ccb88f1992da8de45",
+  "eval/count.py": "ea5f5d8c3f14c9a29617d11b0e5bea3f39f9c209e181a96f5e5195a299ead82a",
+  "eval/entrapment_ratio.py": "b6ac14ba66ff9fc6732f77daad263829e9616fb24aa9b79ff81705ee690c200d",
+  "eval/sage_to_pin.py": "74cb973715d4126467ed9eccbc752d2a8145b81c00c0fecad25b071579a8552b"
+ },
+ "inputs": {
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "target_entrap_human.fasta": "6a5a82aeae17927c97cd066932a7a518c2281a2644c06e27584ee0078438e6a5",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "open-cal-lda-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config open-cal-lda.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "7b36b59f8d42411b",
+   "wall_s": 10.02,
+   "peak_rss_gb": 3.25,
+   "cpu_percent": 1632,
+   "counts": {
+    "candidate_rows": 117266,
+    "competed_psms": 117266,
+    "psms_q01": 77433,
+    "sequences_q01": 37178,
+    "peptidoforms_q01": 51968
+   },
+   "ids_json_sha256": "55304e5054c86bf02b95aaca23e86a91200f1e1f75203846a7d32fe9f16fd85c",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 77433,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 37178,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 38657,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "open-cal-lda-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config open-cal-lda.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "7b36b59f8d42411b",
+   "wall_s": 9.45,
+   "peak_rss_gb": 3.11,
+   "cpu_percent": 1667,
+   "counts": {
+    "candidate_rows": 117266,
+    "competed_psms": 117266,
+    "psms_q01": 77433,
+    "sequences_q01": 37178,
+    "peptidoforms_q01": 51968
+   },
+   "ids_json_sha256": "55304e5054c86bf02b95aaca23e86a91200f1e1f75203846a7d32fe9f16fd85c",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 77433,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 37178,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 38657,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "open-cal-lda-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config open-cal-lda.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "7b36b59f8d42411b",
+   "wall_s": 9.42,
+   "peak_rss_gb": 3.2,
+   "cpu_percent": 1685,
+   "counts": {
+    "candidate_rows": 117266,
+    "competed_psms": 117266,
+    "psms_q01": 77433,
+    "sequences_q01": 37178,
+    "peptidoforms_q01": 51968
+   },
+   "ids_json_sha256": "55304e5054c86bf02b95aaca23e86a91200f1e1f75203846a7d32fe9f16fd85c",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 77433,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 37178,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 38657,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "sage-open-E": {
+   "wall_s": 151.21,
+   "peak_rss_gb": 4.77,
+   "cpu_percent": 1530,
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 68848,
+      "ne": 359,
+      "fdp": 0.0101
+     },
+     "seqlvl": {
+      "nt": 30343,
+      "ne": 141,
+      "fdp": 0.009
+     },
+     "seqs": {
+      "nt": 30971,
+      "ne": 306,
+      "fdp": 0.019
+     }
+    }
+   },
+   "counts": {
+    "candidate_rows": 116736,
+    "competed_psms": 116736,
+    "psms_q01": 69207,
+    "sequences_q01": 30484,
+    "peptidoforms_q01": 32746
+   },
+   "counted_pin_sha256": "6c376eb5b8874330a2248c35bdcb3fa846cce081cb6aceab6e8a5588025087da",
+   "sage_results_sha256": "16fd2a29d50a6cd2aa95c68efb8b8a11d01992b4adf47250b8d4028b4400bcae"
+  }
+ }
+}

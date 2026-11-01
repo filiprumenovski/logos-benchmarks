@@ -1,0 +1,9 @@
+SUMMARY astral ROOT-sweep  wall 3.860 [3.570..3.880]  search 1.976 [1.884..1.986]  ingest 0.665
+SUMMARY astral NEW-sweep   wall 3.820 [3.780..3.900]  search 1.920 [1.907..2.005]  ingest 0.653
+SUMMARY astral ROOT-fi     wall 3.910 [3.720..3.990]  search 2.011 [1.926..2.043]  ingest 0.684
+SUMMARY astral NEW-fi      wall 3.850 [3.830..3.900]  search 1.982 [1.930..2.043]  ingest 0.666
+PAIRED NEW-fi search faster than ROOT-fi in 4/5; wall in 3 /5
+PAIRED NEW-sweep search faster than ROOT-sweep in 2/5; wall in 2 /5
+SUMMARY gpu-ROOT wall 2.480
+SUMMARY gpu-NEW wall 2.680
+PARITY OK

@@ -1,0 +1,488 @@
+{
+ "name": "2026-10-30-lfq-closed-speed",
+ "measured": "LFQ human-01 closed search: LOGOS CPU and GPU wall time, 5 interleaved repeats",
+ "slurm_job": 40903172,
+ "node": "ymh4",
+ "started": "2026-10-31T01:38:23-0400",
+ "job": "40903172",
+ "cpus": "22",
+ "mem": "81920",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "bin-b3d5a5f3/logos": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631",
+  "bin-870fc8ad/logos": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+ },
+ "inputs": {
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "cpu-NEW-fi-1": {
+   "wall_s": 1.48,
+   "peak_rss_gb": 1.79,
+   "cpu_percent": 874,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-2": {
+   "wall_s": 1.48,
+   "peak_rss_gb": 1.7,
+   "cpu_percent": 866,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-3": {
+   "wall_s": 1.55,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 862,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-4": {
+   "wall_s": 1.47,
+   "peak_rss_gb": 1.67,
+   "cpu_percent": 876,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-5": {
+   "wall_s": 1.53,
+   "peak_rss_gb": 1.58,
+   "cpu_percent": 836,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-1": {
+   "wall_s": 1.56,
+   "peak_rss_gb": 1.71,
+   "cpu_percent": 824,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-2": {
+   "wall_s": 1.51,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 838,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-3": {
+   "wall_s": 1.47,
+   "peak_rss_gb": 1.82,
+   "cpu_percent": 919,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-4": {
+   "wall_s": 1.51,
+   "peak_rss_gb": 1.75,
+   "cpu_percent": 846,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-5": {
+   "wall_s": 1.39,
+   "peak_rss_gb": 1.63,
+   "cpu_percent": 929,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-ROOT-fi-1": {
+   "wall_s": 1.43,
+   "peak_rss_gb": 1.74,
+   "cpu_percent": 881,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-2": {
+   "wall_s": 1.6,
+   "peak_rss_gb": 1.68,
+   "cpu_percent": 814,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-3": {
+   "wall_s": 1.5,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 854,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-4": {
+   "wall_s": 1.55,
+   "peak_rss_gb": 1.74,
+   "cpu_percent": 845,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-5": {
+   "wall_s": 1.59,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 787,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-1": {
+   "wall_s": 1.44,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 889,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-2": {
+   "wall_s": 1.51,
+   "peak_rss_gb": 1.65,
+   "cpu_percent": 851,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-3": {
+   "wall_s": 1.58,
+   "peak_rss_gb": 1.64,
+   "cpu_percent": 801,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-4": {
+   "wall_s": 1.55,
+   "peak_rss_gb": 1.79,
+   "cpu_percent": 871,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-5": {
+   "wall_s": 1.49,
+   "peak_rss_gb": 1.6,
+   "cpu_percent": 861,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "ddaplus-NEW-fi": {
+   "wall_s": 16.28,
+   "peak_rss_gb": 13.76,
+   "cpu_percent": 1685,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "ddaplus-NEW-sweep": {
+   "wall_s": 16.32,
+   "peak_rss_gb": 13.42,
+   "cpu_percent": 1680,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "ddaplus-ROOT-fi": {
+   "wall_s": 17.26,
+   "peak_rss_gb": 13.9,
+   "cpu_percent": 1701,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "ddaplus-ROOT-sweep": {
+   "wall_s": 17.25,
+   "peak_rss_gb": 14.08,
+   "cpu_percent": 1707,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "gpu-NEW": {
+   "wall_s": 1.56,
+   "peak_rss_gb": 1.73,
+   "cpu_percent": 504,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "gpu-ROOT": {
+   "wall_s": 1.59,
+   "peak_rss_gb": 1.7,
+   "cpu_percent": 490,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "warm-NEW-fi": {
+   "wall_s": 1.49,
+   "peak_rss_gb": 1.76,
+   "cpu_percent": 881,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "warm-NEW-sweep": {
+   "wall_s": 1.63,
+   "peak_rss_gb": 1.66,
+   "cpu_percent": 777,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "warm-ROOT-fi": {
+   "wall_s": 1.52,
+   "peak_rss_gb": 1.63,
+   "cpu_percent": 851,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "warm-ROOT-sweep": {
+   "wall_s": 1.75,
+   "peak_rss_gb": 1.7,
+   "cpu_percent": 811,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  }
+ }
+}

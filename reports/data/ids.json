@@ -1,0 +1,171 @@
+{
+ "rows": [
+  {
+   "key": "c-logos",
+   "benchmark": "Closed DDA, LFQ human",
+   "engine": "LOGOS",
+   "sequences": 33102,
+   "psms": 59769,
+   "target_source": "2026-11-01-h2h-current/lfq-cpu-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 31718,
+     "ne": 204,
+     "fdp": 0.0124
+    },
+    "psms": {
+     "nt": 57154,
+     "ne": 349,
+     "fdp": 0.0118
+    }
+   },
+   "entrapment_source": "2026-10-30-lfq-counts/plain-H-E"
+  },
+  {
+   "key": "c-sage",
+   "benchmark": "Closed DDA, LFQ human",
+   "engine": "Sage 0.14.7",
+   "sequences": 32453,
+   "psms": 58668,
+   "target_source": "2026-10-30-lfq-counts/sage-default-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 31489,
+     "ne": 202,
+     "fdp": 0.0124
+    },
+    "psms": {
+     "nt": 56594,
+     "ne": 337,
+     "fdp": 0.0115
+    }
+   },
+   "entrapment_source": "2026-10-30-lfq-sage-entrapment/sage-default-E"
+  },
+  {
+   "key": "o-logos",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "engine": "LOGOS",
+   "sequences": 34130,
+   "psms": 70886,
+   "target_source": "2026-10-31-lfq-open-ymh4/cpu-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 32086,
+     "ne": 166,
+     "fdp": 0.01
+    },
+    "psms": {
+     "nt": 65824,
+     "ne": 353,
+     "fdp": 0.0104
+    }
+   },
+   "entrapment_source": "2026-10-31-entrapment-arms/lfq-open-lean-E"
+  },
+  {
+   "key": "o-logos-lda",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "engine": "LOGOS + LDA rescoring",
+   "sequences": null,
+   "psms": null,
+   "entrapment": {
+    "sequences": {
+     "nt": 35650,
+     "ne": 203,
+     "fdp": 0.011
+    },
+    "psms": {
+     "nt": 73449,
+     "ne": 390,
+     "fdp": 0.0103
+    }
+   },
+   "entrapment_source": "2026-10-31-entrapment-arms/lfq-open-lda-E"
+  },
+  {
+   "key": "o-logos-cal",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "engine": "LOGOS + calibration + LDA",
+   "sequences": 37178,
+   "psms": 77433,
+   "target_source": "2026-11-01-fill-gaps/open-cal-lda-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 35595,
+     "ne": 192,
+     "fdp": 0.0104
+    },
+    "psms": {
+     "nt": 73438,
+     "ne": 379,
+     "fdp": 0.01
+    }
+   },
+   "entrapment_source": "2026-10-31-entrapment-arms/lfq-open-cal-lda-E"
+  },
+  {
+   "key": "o-sage",
+   "benchmark": "Open −100 to +500 Da, LFQ human",
+   "engine": "Sage 0.14.7",
+   "sequences": 31744,
+   "psms": 73148,
+   "target_source": "2026-10-31-lfq-open-ymh4/sage-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 30343,
+     "ne": 141,
+     "fdp": 0.009
+    },
+    "psms": {
+     "nt": 68848,
+     "ne": 359,
+     "fdp": 0.0101
+    }
+   },
+   "entrapment_source": "2026-11-01-fill-gaps/sage-open-E"
+  },
+  {
+   "key": "a-logos",
+   "benchmark": "Astral TMTpro, one file",
+   "engine": "LOGOS",
+   "sequences": 7769,
+   "psms": 24167,
+   "target_source": "2026-11-01-h2h-current/astral-cpu-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 7568,
+     "ne": 29,
+     "fdp": 0.0076
+    },
+    "psms": {
+     "nt": 23364,
+     "ne": 124,
+     "fdp": 0.0106
+    }
+   },
+   "entrapment_source": "2026-10-31-entrapment-arms/astral-logos-E"
+  },
+  {
+   "key": "a-sage",
+   "benchmark": "Astral TMTpro, one file",
+   "engine": "Sage 0.14.7",
+   "sequences": 7470,
+   "psms": 22409,
+   "target_source": "2026-11-01-h2h-current/astral-sage-1",
+   "entrapment": {
+    "sequences": {
+     "nt": 7212,
+     "ne": 37,
+     "fdp": 0.0102
+    },
+    "psms": {
+     "nt": 21649,
+     "ne": 94,
+     "fdp": 0.0086
+    }
+   },
+   "entrapment_source": "2026-10-31-entrapment-arms/astral-sage-E"
+  }
+ ]
+}

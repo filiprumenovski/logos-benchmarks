@@ -1,0 +1,350 @@
+{
+ "name": "2026-10-30-iontrap",
+ "measured": "Ion-trap CID and HCD iw04 (PXD053241)",
+ "slurm_job": 40895345,
+ "node": "ymh4",
+ "started": "2026-10-30T22:33:22-0400",
+ "job": "40895345",
+ "cpus": "32",
+ "mem": "65536",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df"
+ },
+ "inputs": {
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "221021_FB_60min_CID_IT_iw04.raw": "b0846f422116886332fbf281cb3f28a74ac86e31179443672d9e368211609c59",
+  "221006_FB_60min_HCD_IT_iw04.raw": "eef2618eb54f735210b9913524ebf8ae958c67eccb1dbf4748bec4f08c1b998d"
+ },
+ "arms": {
+  "boost-cid": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument Lumos --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 50.23,
+   "peak_rss_gb": 1.81,
+   "cpu_percent": 158,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-hcd": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument Lumos --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 220.25,
+   "peak_rss_gb": 17.74,
+   "cpu_percent": 207,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "cid-cpu": {
+   "binary": "bin/logos",
+   "command": "logos --config it-cid.json --backend cpu --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "818d5ed4791be15e",
+   "wall_s": 51.63,
+   "peak_rss_gb": 2.32,
+   "cpu_percent": 2989,
+   "counts": {
+    "candidate_rows": 341643,
+    "competed_psms": 323075,
+    "psms_q01": 46729,
+    "sequences_q01": 31001,
+    "peptidoforms_q01": 31478
+   },
+   "ids_json_sha256": "1d31182d474fa4dde54f153f66f90e064a61bac774ff476cee192075e6eb220b",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 46463,
+      "ne": 266,
+      "fdp": 0.0111
+     },
+     "seqlvl": {
+      "nt": 30824,
+      "ne": 177,
+      "fdp": 0.0111
+     },
+     "seqs": {
+      "nt": 31624,
+      "ne": 256,
+      "fdp": 0.0156
+     }
+    }
+   },
+   "pin_sha256": "df8e6a084ab2f45ac7e79140f517e2840219779980571c073eb314bd36910d95",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "cid-r1": {
+   "binary": "bin/logos",
+   "command": "logos --config it-cid.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "818d5ed4791be15e",
+   "wall_s": 5.08,
+   "peak_rss_gb": 3.02,
+   "cpu_percent": 1421,
+   "counts": {
+    "candidate_rows": 341643,
+    "competed_psms": 323075,
+    "psms_q01": 46729,
+    "sequences_q01": 31001,
+    "peptidoforms_q01": 31478
+   },
+   "ids_json_sha256": "1d31182d474fa4dde54f153f66f90e064a61bac774ff476cee192075e6eb220b",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 46463,
+      "ne": 266,
+      "fdp": 0.0111
+     },
+     "seqlvl": {
+      "nt": 30824,
+      "ne": 177,
+      "fdp": 0.0111
+     },
+     "seqs": {
+      "nt": 31624,
+      "ne": 256,
+      "fdp": 0.0156
+     }
+    }
+   },
+   "pin_sha256": "df8e6a084ab2f45ac7e79140f517e2840219779980571c073eb314bd36910d95",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "cid-r2": {
+   "binary": "bin/logos",
+   "command": "logos --config it-cid.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "818d5ed4791be15e",
+   "wall_s": 4.95,
+   "peak_rss_gb": 3.19,
+   "cpu_percent": 1450,
+   "counts": {
+    "candidate_rows": 341643,
+    "competed_psms": 323075,
+    "psms_q01": 46729,
+    "sequences_q01": 31001,
+    "peptidoforms_q01": 31478
+   },
+   "ids_json_sha256": "1d31182d474fa4dde54f153f66f90e064a61bac774ff476cee192075e6eb220b",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 46463,
+      "ne": 266,
+      "fdp": 0.0111
+     },
+     "seqlvl": {
+      "nt": 30824,
+      "ne": 177,
+      "fdp": 0.0111
+     },
+     "seqs": {
+      "nt": 31624,
+      "ne": 256,
+      "fdp": 0.0156
+     }
+    }
+   },
+   "pin_sha256": "df8e6a084ab2f45ac7e79140f517e2840219779980571c073eb314bd36910d95",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "cid-r3": {
+   "binary": "bin/logos",
+   "command": "logos --config it-cid.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "818d5ed4791be15e",
+   "wall_s": 5.11,
+   "peak_rss_gb": 2.83,
+   "cpu_percent": 1419,
+   "counts": {
+    "candidate_rows": 341643,
+    "competed_psms": 323075,
+    "psms_q01": 46729,
+    "sequences_q01": 31001,
+    "peptidoforms_q01": 31478
+   },
+   "ids_json_sha256": "1d31182d474fa4dde54f153f66f90e064a61bac774ff476cee192075e6eb220b",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 46463,
+      "ne": 266,
+      "fdp": 0.0111
+     },
+     "seqlvl": {
+      "nt": 30824,
+      "ne": 177,
+      "fdp": 0.0111
+     },
+     "seqs": {
+      "nt": 31624,
+      "ne": 256,
+      "fdp": 0.0156
+     }
+    }
+   },
+   "pin_sha256": "df8e6a084ab2f45ac7e79140f517e2840219779980571c073eb314bd36910d95",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "hcd-r1": {
+   "binary": "bin/logos",
+   "command": "logos --config it-hcd.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "103d894782b77c6b",
+   "wall_s": 12.92,
+   "peak_rss_gb": 13.04,
+   "cpu_percent": 1310,
+   "counts": {
+    "candidate_rows": 4183069,
+    "competed_psms": 2757355,
+    "psms_q01": 62695,
+    "sequences_q01": 37515,
+    "peptidoforms_q01": 38333
+   },
+   "ids_json_sha256": "064af906237cf14a1a0c7adc3fb904991a7044ae2f81726c475af62766ebdeff",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 62385,
+      "ne": 310,
+      "fdp": 0.0096
+     },
+     "seqlvl": {
+      "nt": 37325,
+      "ne": 190,
+      "fdp": 0.0099
+     },
+     "seqs": {
+      "nt": 38247,
+      "ne": 303,
+      "fdp": 0.0153
+     }
+    }
+   },
+   "pin_sha256": "4f96f774611f7ccf3032860bc97e2b8ab3af6e11adf3c90f94dd560e723e1154",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "hcd-r2": {
+   "binary": "bin/logos",
+   "command": "logos --config it-hcd.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "103d894782b77c6b",
+   "wall_s": 12.88,
+   "peak_rss_gb": 13.04,
+   "cpu_percent": 1336,
+   "counts": {
+    "candidate_rows": 4183069,
+    "competed_psms": 2757355,
+    "psms_q01": 62695,
+    "sequences_q01": 37515,
+    "peptidoforms_q01": 38333
+   },
+   "ids_json_sha256": "064af906237cf14a1a0c7adc3fb904991a7044ae2f81726c475af62766ebdeff",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 62385,
+      "ne": 310,
+      "fdp": 0.0096
+     },
+     "seqlvl": {
+      "nt": 37325,
+      "ne": 190,
+      "fdp": 0.0099
+     },
+     "seqs": {
+      "nt": 38247,
+      "ne": 303,
+      "fdp": 0.0153
+     }
+    }
+   },
+   "pin_sha256": "4f96f774611f7ccf3032860bc97e2b8ab3af6e11adf3c90f94dd560e723e1154",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "hcd-r3": {
+   "binary": "bin/logos",
+   "command": "logos --config it-hcd.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "103d894782b77c6b",
+   "wall_s": 12.79,
+   "peak_rss_gb": 13.13,
+   "cpu_percent": 1350,
+   "counts": {
+    "candidate_rows": 4183069,
+    "competed_psms": 2757355,
+    "psms_q01": 62695,
+    "sequences_q01": 37515,
+    "peptidoforms_q01": 38333
+   },
+   "ids_json_sha256": "064af906237cf14a1a0c7adc3fb904991a7044ae2f81726c475af62766ebdeff",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 62385,
+      "ne": 310,
+      "fdp": 0.0096
+     },
+     "seqlvl": {
+      "nt": 37325,
+      "ne": 190,
+      "fdp": 0.0099
+     },
+     "seqs": {
+      "nt": 38247,
+      "ne": 303,
+      "fdp": 0.0153
+     }
+    }
+   },
+   "pin_sha256": "4f96f774611f7ccf3032860bc97e2b8ab3af6e11adf3c90f94dd560e723e1154",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "warm": {
+   "binary": "bin/logos",
+   "command": "logos --config it-hcd.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038 --pin pin",
+   "config": "103d894782b77c6b",
+   "wall_s": 13.18,
+   "peak_rss_gb": 12.67,
+   "cpu_percent": 1308,
+   "counts": {
+    "candidate_rows": 4183069,
+    "competed_psms": 2757355,
+    "psms_q01": 62695,
+    "sequences_q01": 37515,
+    "peptidoforms_q01": 38333
+   },
+   "ids_json_sha256": "064af906237cf14a1a0c7adc3fb904991a7044ae2f81726c475af62766ebdeff",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 62385,
+      "ne": 310,
+      "fdp": 0.0096
+     },
+     "seqlvl": {
+      "nt": 37325,
+      "ne": 190,
+      "fdp": 0.0099
+     },
+     "seqs": {
+      "nt": 38247,
+      "ne": 303,
+      "fdp": 0.0153
+     }
+    }
+   },
+   "pin_sha256": "4f96f774611f7ccf3032860bc97e2b8ab3af6e11adf3c90f94dd560e723e1154",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  }
+ }
+}

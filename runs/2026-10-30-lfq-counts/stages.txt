@@ -1,0 +1,34 @@
+2026-10-30T21:17:23-0400 staged 4 files into in in 1 s: 4.8G
+2026-10-30T21:17:28-0400 inputs hashed: 4 files
+2026-10-30T21:17:31-0400 warm-plain rc=0 wall=2.60 rss_gb=2.52 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 61101 PSMs, 33907 sequences (seq_tdc) at q <= 0.01 in 0.56 s
+2026-10-30T21:17:37-0400 warm-open rc=0 wall=4.23 rss_gb=2.18 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 70886 PSMs, 34130 sequences (seq_tdc) at q <= 0.01 in 0.36 s
+2026-10-30T21:17:40-0400 plain-L-1 rc=0 wall=2.40 rss_gb=2.18 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 61101 PSMs, 33907 sequences (seq_tdc) at q <= 0.01 in 0.55 s
+2026-10-30T21:17:43-0400 plain-H-1 rc=0 wall=1.72 rss_gb=1.76 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.29 s
+2026-10-30T21:17:55-0400 ddaplus-H-1 rc=0 wall=11.27 rss_gb=13.82 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 144925 PSMs, 40453 sequences (seq_tdc) at q <= 0.01 in 4.37 s
+2026-10-30T21:18:00-0400 open-fi-1 rc=0 wall=4.00 rss_gb=2.15 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 70886 PSMs, 34130 sequences (seq_tdc) at q <= 0.01 in 0.32 s
+2026-10-30T21:18:19-0400 sage-default-1 rc=0 wall=19.58 rss_gb=2.86 | [2026-10-31T01:18:18Z INFO  sage] discovered 35069 target peptides at 1% FDR [2026-10-31T01:18:18Z INFO  sage] discovered 5171 target proteins at 1% FDR 
+2026-10-30T21:19:10-0400 sage-open-1 rc=0 wall=50.35 rss_gb=2.92 | [2026-10-31T01:19:09Z INFO  sage] discovered 34284 target peptides at 1% FDR [2026-10-31T01:19:09Z INFO  sage] discovered 5231 target proteins at 1% FDR 
+2026-10-30T21:19:13-0400 plain-H-cpu-1 rc=0 wall=2.37 rss_gb=1.50 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.23 s
+2026-10-30T21:20:06-0400 sage-open-2 rc=0 wall=52.50 rss_gb=2.91 | [2026-10-31T01:20:05Z INFO  sage] discovered 34284 target peptides at 1% FDR [2026-10-31T01:20:05Z INFO  sage] discovered 5231 target proteins at 1% FDR 
+2026-10-30T21:20:24-0400 sage-default-2 rc=0 wall=17.32 rss_gb=2.87 | [2026-10-31T01:20:22Z INFO  sage] discovered 35069 target peptides at 1% FDR [2026-10-31T01:20:22Z INFO  sage] discovered 5171 target proteins at 1% FDR 
+2026-10-30T21:20:29-0400 open-fi-2 rc=0 wall=4.06 rss_gb=2.16 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 70886 PSMs, 34130 sequences (seq_tdc) at q <= 0.01 in 0.33 s
+2026-10-30T21:20:41-0400 ddaplus-H-2 rc=0 wall=11.25 rss_gb=13.66 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 144925 PSMs, 40453 sequences (seq_tdc) at q <= 0.01 in 4.38 s
+2026-10-30T21:20:44-0400 plain-H-2 rc=0 wall=1.65 rss_gb=1.82 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.25 s
+2026-10-30T21:20:48-0400 plain-L-2 rc=0 wall=2.33 rss_gb=2.20 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 61101 PSMs, 33907 sequences (seq_tdc) at q <= 0.01 in 0.51 s
+2026-10-30T21:20:51-0400 plain-H-cpu-2 rc=0 wall=2.26 rss_gb=1.50 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.23 s
+2026-10-30T21:20:55-0400 plain-L-3 rc=0 wall=2.40 rss_gb=2.31 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 61101 PSMs, 33907 sequences (seq_tdc) at q <= 0.01 in 0.57 s
+2026-10-30T21:20:58-0400 plain-H-3 rc=0 wall=1.74 rss_gb=1.72 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.26 s
+2026-10-30T21:21:16-0400 ddaplus-H-3 rc=0 wall=10.89 rss_gb=13.98 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 144925 PSMs, 40453 sequences (seq_tdc) at q <= 0.01 in 3.92 s
+2026-10-30T21:21:21-0400 open-fi-3 rc=0 wall=4.15 rss_gb=2.14 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 70886 PSMs, 34130 sequences (seq_tdc) at q <= 0.01 in 0.32 s
+2026-10-30T21:21:39-0400 sage-default-3 rc=0 wall=17.34 rss_gb=2.87 | [2026-10-31T01:21:37Z INFO  sage] discovered 35069 target peptides at 1% FDR [2026-10-31T01:21:37Z INFO  sage] discovered 5171 target proteins at 1% FDR 
+2026-10-30T21:22:31-0400 sage-open-3 rc=0 wall=52.44 rss_gb=2.90 | [2026-10-31T01:22:30Z INFO  sage] discovered 34284 target peptides at 1% FDR [2026-10-31T01:22:30Z INFO  sage] discovered 5231 target proteins at 1% FDR 
+2026-10-30T21:22:34-0400 plain-H-cpu-3 rc=0 wall=2.27 rss_gb=1.58 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 59769 PSMs, 33102 sequences (seq_tdc) at q <= 0.01 in 0.21 s
+2026-10-30T21:23:51-0400 ddaplus-H-cpu-1 rc=0 wall=76.36 rss_gb=13.52 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 144925 PSMs, 40453 sequences (seq_tdc) at q <= 0.01 in 4.29 s
+2026-10-30T21:23:52-0400 sage-default-1 count seq_tdc 32453 psms 58668
+2026-10-30T21:23:53-0400 sage-open-1 count seq_tdc 31744 psms 73148
+2026-10-30T21:23:57-0400 plain-L-E rc=0 wall=2.93 rss_gb=3.72 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 58277 PSMs, 32513 sequences (seq_tdc) at q <= 0.01 in 0.57 s
+2026-10-30T21:24:00-0400 plain-H-E rc=0 wall=2.01 rss_gb=2.77 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 57503 PSMs, 31922 sequences (seq_tdc) at q <= 0.01 in 0.27 s
+2026-10-30T21:24:13-0400 ddaplus-H-E rc=0 wall=12.09 rss_gb=14.77 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 130807 PSMs, 37324 sequences (seq_tdc) at q <= 0.01 in 4.33 s
+2026-10-30T21:24:19-0400 open-fi-E rc=0 wall=4.78 rss_gb=2.88 | learn: LFQ_Orbitrap_DDA_Human_01.raw: 66177 PSMs, 32252 sequences (seq_tdc) at q <= 0.01 in 0.26 s
+2026-10-30T21:24:19-0400 B1 DONE
+2026-10-30T21:24:20-0400 cleanup done (exit 0); /dev/shm now: 21G

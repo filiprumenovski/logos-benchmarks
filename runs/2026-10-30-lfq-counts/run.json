@@ -1,0 +1,889 @@
+{
+ "name": "2026-10-30-lfq-counts",
+ "measured": "LFQ human-01: LOGOS plain, DDA+ and open; Sage default and open; entrapment arms",
+ "slurm_job": 40901452,
+ "node": "ymh4",
+ "started": "2026-10-30T21:17:21-0400",
+ "job": "40901452",
+ "cpus": "22",
+ "mem": "65536",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df"
+ },
+ "inputs": {
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb",
+  "sage2pin.py": "82a5ae4b61238cf72a94ed676384ba60d90d156e803e2f228ace22575566bc8f"
+ },
+ "arms": {
+  "ddaplus-H-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-ddaplus-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "e830d9f561adf586",
+   "wall_s": 11.27,
+   "peak_rss_gb": 13.82,
+   "cpu_percent": 1300,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 144925,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 40453,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 44643,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "ddaplus-H-2": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-ddaplus-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "e830d9f561adf586",
+   "wall_s": 11.25,
+   "peak_rss_gb": 13.66,
+   "cpu_percent": 1336,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 144925,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 40453,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 44643,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "ddaplus-H-3": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-ddaplus-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "e830d9f561adf586",
+   "wall_s": 10.89,
+   "peak_rss_gb": 13.98,
+   "cpu_percent": 1353,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 144925,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 40453,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 44643,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "ddaplus-H-E": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-ddaplus-H.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.060595818801411",
+   "config": "e830d9f561adf586",
+   "wall_s": 12.09,
+   "peak_rss_gb": 14.77,
+   "cpu_percent": 1273,
+   "counts": {
+    "candidate_rows": 5364214,
+    "competed_psms": 4659141,
+    "psms_q01": 130807,
+    "sequences_q01": 37324,
+    "peptidoforms_q01": 40328
+   },
+   "ids_json_sha256": "d8f94d937619d88b3f7a43158b89451564e9a92fb8bce845d4e9a0d2b4535136",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 130122,
+      "ne": 685,
+      "fdp": 0.0102
+     },
+     "seqlvl": {
+      "nt": 37136,
+      "ne": 188,
+      "fdp": 0.0098
+     },
+     "seqs": {
+      "nt": 41079,
+      "ne": 563,
+      "fdp": 0.0263
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "ddaplus-H-cpu-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-ddaplus-H.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "e830d9f561adf586",
+   "wall_s": 76.36,
+   "peak_rss_gb": 13.52,
+   "cpu_percent": 2026,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 144925,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 40453,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 44643,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "open-fi-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-open-fi.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "6582d671f7fddf82",
+   "wall_s": 4.0,
+   "peak_rss_gb": 2.15,
+   "cpu_percent": 1336,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 70886,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 34130,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 35163,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "open-fi-2": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-open-fi.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "6582d671f7fddf82",
+   "wall_s": 4.06,
+   "peak_rss_gb": 2.16,
+   "cpu_percent": 1336,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 70886,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 34130,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 35163,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "open-fi-3": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-open-fi.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "6582d671f7fddf82",
+   "wall_s": 4.15,
+   "peak_rss_gb": 2.14,
+   "cpu_percent": 1284,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 70886,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 34130,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 35163,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "open-fi-E": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-open-fi.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.060595818801411",
+   "config": "6582d671f7fddf82",
+   "wall_s": 4.78,
+   "peak_rss_gb": 2.88,
+   "cpu_percent": 1301,
+   "counts": {
+    "candidate_rows": 117307,
+    "competed_psms": 117307,
+    "psms_q01": 66177,
+    "sequences_q01": 32252,
+    "peptidoforms_q01": 46736
+   },
+   "ids_json_sha256": "58010a803ebd3107319e10ddfe21e15349a88388f500844d157fc529ac9feabc",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 65824,
+      "ne": 353,
+      "fdp": 0.0104
+     },
+     "seqlvl": {
+      "nt": 32086,
+      "ne": 166,
+      "fdp": 0.01
+     },
+     "seqs": {
+      "nt": 33002,
+      "ne": 332,
+      "fdp": 0.0194
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 1.72,
+   "peak_rss_gb": 1.76,
+   "cpu_percent": 490,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-2": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 1.65,
+   "peak_rss_gb": 1.82,
+   "cpu_percent": 536,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-3": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 1.74,
+   "peak_rss_gb": 1.72,
+   "cpu_percent": 505,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-E": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.060595818801411",
+   "config": "0567266d0f093fc5",
+   "wall_s": 2.01,
+   "peak_rss_gb": 2.77,
+   "cpu_percent": 607,
+   "counts": {
+    "candidate_rows": 108375,
+    "competed_psms": 108375,
+    "psms_q01": 57503,
+    "sequences_q01": 31922,
+    "peptidoforms_q01": 34265
+   },
+   "ids_json_sha256": "a2b35b69a53126f8e01248ac9f41d0eac82f29a187f8d59c513ef4662362b0b6",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 57154,
+      "ne": 349,
+      "fdp": 0.0118
+     },
+     "seqlvl": {
+      "nt": 31718,
+      "ne": 204,
+      "fdp": 0.0124
+     },
+     "seqs": {
+      "nt": 32579,
+      "ne": 321,
+      "fdp": 0.019
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-cpu-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 2.37,
+   "peak_rss_gb": 1.5,
+   "cpu_percent": 1044,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-cpu-2": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 2.26,
+   "peak_rss_gb": 1.5,
+   "cpu_percent": 1109,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-H-cpu-3": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-H.json --backend cpu --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "0567266d0f093fc5",
+   "wall_s": 2.27,
+   "peak_rss_gb": 1.58,
+   "cpu_percent": 1033,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 59769,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33102,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 33954,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-L-1": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-L.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "ffc680333be321e0",
+   "wall_s": 2.4,
+   "peak_rss_gb": 2.18,
+   "cpu_percent": 777,
+   "counts": {
+    "candidate_rows": 339837,
+    "competed_psms": 109844,
+    "psms_q01": 61101,
+    "sequences_q01": 33907,
+    "peptidoforms_q01": 36362
+   },
+   "ids_json_sha256": "d3141787b1f5571e36295f24aeebb29b365fdd75f919ee7f5b9fe071020af30a",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 61101,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33907,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 34974,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-L-2": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-L.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "ffc680333be321e0",
+   "wall_s": 2.33,
+   "peak_rss_gb": 2.2,
+   "cpu_percent": 811,
+   "counts": {
+    "candidate_rows": 339837,
+    "competed_psms": 109844,
+    "psms_q01": 61101,
+    "sequences_q01": 33907,
+    "peptidoforms_q01": 36362
+   },
+   "ids_json_sha256": "d3141787b1f5571e36295f24aeebb29b365fdd75f919ee7f5b9fe071020af30a",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 61101,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33907,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 34974,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-L-3": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-L.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "ffc680333be321e0",
+   "wall_s": 2.4,
+   "peak_rss_gb": 2.31,
+   "cpu_percent": 799,
+   "counts": {
+    "candidate_rows": 339837,
+    "competed_psms": 109844,
+    "psms_q01": 61101,
+    "sequences_q01": 33907,
+    "peptidoforms_q01": 36362
+   },
+   "ids_json_sha256": "d3141787b1f5571e36295f24aeebb29b365fdd75f919ee7f5b9fe071020af30a",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 61101,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33907,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 34974,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "plain-L-E": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-L.json --no-tsv --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038",
+   "config": "ffc680333be321e0",
+   "wall_s": 2.93,
+   "peak_rss_gb": 3.72,
+   "cpu_percent": 837,
+   "counts": {
+    "candidate_rows": 372151,
+    "competed_psms": 111437,
+    "psms_q01": 58277,
+    "sequences_q01": 32513,
+    "peptidoforms_q01": 34853
+   },
+   "ids_json_sha256": "a524f181cabe438850541d0e2dc6237405c6b353a2b634725fd4b051276b9afd",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 57943,
+      "ne": 334,
+      "fdp": 0.0112
+     },
+     "seqlvl": {
+      "nt": 32320,
+      "ne": 193,
+      "fdp": 0.0116
+     },
+     "seqs": {
+      "nt": 33317,
+      "ne": 314,
+      "fdp": 0.0182
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "sage-default-1": {
+   "config": "48430727792e7d37",
+   "wall_s": 19.58,
+   "peak_rss_gb": 2.86,
+   "cpu_percent": 652,
+   "counts": {
+    "candidate_rows": 99861,
+    "competed_psms": 99861,
+    "psms_q01": 58668,
+    "sequences_q01": 32453,
+    "peptidoforms_q01": 34875
+   },
+   "counted_pin_sha256": "4e42a8068f5efd384b53996cb48616a510341c8af1416f673e7e374609969c02",
+   "sage_results_sha256": "91bb2730c98e73877649ed791b641920489e209568db647c99a4d7ecd54fbf53"
+  },
+  "sage-default-2": {
+   "config": "48430727792e7d37",
+   "wall_s": 17.32,
+   "peak_rss_gb": 2.87,
+   "cpu_percent": 678,
+   "sage_results_sha256": "38801228c607fd25bd91ae72e9c3481394ed1aee32985e836604995ed02a5e6d"
+  },
+  "sage-default-3": {
+   "config": "48430727792e7d37",
+   "wall_s": 17.34,
+   "peak_rss_gb": 2.87,
+   "cpu_percent": 670,
+   "sage_results_sha256": "487fda4f6017d35f31bcc573faa9261c33bdf02c2e4819f0b7427c674e493482"
+  },
+  "sage-open-1": {
+   "config": "40696f5a1e215c99",
+   "wall_s": 50.35,
+   "peak_rss_gb": 2.92,
+   "cpu_percent": 1642,
+   "counts": {
+    "candidate_rows": 116611,
+    "competed_psms": 116611,
+    "psms_q01": 73148,
+    "sequences_q01": 31744,
+    "peptidoforms_q01": 34070
+   },
+   "counted_pin_sha256": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71",
+   "sage_results_sha256": "981691ca153b2346ee4712b185468bd595f7c800043c42ebd11f1715b7dca968"
+  },
+  "sage-open-2": {
+   "config": "40696f5a1e215c99",
+   "wall_s": 52.5,
+   "peak_rss_gb": 2.91,
+   "cpu_percent": 1652,
+   "sage_results_sha256": "023f0ca3563e3b66c72435f278b12d6a76684a26d9b984fab732bdd677641ae8"
+  },
+  "sage-open-3": {
+   "config": "40696f5a1e215c99",
+   "wall_s": 52.44,
+   "peak_rss_gb": 2.9,
+   "cpu_percent": 1622,
+   "sage_results_sha256": "82cb3ee0c3627e64a8a359928f8f3577f433486be9d6ff6707bfc6c44c36293f"
+  },
+  "warm-open": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-open-fi.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "6582d671f7fddf82",
+   "wall_s": 4.23,
+   "peak_rss_gb": 2.18,
+   "cpu_percent": 1309,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 70886,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 34130,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 35163,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "warm-plain": {
+   "binary": "bin/logos",
+   "command": "logos --config lfq-plain-L.json --no-tsv --learn learn --entrapment-ratio 1",
+   "config": "ffc680333be321e0",
+   "wall_s": 2.6,
+   "peak_rss_gb": 2.52,
+   "cpu_percent": 822,
+   "counts": {
+    "candidate_rows": 339837,
+    "competed_psms": 109844,
+    "psms_q01": 61101,
+    "sequences_q01": 33907,
+    "peptidoforms_q01": 36362
+   },
+   "ids_json_sha256": "d3141787b1f5571e36295f24aeebb29b365fdd75f919ee7f5b9fe071020af30a",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 61101,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 33907,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 34974,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  }
+ }
+}

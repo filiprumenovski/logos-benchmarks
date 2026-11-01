@@ -1,0 +1,428 @@
+{
+ "name": "2026-10-30-astral-tmt-speed",
+ "measured": "Astral TMTpro az01263: LOGOS CPU and GPU wall time, 5 interleaved repeats",
+ "slurm_job": 40903171,
+ "node": "ymh4",
+ "started": "2026-10-31T01:36:23-0400",
+ "job": "40903171",
+ "cpus": "22",
+ "mem": "81920",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "bin-b3d5a5f3/logos": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631",
+  "bin-870fc8ad/logos": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+ },
+ "inputs": {
+  "target.fasta": "c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0",
+  "az01263_02152024.raw": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e"
+ },
+ "arms": {
+  "cpu-NEW-fi-1": {
+   "wall_s": 3.84,
+   "peak_rss_gb": 2.94,
+   "cpu_percent": 1366,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-2": {
+   "wall_s": 3.83,
+   "peak_rss_gb": 2.88,
+   "cpu_percent": 1370,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-3": {
+   "wall_s": 3.85,
+   "peak_rss_gb": 2.97,
+   "cpu_percent": 1368,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-4": {
+   "wall_s": 3.86,
+   "peak_rss_gb": 3.15,
+   "cpu_percent": 1353,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-fi-5": {
+   "wall_s": 3.9,
+   "peak_rss_gb": 2.96,
+   "cpu_percent": 1352,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-1": {
+   "wall_s": 3.79,
+   "peak_rss_gb": 2.99,
+   "cpu_percent": 1389,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-2": {
+   "wall_s": 3.86,
+   "peak_rss_gb": 3.04,
+   "cpu_percent": 1358,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-3": {
+   "wall_s": 3.9,
+   "peak_rss_gb": 2.83,
+   "cpu_percent": 1329,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-4": {
+   "wall_s": 3.82,
+   "peak_rss_gb": 3.05,
+   "cpu_percent": 1370,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-NEW-sweep-5": {
+   "wall_s": 3.78,
+   "peak_rss_gb": 3.11,
+   "cpu_percent": 1391,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "cpu-ROOT-fi-1": {
+   "wall_s": 3.91,
+   "peak_rss_gb": 2.93,
+   "cpu_percent": 1342,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-2": {
+   "wall_s": 3.83,
+   "peak_rss_gb": 2.9,
+   "cpu_percent": 1364,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-3": {
+   "wall_s": 3.98,
+   "peak_rss_gb": 3.03,
+   "cpu_percent": 1316,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-4": {
+   "wall_s": 3.72,
+   "peak_rss_gb": 3.02,
+   "cpu_percent": 1407,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-fi-5": {
+   "wall_s": 3.99,
+   "peak_rss_gb": 2.7,
+   "cpu_percent": 1316,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-1": {
+   "wall_s": 3.57,
+   "peak_rss_gb": 3.03,
+   "cpu_percent": 1469,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-2": {
+   "wall_s": 3.88,
+   "peak_rss_gb": 3.07,
+   "cpu_percent": 1356,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-3": {
+   "wall_s": 3.86,
+   "peak_rss_gb": 3.07,
+   "cpu_percent": 1357,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-4": {
+   "wall_s": 3.87,
+   "peak_rss_gb": 3.12,
+   "cpu_percent": 1356,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "cpu-ROOT-sweep-5": {
+   "wall_s": 3.71,
+   "peak_rss_gb": 3.11,
+   "cpu_percent": 1405,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "gpu-NEW": {
+   "wall_s": 2.68,
+   "peak_rss_gb": 3.35,
+   "cpu_percent": 638,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "gpu-ROOT": {
+   "wall_s": 2.48,
+   "peak_rss_gb": 3.41,
+   "cpu_percent": 693,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "warm-NEW-fi": {
+   "wall_s": 3.73,
+   "peak_rss_gb": 2.96,
+   "cpu_percent": 1398,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "warm-NEW-sweep": {
+   "wall_s": 3.9,
+   "peak_rss_gb": 3.12,
+   "cpu_percent": 1338,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-870fc8ad/logos",
+   "binary_sha256": "4bed9fd653574a6fc0e161b9a9a2221f77bb5bcce5bf387ba52a7c4315a8050b"
+  },
+  "warm-ROOT-fi": {
+   "wall_s": 3.9,
+   "peak_rss_gb": 2.88,
+   "cpu_percent": 1340,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  },
+  "warm-ROOT-sweep": {
+   "wall_s": 4.12,
+   "peak_rss_gb": 3.72,
+   "cpu_percent": 1333,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-b3d5a5f3/logos",
+   "binary_sha256": "0a42e1387d1cb78e6088f3356ed1163bab52f9cf75394e18ead531da5e93e631"
+  }
+ }
+}

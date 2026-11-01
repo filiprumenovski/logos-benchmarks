@@ -1,0 +1,7 @@
+SUMMARY OLD N1 wall 3.56 [3.52..3.59]  cpu-s 51.4 [51.3..51.9]
+SUMMARY NEW N1 wall 3.61 [3.47..3.66]  cpu-s 51.5 [51.2..51.6]
+PAIRED N1: NEW wall faster in 1/5, NEW cpu lower in 2/5
+SUMMARY OLD N4 wall 10.64 [10.61..10.75]  cpu-s 203.5 [203.0..204.1]
+SUMMARY NEW N4 wall 10.53 [10.45..10.74]  cpu-s 203.0 [202.9..203.1]
+PAIRED N4: NEW wall faster in 4/5, NEW cpu lower in 4/5
+PARITY OK

@@ -1,0 +1,15 @@
+2026-10-31T00:15:35-0400 staged 2 files into in in 11 s: 4.5G
+2026-10-31T00:15:37-0400 inputs hashed: 3 files
+2026-10-31T00:15:46-0400 warm-logos rc=0 wall=8.47 cpu=1829% rs=8.089504887s rss=2859684 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:16:26-0400 warm-sage rc=0 wall=39.64 cpu=406% rss=6740996 | generated 146340412 fragments, 6932368 peptides in 6916ms - file IO:    23638 ms - search:      4133 ms (32409 spectra/s) discovered 22632 target peptide-spectrum matches at 1% FDR discovered 8150 target peptides at 1% FDR discovered 4374 target proteins at 1% FDR 
+2026-10-31T00:16:34-0400 logos-cpu-1 rc=0 wall=8.58 cpu=1788% rs=8.191367623s rss=2452508 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:17:14-0400 sage-1 rc=0 wall=39.4 cpu=406% rss=6672188 | generated 146340412 fragments, 6932368 peptides in 6927ms - file IO:    23667 ms - search:      4003 ms (33461 spectra/s) discovered 22632 target peptide-spectrum matches at 1% FDR discovered 8150 target peptides at 1% FDR discovered 4374 target proteins at 1% FDR 
+2026-10-31T00:17:53-0400 sage-2 rc=0 wall=39.59 cpu=407% rss=6711428 | generated 146340412 fragments, 6932368 peptides in 6893ms - file IO:    23761 ms - search:      4032 ms (33221 spectra/s) discovered 22632 target peptide-spectrum matches at 1% FDR discovered 8150 target peptides at 1% FDR discovered 4374 target proteins at 1% FDR 
+2026-10-31T00:18:02-0400 logos-cpu-2 rc=0 wall=8.56 cpu=1806% rs=8.178550437s rss=2624024 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:18:10-0400 logos-cpu-3 rc=0 wall=8.49 cpu=1820% rs=8.133028914s rss=2624732 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:18:50-0400 sage-3 rc=0 wall=39.06 cpu=411% rss=6727216 | generated 146340412 fragments, 6932368 peptides in 6780ms - file IO:    23322 ms - search:      3949 ms (33919 spectra/s) discovered 22632 target peptide-spectrum matches at 1% FDR discovered 8150 target peptides at 1% FDR discovered 4374 target proteins at 1% FDR 
+2026-10-31T00:19:00-0400 base-cpu-1 rc=0 wall=10.55 cpu=1870% rs=10.084585919s rss=2644692 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:19:03-0400 logos-gpu-1 rc=0 wall=2.88 cpu=690% rs=2.3679915s rss=3768980 | 24167 PSMs, 7769 sequences ids=281adfa2892b
+2026-10-31T00:19:04-0400 sage-1 count seq_tdc 7470 psms 22409 (sage2pin rc: 100737 rows from results.sage.tsv scored by sage_discriminant_score)
+2026-10-31T00:19:04-0400 SAGE-ASTRAL DONE
+2026-10-31T00:19:05-0400 cleanup done (exit 0); /dev/shm now: 21G

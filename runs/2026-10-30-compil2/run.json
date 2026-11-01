@@ -1,0 +1,76 @@
+{
+ "name": "2026-10-30-compil2",
+ "measured": "ComPIL 2.0: one gut RAW against 111.5 M sequences, 3 repeats",
+ "slurm_job": 40895349,
+ "node": "ymh4",
+ "started": "2026-10-31T00:03:22-0400",
+ "job": "40895349",
+ "cpus": "32",
+ "mem": "114688",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df"
+ },
+ "inputs": {
+  "020618_MS0745_PTB_H2.raw": "2ad1282223953583827ce4d1f01587d12daa4d58e746fe052b5c325635d92a61",
+  "compil2_targets.fasta": "93ecb081b6eccd316fe77680ead5e2bd4f9d5d2e046d08c7f751dd4ce0eba938"
+ },
+ "arms": {
+  "r1": {
+   "binary": "bin/logos",
+   "command": "logos --config compil2.json --threads 32 --out out.tsv",
+   "config": "b388088080f94e03",
+   "wall_s": 65.05,
+   "peak_rss_gb": 3.55,
+   "cpu_percent": 438,
+   "sage_results_sha256": "4af0cc36adedd2f9c232ba9b4021f7d240b58ce213fb388915ff372c64bf7b8d",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "r2": {
+   "binary": "bin/logos",
+   "command": "logos --config compil2.json --threads 32 --out out.tsv",
+   "config": "b388088080f94e03",
+   "wall_s": 65.11,
+   "peak_rss_gb": 3.65,
+   "cpu_percent": 433,
+   "sage_results_sha256": "4af0cc36adedd2f9c232ba9b4021f7d240b58ce213fb388915ff372c64bf7b8d",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "r3": {
+   "binary": "bin/logos",
+   "command": "logos --config compil2.json --threads 32 --out out.tsv",
+   "config": "b388088080f94e03",
+   "wall_s": 64.96,
+   "peak_rss_gb": 3.47,
+   "cpu_percent": 433,
+   "sage_results_sha256": "4af0cc36adedd2f9c232ba9b4021f7d240b58ce213fb388915ff372c64bf7b8d",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "warm": {
+   "binary": "bin/logos",
+   "command": "logos --config compil2.json --threads 32 --out out.tsv",
+   "config": "b388088080f94e03",
+   "wall_s": 76.57,
+   "peak_rss_gb": 4.96,
+   "cpu_percent": 460,
+   "sage_results_sha256": "4af0cc36adedd2f9c232ba9b4021f7d240b58ce213fb388915ff372c64bf7b8d",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  }
+ }
+}

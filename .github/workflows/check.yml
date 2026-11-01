@@ -1,0 +1,14 @@
+name: check
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Counting rule tests
+        run: python3 -m unittest discover -s eval -v
+      - name: Report data and README equal the run records
+        run: python3 reports/from_runs.py --check

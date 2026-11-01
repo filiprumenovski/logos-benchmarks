@@ -1,0 +1,182 @@
+{
+ "name": "2026-10-31-lfq-open-ymh4",
+ "measured": "LFQ human-01 open search on ymh4: LOGOS CPU, LOGOS GPU and Sage, 3 interleaved repeats",
+ "slurm_job": 40928343,
+ "node": "ymh4",
+ "started": "2026-10-31T23:18:05-0400",
+ "job": "40928343",
+ "cpus": "22",
+ "mem": "65536",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+ },
+ "inputs": {
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "cpu-1": {
+   "wall_s": 6.91,
+   "peak_rss_gb": 3.35,
+   "cpu_percent": 1806,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "cpu-2": {
+   "wall_s": 6.96,
+   "peak_rss_gb": 3.36,
+   "cpu_percent": 1800,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "cpu-3": {
+   "wall_s": 7.22,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1734,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "cuda-1": {
+   "wall_s": 2.89,
+   "peak_rss_gb": 2.39,
+   "cpu_percent": 1094,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "cuda-2": {
+   "wall_s": 2.79,
+   "peak_rss_gb": 2.23,
+   "cpu_percent": 1147,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "cuda-3": {
+   "wall_s": 2.73,
+   "peak_rss_gb": 2.17,
+   "cpu_percent": 1165,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "sage-1": {
+   "wall_s": 45.94,
+   "peak_rss_gb": 2.93,
+   "cpu_percent": 1614,
+   "counts": {
+    "candidate_rows": 116611,
+    "competed_psms": 116611,
+    "psms_q01": 73148,
+    "sequences_q01": 31744,
+    "peptidoforms_q01": 34070
+   },
+   "counted_pin_sha256": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71"
+  },
+  "sage-2": {
+   "wall_s": 46.23,
+   "peak_rss_gb": 2.9,
+   "cpu_percent": 1615
+  },
+  "sage-3": {
+   "wall_s": 47.34,
+   "peak_rss_gb": 2.92,
+   "cpu_percent": 1587
+  },
+  "warm-cpu": {
+   "wall_s": 7.21,
+   "peak_rss_gb": 3.23,
+   "cpu_percent": 1752,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-gpu": {
+   "wall_s": 2.86,
+   "peak_rss_gb": 2.19,
+   "cpu_percent": 1122,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-79eeea50/logos",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  }
+ }
+}

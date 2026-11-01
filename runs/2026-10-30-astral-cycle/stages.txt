@@ -1,0 +1,25 @@
+2026-10-30T23:10:13-0400 staged 8 files into in in 126 s: 41G
+2026-10-30T23:10:22-0400 inputs hashed: 8 files
+2026-10-30T23:10:56-0400 warm rc=0 wall=29.02 rss_gb=14.40 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw: 145612 PSMs, 30633 sequences (seq_tdc) at q <= 0.01 in 10.00 s
+2026-10-30T23:11:44-0400 a30-1-r1 rc=0 wall=41.14 rss_gb=29.78 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_01.raw: 356203 PSMs, 57357 sequences (seq_tdc) at q <= 0.01 in 14.86 s
+2026-10-30T23:17:19-0400 boost-a30-1 wall=320.30 rss_gb=38.79 | mlp seq_tdc 98203 psms 668104
+2026-10-30T23:17:39-0400 a14-1-r1 rc=0 wall=15.41 rss_gb=15.43 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw: 145612 PSMs, 30633 sequences (seq_tdc) at q <= 0.01 in 3.35 s
+2026-10-30T23:20:19-0400 boost-a14-1 wall=155.65 rss_gb=16.70 | mlp seq_tdc 60175 psms 305868
+2026-10-30T23:20:38-0400 a14-1-r2 rc=0 wall=15.99 rss_gb=15.21 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw: 145612 PSMs, 30633 sequences (seq_tdc) at q <= 0.01 in 3.29 s
+2026-10-30T23:21:16-0400 a30-1-r2 rc=0 wall=32.57 rss_gb=30.03 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_01.raw: 356203 PSMs, 57357 sequences (seq_tdc) at q <= 0.01 in 7.46 s
+2026-10-30T23:21:56-0400 a30-1-r3 rc=0 wall=33.54 rss_gb=30.23 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_01.raw: 356203 PSMs, 57357 sequences (seq_tdc) at q <= 0.01 in 7.51 s
+2026-10-30T23:22:15-0400 a14-1-r3 rc=0 wall=16.05 rss_gb=15.23 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw: 145612 PSMs, 30633 sequences (seq_tdc) at q <= 0.01 in 3.58 s
+2026-10-30T23:22:53-0400 a30-2 rc=0 wall=32.63 rss_gb=30.41 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_02.raw: 354523 PSMs, 56405 sequences (seq_tdc) at q <= 0.01 in 7.43 s
+2026-10-30T23:28:21-0400 boost-a30-2 wall=314.30 rss_gb=38.91 | mlp seq_tdc 96703 psms 673214
+2026-10-30T23:28:57-0400 a30-3 rc=0 wall=30.37 rss_gb=29.99 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_03.raw: 347316 PSMs, 58791 sequences (seq_tdc) at q <= 0.01 in 6.50 s
+2026-10-30T23:34:22-0400 boost-a30-3 wall=313.61 rss_gb=38.05 | mlp seq_tdc 98127 psms 645732
+2026-10-30T23:34:41-0400 a14-2 rc=0 wall=15.49 rss_gb=15.29 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_02_20230808144922.raw: 145061 PSMs, 30532 sequences (seq_tdc) at q <= 0.01 in 3.48 s
+2026-10-30T23:37:21-0400 boost-a14-2 wall=155.63 rss_gb=16.72 | mlp seq_tdc 60546 psms 305610
+2026-10-30T23:37:40-0400 a14-3 rc=0 wall=15.58 rss_gb=15.72 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_03_20230808150548.raw: 143124 PSMs, 29882 sequences (seq_tdc) at q <= 0.01 in 3.51 s
+2026-10-30T23:40:20-0400 boost-a14-3 wall=155.35 rss_gb=16.71 | mlp seq_tdc 60691 psms 305790
+2026-10-30T23:41:05-0400 a30-1-E rc=0 wall=40.03 rss_gb=31.16 | learn: 20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_01.raw: 319689 PSMs, 52900 sequences (seq_tdc) at q <= 0.01 in 6.91 s
+2026-10-30T23:47:18-0400 boost-a30-1-E wall=355.87 rss_gb=41.07 | mlp seq_tdc 92279 psms 607255
+2026-10-30T23:47:42-0400 a14-1-E rc=0 wall=20.01 rss_gb=15.39 | learn: 20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw: 125708 PSMs, 26873 sequences (seq_tdc) at q <= 0.01 in 3.43 s
+2026-10-30T23:50:40-0400 boost-a14-1-E wall=173.46 rss_gb=17.68 | mlp seq_tdc 55554 psms 272327
+2026-10-30T23:50:40-0400 B3 DONE
+2026-10-30T23:50:43-0400 cleanup done (exit 0); /dev/shm now: 21G

@@ -1,0 +1,2 @@
+2026-10-30T23:04:25-0400 staged 2 files into db in 2 s: 90M
+2026-10-30T23:07:07-0400 cleanup done (exit 123); /dev/shm now: 21G

@@ -1,0 +1,157 @@
+{
+ "name": "2026-10-30-astral-tmt-counts",
+ "measured": "Astral TMTpro az01263: LOGOS CPU/GPU and Sage, counts and wall time",
+ "slurm_job": 40902791,
+ "node": "ymh4",
+ "started": "2026-10-31T00:15:22-0400",
+ "job": "40902791",
+ "cpus": "22",
+ "mem": "98304",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-a7418138/logos": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+ },
+ "inputs": {
+  "target.fasta": "c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0",
+  "az01263_02152024.mzML": "69725c5ab95e3e487dfb2b95deae586f6cb456191a28867a11da585e32ef4970",
+  "az01263_02152024.raw": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e"
+ },
+ "arms": {
+  "base-cpu-1": {
+   "wall_s": 10.55,
+   "peak_rss_gb": 2.52,
+   "cpu_percent": 1870,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin/logos",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "logos-cpu-1": {
+   "wall_s": 8.58,
+   "peak_rss_gb": 2.34,
+   "cpu_percent": 1788,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-a7418138/logos",
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "logos-cpu-2": {
+   "wall_s": 8.56,
+   "peak_rss_gb": 2.5,
+   "cpu_percent": 1806,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-a7418138/logos",
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "logos-cpu-3": {
+   "wall_s": 8.49,
+   "peak_rss_gb": 2.5,
+   "cpu_percent": 1820,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-a7418138/logos",
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "logos-gpu-1": {
+   "wall_s": 2.88,
+   "peak_rss_gb": 3.59,
+   "cpu_percent": 690,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-a7418138/logos",
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "sage-1": {
+   "wall_s": 39.4,
+   "peak_rss_gb": 6.36,
+   "cpu_percent": 406,
+   "counts": {
+    "candidate_rows": 100737,
+    "competed_psms": 100737,
+    "psms_q01": 22409,
+    "sequences_q01": 7470,
+    "peptidoforms_q01": 8109
+   },
+   "counted_pin_sha256": "b5222d79a6063506216d5082036f7596b3f51a6f579933663036d9aee7c3c55b"
+  },
+  "sage-2": {
+   "wall_s": 39.59,
+   "peak_rss_gb": 6.4,
+   "cpu_percent": 407
+  },
+  "sage-3": {
+   "wall_s": 39.06,
+   "peak_rss_gb": 6.42,
+   "cpu_percent": 411
+  },
+  "warm-logos": {
+   "wall_s": 8.47,
+   "peak_rss_gb": 2.73,
+   "cpu_percent": 1829,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary": "bin-a7418138/logos",
+   "binary_sha256": "398b935961400d3e15be7db284e4c88415ec3cdd38502b96ea426b29005daee2"
+  },
+  "warm-sage": {
+   "wall_s": 39.64,
+   "peak_rss_gb": 6.43,
+   "cpu_percent": 406
+  }
+ }
+}

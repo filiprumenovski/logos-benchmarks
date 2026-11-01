@@ -1,0 +1,243 @@
+{
+ "name": "2026-10-31-lfq-open-arw3",
+ "measured": "LFQ human-01 open search on arw3: LOGOS CPU and Sage, 3 interleaved repeats",
+ "slurm_job": 40928265,
+ "node": "arw3",
+ "started": "2026-10-31T22:50:06-0400",
+ "job": "40928265",
+ "cpus": "22",
+ "mem": "65536",
+ "cpu": "Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-98bea377/logos": "b96e9bccbb47dbd4dcade39ef8b50714183384371d520ae139c2b2a862d4e1fa",
+  "bin-3c2454d3/logos": "4dabaa339ebab8c6c98f1624e2e9001fd4adfa2d9d94530ed6285409fa46316b",
+  "bin-59d5908a/logos": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+ },
+ "inputs": {
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "mid-1": {
+   "wall_s": 11.26,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1849,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-3c2454d3/logos",
+   "binary_sha256": "4dabaa339ebab8c6c98f1624e2e9001fd4adfa2d9d94530ed6285409fa46316b"
+  },
+  "mid-2": {
+   "wall_s": 11.23,
+   "peak_rss_gb": 3.13,
+   "cpu_percent": 1857,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-3c2454d3/logos",
+   "binary_sha256": "4dabaa339ebab8c6c98f1624e2e9001fd4adfa2d9d94530ed6285409fa46316b"
+  },
+  "mid-3": {
+   "wall_s": 11.37,
+   "peak_rss_gb": 3.15,
+   "cpu_percent": 1867,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-3c2454d3/logos",
+   "binary_sha256": "4dabaa339ebab8c6c98f1624e2e9001fd4adfa2d9d94530ed6285409fa46316b"
+  },
+  "new-1": {
+   "wall_s": 11.33,
+   "peak_rss_gb": 3.21,
+   "cpu_percent": 1860,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-59d5908a/logos",
+   "binary_sha256": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+  },
+  "new-2": {
+   "wall_s": 11.57,
+   "peak_rss_gb": 3.26,
+   "cpu_percent": 1882,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-59d5908a/logos",
+   "binary_sha256": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+  },
+  "new-3": {
+   "wall_s": 11.36,
+   "peak_rss_gb": 3.18,
+   "cpu_percent": 1863,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-59d5908a/logos",
+   "binary_sha256": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+  },
+  "old-1": {
+   "wall_s": 11.04,
+   "peak_rss_gb": 3.26,
+   "cpu_percent": 1859,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-98bea377/logos",
+   "binary_sha256": "b96e9bccbb47dbd4dcade39ef8b50714183384371d520ae139c2b2a862d4e1fa"
+  },
+  "old-2": {
+   "wall_s": 11.39,
+   "peak_rss_gb": 3.3,
+   "cpu_percent": 1809,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-98bea377/logos",
+   "binary_sha256": "b96e9bccbb47dbd4dcade39ef8b50714183384371d520ae139c2b2a862d4e1fa"
+  },
+  "old-3": {
+   "wall_s": 11.79,
+   "peak_rss_gb": 3.3,
+   "cpu_percent": 1858,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-98bea377/logos",
+   "binary_sha256": "b96e9bccbb47dbd4dcade39ef8b50714183384371d520ae139c2b2a862d4e1fa"
+  },
+  "sage-1": {
+   "wall_s": 106.37,
+   "peak_rss_gb": 2.9,
+   "cpu_percent": 1087,
+   "counts": {
+    "candidate_rows": 116611,
+    "competed_psms": 116611,
+    "psms_q01": 73148,
+    "sequences_q01": 31744,
+    "peptidoforms_q01": 34070
+   },
+   "counted_pin_sha256": "a61c53df8318ba74c034ebe024d85d312736df4fb7ecae1bbd58e00e40f2cf71"
+  },
+  "sage-2": {
+   "wall_s": 107.82,
+   "peak_rss_gb": 2.92,
+   "cpu_percent": 1100
+  },
+  "sage-3": {
+   "wall_s": 102.41,
+   "peak_rss_gb": 2.92,
+   "cpu_percent": 1128
+  },
+  "warm-mid": {
+   "wall_s": 11.52,
+   "peak_rss_gb": 3.35,
+   "cpu_percent": 1847,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-3c2454d3/logos",
+   "binary_sha256": "4dabaa339ebab8c6c98f1624e2e9001fd4adfa2d9d94530ed6285409fa46316b"
+  },
+  "warm-new": {
+   "wall_s": 11.48,
+   "peak_rss_gb": 3.24,
+   "cpu_percent": 1864,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-59d5908a/logos",
+   "binary_sha256": "6671172e82aed92d9ebffff498d6b2b8c9616664251523ca88e9014c5c8113c1"
+  },
+  "warm-old": {
+   "wall_s": 12.41,
+   "peak_rss_gb": 3.15,
+   "cpu_percent": 1794,
+   "counts": {
+    "candidate_rows": 117238,
+    "competed_psms": 117238,
+    "psms_q01": 70886,
+    "sequences_q01": 34130,
+    "peptidoforms_q01": 49929
+   },
+   "ids_json_sha256": "583ae51be6090c3ff23443cd55755e89eb8a640b990b2ffa2f46fb6339803525",
+   "binary": "bin-98bea377/logos",
+   "binary_sha256": "b96e9bccbb47dbd4dcade39ef8b50714183384371d520ae139c2b2a862d4e1fa"
+  }
+ }
+}

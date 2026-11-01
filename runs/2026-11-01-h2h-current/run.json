@@ -1,0 +1,415 @@
+{
+ "name": "2026-11-01-h2h-current",
+ "measured": "Head to head on one binary (79eeea50): LFQ closed and DDA+, Astral TMTpro; LOGOS CPU, LOGOS GPU and Sage interleaved, 3 repeats",
+ "slurm_job": 40931267,
+ "node": "ymh4",
+ "started": "2026-11-01T01:34:24-0400",
+ "job": "40931267",
+ "cpus": "22",
+ "mem": "98304",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df",
+  "sage-v0.14.7-x86_64-unknown-linux-gnu/sage": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+  "bin-79eeea50/logos": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e",
+  "eval/check_logos.py": "544c2843486bf22df4642b7a3840756836504c7cf1a1041970bb3fe646983f5e",
+  "eval/check_sage.py": "8496ebf61ad1f9981eadff3a08d86c501812331311fae98ccb88f1992da8de45",
+  "eval/count.py": "ea5f5d8c3f14c9a29617d11b0e5bea3f39f9c209e181a96f5e5195a299ead82a",
+  "eval/entrapment_ratio.py": "b6ac14ba66ff9fc6732f77daad263829e9616fb24aa9b79ff81705ee690c200d",
+  "eval/sage_to_pin.py": "74cb973715d4126467ed9eccbc752d2a8145b81c00c0fecad25b071579a8552b"
+ },
+ "inputs": {
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "target.fasta": "c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0",
+  "LFQ_Orbitrap_DDA_Human_01.mzML": "dbcafd18313583902aea9c9d1496dfd23be83a237c984f758ad60081b8a4e79f",
+  "az01263_02152024.mzML": "69725c5ab95e3e487dfb2b95deae586f6cb456191a28867a11da585e32ef4970",
+  "az01263_02152024.raw": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e",
+  "LFQ_Orbitrap_DDA_Human_01.raw": "8e617e21757e4392892fe58951203467d0742eb8aa9fb2e7e5f00e13e7e711cb"
+ },
+ "arms": {
+  "astral-cpu-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 3.68,
+   "peak_rss_gb": 3.17,
+   "cpu_percent": 1412,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-cpu-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 3.63,
+   "peak_rss_gb": 3.0,
+   "cpu_percent": 1427,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-cpu-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 3.69,
+   "peak_rss_gb": 3.2,
+   "cpu_percent": 1410,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-gpu-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 2.49,
+   "peak_rss_gb": 3.37,
+   "cpu_percent": 655,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-gpu-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 2.58,
+   "peak_rss_gb": 3.28,
+   "cpu_percent": 648,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-gpu-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 2.6,
+   "peak_rss_gb": 3.18,
+   "cpu_percent": 610,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "astral-sage-1": {
+   "wall_s": 40.06,
+   "peak_rss_gb": 6.45,
+   "cpu_percent": 407,
+   "counts": {
+    "candidate_rows": 100737,
+    "competed_psms": 100737,
+    "psms_q01": 22409,
+    "sequences_q01": 7470,
+    "peptidoforms_q01": 8109
+   },
+   "counted_pin_sha256": "b5222d79a6063506216d5082036f7596b3f51a6f579933663036d9aee7c3c55b",
+   "sage_results_sha256": "e21719431d50136c0a094697ab8f14108edbd8c3fec4c80583a9324dba7a99bd"
+  },
+  "astral-sage-2": {
+   "wall_s": 38.35,
+   "peak_rss_gb": 6.39,
+   "cpu_percent": 432,
+   "sage_results_sha256": "1fa9433475586c1fe63426112f20422fb70798702316d3dcde40aea1661900f0"
+  },
+  "astral-sage-3": {
+   "wall_s": 40.07,
+   "peak_rss_gb": 6.37,
+   "cpu_percent": 407,
+   "sage_results_sha256": "e290dfd4d36c43e49468e08e9499c7345082a4a2f0ae7fa72466e51a29eb29cb"
+  },
+  "lfq-cpu-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.4,
+   "peak_rss_gb": 1.67,
+   "cpu_percent": 920,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-cpu-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.41,
+   "peak_rss_gb": 1.76,
+   "cpu_percent": 928,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-cpu-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.46,
+   "peak_rss_gb": 1.83,
+   "cpu_percent": 926,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-ddaplus-cpu-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-ddaplus.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 18.44,
+   "peak_rss_gb": 13.23,
+   "cpu_percent": 1632,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-ddaplus-cpu-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-ddaplus.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 17.0,
+   "peak_rss_gb": 13.42,
+   "cpu_percent": 1647,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-ddaplus-cpu-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-ddaplus.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 16.46,
+   "peak_rss_gb": 13.59,
+   "cpu_percent": 1685,
+   "counts": {
+    "candidate_rows": 5184600,
+    "competed_psms": 4643239,
+    "psms_q01": 144925,
+    "sequences_q01": 40453,
+    "peptidoforms_q01": 43628
+   },
+   "ids_json_sha256": "7bfb58a54798ba038a30a7f2b0745033c7d5900d3b7385ac1ecb0bb87dec5b76",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-gpu-1": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.51,
+   "peak_rss_gb": 1.62,
+   "cpu_percent": 511,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-gpu-2": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.64,
+   "peak_rss_gb": 1.89,
+   "cpu_percent": 474,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-gpu-3": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.53,
+   "peak_rss_gb": 1.85,
+   "cpu_percent": 509,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "lfq-sage-1": {
+   "wall_s": 17.25,
+   "peak_rss_gb": 2.86,
+   "cpu_percent": 588,
+   "counts": {
+    "candidate_rows": 99861,
+    "competed_psms": 99861,
+    "psms_q01": 58668,
+    "sequences_q01": 32453,
+    "peptidoforms_q01": 34875
+   },
+   "counted_pin_sha256": "4e42a8068f5efd384b53996cb48616a510341c8af1416f673e7e374609969c02",
+   "sage_results_sha256": "9c32be29cce8aafe68f5a9e1bbc4b466488c5c9d6d30142755866c01099e2877"
+  },
+  "lfq-sage-2": {
+   "wall_s": 17.67,
+   "peak_rss_gb": 2.86,
+   "cpu_percent": 571,
+   "sage_results_sha256": "439f825b10707a7aff349a66ce5ced22d6588a6b962c2b3979e7a005fd516493"
+  },
+  "lfq-sage-3": {
+   "wall_s": 17.01,
+   "peak_rss_gb": 2.85,
+   "cpu_percent": 593,
+   "sage_results_sha256": "3d29f94469cc6c7ec00c129cdf38455b8c1d1adaa5b6d691a0e7c708e6ef6934"
+  },
+  "warm-astral-cpu": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 4.11,
+   "peak_rss_gb": 3.86,
+   "cpu_percent": 1331,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-astral-gpu": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config astral.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 2.55,
+   "peak_rss_gb": 3.33,
+   "cpu_percent": 634,
+   "counts": {
+    "candidate_rows": 109406,
+    "competed_psms": 109406,
+    "psms_q01": 24167,
+    "sequences_q01": 7769,
+    "peptidoforms_q01": 8447
+   },
+   "ids_json_sha256": "281adfa2892bff7776612fd019dafa5d63b937d46b9d8a8d2f4caa1994d186e7",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-lfq-cpu": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cpu --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.77,
+   "peak_rss_gb": 1.82,
+   "cpu_percent": 819,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-lfq-gpu": {
+   "binary": "bin-79eeea50/logos",
+   "command": "logos --config lfq-closed.json --backend cuda --no-tsv --learn @learn --entrapment-ratio 1 --timing",
+   "wall_s": 1.47,
+   "peak_rss_gb": 1.75,
+   "cpu_percent": 518,
+   "counts": {
+    "candidate_rows": 105700,
+    "competed_psms": 105700,
+    "psms_q01": 59769,
+    "sequences_q01": 33102,
+    "peptidoforms_q01": 35517
+   },
+   "ids_json_sha256": "34d8c3cc92214b182c2c37be576d25c0db2c3648d69c6fc51f1037e6e48dc684",
+   "binary_sha256": "47068225e4a0d61e4f52c93e980581a5d91ede7e32c437b6bee75fd60155d89e"
+  },
+  "warm-sage-astral": {
+   "wall_s": 39.58,
+   "peak_rss_gb": 6.36,
+   "cpu_percent": 426,
+   "sage_results_sha256": "965070a1401799abb5f174c3318788bb195da508e3219894d57388344b258b9c"
+  },
+  "warm-sage-lfq": {
+   "wall_s": 17.04,
+   "peak_rss_gb": 2.84,
+   "cpu_percent": 593,
+   "sage_results_sha256": "d507734925d8ec6d674f98ffbd893ce8a78af6c6925c4a85a7cf21e217c9e870"
+  }
+ }
+}

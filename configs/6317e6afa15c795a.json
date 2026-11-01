@@ -1,0 +1,69 @@
+{
+ "acquisition": "dda",
+ "calibrate": true,
+ "chimera_psms": 0,
+ "chimera_sweep": 0,
+ "database": {
+  "decoy": {
+   "strategy": "reverse_between_cleavage"
+  },
+  "enzyme": {
+   "cleave_at": "KR",
+   "clip_nterm_met": false,
+   "max_len": 50,
+   "min_len": 7,
+   "missed_cleavages": 2,
+   "restrict": ""
+  },
+  "fasta": "target.fasta",
+  "max_variable_mods": 3,
+  "peptide_max_mass": 6000.0,
+  "peptide_min_mass": 500.0,
+  "static_mods": {
+   "C": 57.021464,
+   "K": 304.2071,
+   "^": 304.2071
+  },
+  "variable_mods": {
+   "M": [
+    15.994915
+   ]
+  }
+ },
+ "dda_plus": false,
+ "deisotope": true,
+ "engine": {
+  "backend": "cuda"
+ },
+ "fragment_tol": {
+  "ppm": 10
+ },
+ "inputs": [
+  "az01263_02152024.raw"
+ ],
+ "isotope_errors": [
+  0,
+  0
+ ],
+ "max_fragment_charge": 3,
+ "min_matched_peaks": 4,
+ "neutral_losses": false,
+ "orphan": {
+  "per_scan_cap": 32
+ },
+ "pin": "pin",
+ "precursor_charge": [
+  2,
+  6
+ ],
+ "precursor_tol": {
+  "ppm": 50
+ },
+ "rescore": {
+  "enabled": true,
+  "iterations": 0,
+  "model": "lda",
+  "recompete": 0
+ },
+ "threads": 22
+}

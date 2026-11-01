@@ -1,0 +1,587 @@
+{
+ "name": "2026-10-30-astral-cycle",
+ "measured": "Astral DDA cycle replicates (PXD046453), DDA+ with boost, target and entrapment",
+ "slurm_job": 40895348,
+ "node": "ymh4",
+ "started": "2026-10-30T23:08:03-0400",
+ "job": "40895348",
+ "cpus": "32",
+ "mem": "114688",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "build": {
+  "commit": "109c5ba491f5c5670ca5b1f1001f01ae265e21eb",
+  "features": {
+   "logos": "rawr,cuda,mimalloc",
+   "logos-boost": "cuda",
+   "count-ids": "cli"
+  },
+  "RUSTFLAGS": "-C target-cpu=x86-64-v3",
+  "container": "cuda-12.9.sif",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)\ncargo 1.98.0 (797e8a9bc 2026-08-05)\nCuda compilation tools, release 12.9, V12.9.41\nBuild cuda_12.9.r12.9/compiler.35813241_0\n"
+ },
+ "binaries": {
+  "bin/count-ids": "ea428cdd479bc236a87cb2203829d14f3ff0092b830c1e52846b7610407f562a",
+  "bin/logos": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e",
+  "bin/logos-boost": "12b2afa603039478b757c2f0d93b37883494298e045df3c242b3f6ab520ae5c8",
+  "bin/logos-mixture": "5e9b22fcda4138316581618068a66c9139e66087b85cc0a2b25f2220c5557e89",
+  "bin/mlp-rescore": "376c8904dff815b47195ab319348e015e3f8196f4136766afe55960612b767df"
+ },
+ "inputs": {
+  "entrap_human.fasta": "932aba3a84e0954919b5a0a48430434deab3c78c09dfdbaa52be927f9a2cd6d3",
+  "target_human_contam.fasta": "ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798",
+  "20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_03_20230808150548.raw": "e25acceb121804c7654a3771c1b5b8710cf5200acdddbe13fbf20ab74d26f8ca",
+  "20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_02_20230808144922.raw": "e3c15077a0dd745cb3926b6fe34685e3c39b1f40a1ea40bdcf85f9a73c1ad4e8",
+  "20230108_AST_Neo1_DDA_UHG_HeLa_200ng_2th2p5ms_Cycle_01_20230808143253.raw": "cf0ada2ca4c5da90c071e8fe62af04f890e97db862ef3172bea616de9ff4d0b7",
+  "20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_03.raw": "61a809a29dd460305f691e38ab431be51d1aca059ea9e238b4455f45a5ebb23a",
+  "20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_02.raw": "5f968cd735a553be7ece8b05ca5c59ea65736c7800b5f57ea1d2603b27a82601",
+  "20230320_OLEP08_1000ngHeK_uPAC_180k-30min_MontBlanc_2Th_0p5_Cycle_01.raw": "44f6699f06c35512b95eec2f75798f7bb9ffa67df20977658cb5dfc109ae58d3"
+ },
+ "arms": {
+  "a14-1-E": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-1.json --no-tsv --pin pin --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038",
+   "config": "89adba87e32bac1d",
+   "wall_s": 20.01,
+   "peak_rss_gb": 15.39,
+   "cpu_percent": 1083,
+   "counts": {
+    "candidate_rows": 5321600,
+    "competed_psms": 4623197,
+    "psms_q01": 125708,
+    "sequences_q01": 26873,
+    "peptidoforms_q01": 27059
+   },
+   "ids_json_sha256": "356455430b7b02a65d62d2ffe22f954ef6c5e620f9c822fb80fd3a9d8ab53ed1",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 124990,
+      "ne": 718,
+      "fdp": 0.0111
+     },
+     "seqlvl": {
+      "nt": 26725,
+      "ne": 148,
+      "fdp": 0.0107
+     },
+     "seqs": {
+      "nt": 32546,
+      "ne": 621,
+      "fdp": 0.0364
+     }
+    }
+   },
+   "pin_sha256": "1369d5852808935e77799075a734978c8c47193b125039e78f65de1a9a782dcb",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a14-1-r1": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "89adba87e32bac1d",
+   "wall_s": 15.41,
+   "peak_rss_gb": 15.43,
+   "cpu_percent": 1366,
+   "counts": {
+    "candidate_rows": 5289650,
+    "competed_psms": 4733944,
+    "psms_q01": 145612,
+    "sequences_q01": 30633,
+    "peptidoforms_q01": 30850
+   },
+   "ids_json_sha256": "b911b36a65f79a29c9913ac947b5d5fb28c0f3ed3bbbdd9fcdeb2dd7c4985508",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 145612,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 30633,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 37084,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "79cc39a6528b13c87864bfb8c8417f41040b212c08ebaad9a2f6b220d8c08689",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a14-1-r2": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "89adba87e32bac1d",
+   "wall_s": 15.99,
+   "peak_rss_gb": 15.21,
+   "cpu_percent": 1355,
+   "counts": {
+    "candidate_rows": 5289650,
+    "competed_psms": 4733944,
+    "psms_q01": 145612,
+    "sequences_q01": 30633,
+    "peptidoforms_q01": 30850
+   },
+   "ids_json_sha256": "b911b36a65f79a29c9913ac947b5d5fb28c0f3ed3bbbdd9fcdeb2dd7c4985508",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 145612,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 30633,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 37084,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "79cc39a6528b13c87864bfb8c8417f41040b212c08ebaad9a2f6b220d8c08689",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a14-1-r3": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "89adba87e32bac1d",
+   "wall_s": 16.05,
+   "peak_rss_gb": 15.23,
+   "cpu_percent": 1335,
+   "counts": {
+    "candidate_rows": 5289650,
+    "competed_psms": 4733944,
+    "psms_q01": 145612,
+    "sequences_q01": 30633,
+    "peptidoforms_q01": 30850
+   },
+   "ids_json_sha256": "b911b36a65f79a29c9913ac947b5d5fb28c0f3ed3bbbdd9fcdeb2dd7c4985508",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 145612,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 30633,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 37084,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "79cc39a6528b13c87864bfb8c8417f41040b212c08ebaad9a2f6b220d8c08689",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a14-2": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-2.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "f7db7c7d9e656718",
+   "wall_s": 15.49,
+   "peak_rss_gb": 15.29,
+   "cpu_percent": 1354,
+   "counts": {
+    "candidate_rows": 5291167,
+    "competed_psms": 4734249,
+    "psms_q01": 145061,
+    "sequences_q01": 30532,
+    "peptidoforms_q01": 30761
+   },
+   "ids_json_sha256": "6f4668923f6868a78dbed4b5f97c4f43c2e79ae3bff937c0b7e96b44a53035e6",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 145061,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 30532,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 36989,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "451dc883ee8b6e81532a0b6be49c08d664d1b0b1568be7345732fceb0811252f",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a14-3": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-3.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "dbfc08a8e406e2b8",
+   "wall_s": 15.58,
+   "peak_rss_gb": 15.72,
+   "cpu_percent": 1341,
+   "counts": {
+    "candidate_rows": 5287130,
+    "competed_psms": 4729109,
+    "psms_q01": 143124,
+    "sequences_q01": 29882,
+    "peptidoforms_q01": 30079
+   },
+   "ids_json_sha256": "8e93d175359457ff0e7238cb8183e83dffa6f542b0367622b6b8f69723dd9b79",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 143124,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 29882,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 36542,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "d0c03a2d6cfd5e57e65f46faa2768dec4eb169af3ac3f7149e18a98bd0958cf1",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-1-E": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-1.json --no-tsv --pin pin --learn learn --entrapment entrap_human.fasta --entrapment-ratio 1.056826223193038",
+   "config": "626c5cd38958f8a9",
+   "wall_s": 40.03,
+   "peak_rss_gb": 31.16,
+   "cpu_percent": 1294,
+   "counts": {
+    "candidate_rows": 12022891,
+    "competed_psms": 10290895,
+    "psms_q01": 319689,
+    "sequences_q01": 52900,
+    "peptidoforms_q01": 53169
+   },
+   "ids_json_sha256": "d8c67017990cc41f291a8f74ab08bb3ab480317cdb0ae221e9d15a3d6f57dd7c",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 317882,
+      "ne": 1807,
+      "fdp": 0.011
+     },
+     "seqlvl": {
+      "nt": 52620,
+      "ne": 280,
+      "fdp": 0.0103
+     },
+     "seqs": {
+      "nt": 63411,
+      "ne": 1508,
+      "fdp": 0.0452
+     }
+    }
+   },
+   "pin_sha256": "481bddbcd0500eff49a163f04dee315552d65129d8f610758c9a6a559e8e5675",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-1-r1": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "626c5cd38958f8a9",
+   "wall_s": 41.14,
+   "peak_rss_gb": 29.78,
+   "cpu_percent": 1480,
+   "counts": {
+    "candidate_rows": 12000694,
+    "competed_psms": 10637231,
+    "psms_q01": 356203,
+    "sequences_q01": 57357,
+    "peptidoforms_q01": 57694
+   },
+   "ids_json_sha256": "430406bd0730b4fb945ca3326d99314102331345007621c6e810c7d51b578ba7",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 356203,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 57357,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 69628,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "b75cd92feb578acfacdd3a85c406dab31b3eb4b406e6d449cfc297bc6e1d2804",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-1-r2": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "626c5cd38958f8a9",
+   "wall_s": 32.57,
+   "peak_rss_gb": 30.03,
+   "cpu_percent": 1568,
+   "counts": {
+    "candidate_rows": 12000694,
+    "competed_psms": 10637231,
+    "psms_q01": 356203,
+    "sequences_q01": 57357,
+    "peptidoforms_q01": 57694
+   },
+   "ids_json_sha256": "430406bd0730b4fb945ca3326d99314102331345007621c6e810c7d51b578ba7",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 356203,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 57357,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 69628,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "b75cd92feb578acfacdd3a85c406dab31b3eb4b406e6d449cfc297bc6e1d2804",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-1-r3": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "626c5cd38958f8a9",
+   "wall_s": 33.54,
+   "peak_rss_gb": 30.23,
+   "cpu_percent": 1530,
+   "counts": {
+    "candidate_rows": 12000694,
+    "competed_psms": 10637231,
+    "psms_q01": 356203,
+    "sequences_q01": 57357,
+    "peptidoforms_q01": 57694
+   },
+   "ids_json_sha256": "430406bd0730b4fb945ca3326d99314102331345007621c6e810c7d51b578ba7",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 356203,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 57357,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 69628,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "b75cd92feb578acfacdd3a85c406dab31b3eb4b406e6d449cfc297bc6e1d2804",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-2": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-2.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "5285569b7a6af380",
+   "wall_s": 32.63,
+   "peak_rss_gb": 30.41,
+   "cpu_percent": 1520,
+   "counts": {
+    "candidate_rows": 12038215,
+    "competed_psms": 10669783,
+    "psms_q01": 354523,
+    "sequences_q01": 56405,
+    "peptidoforms_q01": 56706
+   },
+   "ids_json_sha256": "f5f34d9302c22b647ef703709575cb181afeb323dea73007eebacfc95230ae0d",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 354523,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 56405,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 68360,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "400990b3ab03fa3c57ab503163956cb7cba0691b096b1ff3c2e36146f9d38a53",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "a30-3": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a30-3.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "5d2689fd670d7bec",
+   "wall_s": 30.37,
+   "peak_rss_gb": 29.99,
+   "cpu_percent": 1597,
+   "counts": {
+    "candidate_rows": 11764569,
+    "competed_psms": 10440558,
+    "psms_q01": 347316,
+    "sequences_q01": 58791,
+    "peptidoforms_q01": 59130
+   },
+   "ids_json_sha256": "946479775acd545ca278e8359855929d043eba77f35c5c0c2f762fd1aa352c18",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 347316,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 58791,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 69609,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "06027c3a57b54dd16a5477c7187300d5040a01ae8158148ad8aec7efff43fffa",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a14-1": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 155.65,
+   "peak_rss_gb": 16.7,
+   "cpu_percent": 239,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a14-1-E": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 173.46,
+   "peak_rss_gb": 17.68,
+   "cpu_percent": 228,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a14-2": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 155.63,
+   "peak_rss_gb": 16.72,
+   "cpu_percent": 238,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a14-3": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 155.35,
+   "peak_rss_gb": 16.71,
+   "cpu_percent": 238,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a30-1": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 320.3,
+   "peak_rss_gb": 38.79,
+   "cpu_percent": 252,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a30-1-E": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 355.87,
+   "peak_rss_gb": 41.07,
+   "cpu_percent": 240,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a30-2": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 314.3,
+   "peak_rss_gb": 38.91,
+   "cpu_percent": 253,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "boost-a30-3": {
+   "binary": "bin/logos",
+   "command": "logos-boost --bundle bundle --tch-models models --cuda-memory-gib 12 --nce 30 --instrument ThermoTOF --calibrate-nce --nce-record nce.json --mixture --agreement --rt-refine full --rescore mlp --timing --output boosted",
+   "wall_s": 313.61,
+   "peak_rss_gb": 38.05,
+   "cpu_percent": 251,
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  },
+  "warm": {
+   "binary": "bin/logos",
+   "command": "logos --config astral-a14-1.json --no-tsv --pin pin --learn learn --entrapment-ratio 1",
+   "config": "89adba87e32bac1d",
+   "wall_s": 29.02,
+   "peak_rss_gb": 14.4,
+   "cpu_percent": 1029,
+   "counts": {
+    "candidate_rows": 5289650,
+    "competed_psms": 4733944,
+    "psms_q01": 145612,
+    "sequences_q01": 30633,
+    "peptidoforms_q01": 30850
+   },
+   "ids_json_sha256": "b911b36a65f79a29c9913ac947b5d5fb28c0f3ed3bbbdd9fcdeb2dd7c4985508",
+   "entrapment": {
+    "expmass": {
+     "psm": {
+      "nt": 145612,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqlvl": {
+      "nt": 30633,
+      "ne": 0,
+      "fdp": 0.0
+     },
+     "seqs": {
+      "nt": 37084,
+      "ne": 0,
+      "fdp": 0.0
+     }
+    }
+   },
+   "pin_sha256": "79cc39a6528b13c87864bfb8c8417f41040b212c08ebaad9a2f6b220d8c08689",
+   "binary_sha256": "032afd9102092240e8b35c9321acccc7baef878b04cd5a2b7f524e58a088b27e"
+  }
+ }
+}

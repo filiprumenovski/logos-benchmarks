@@ -1,0 +1,50 @@
+{
+ "acquisition": "dda",
+ "calibrate": false,
+ "chimera_psms": 0,
+ "chimera_sweep": 0,
+ "database": {
+  "enzyme": {
+   "c_terminal": true,
+   "cleave_at": "KR",
+   "max_len": 30,
+   "min_len": 7,
+   "missed_cleavages": 2
+  },
+  "fasta": "compil2_targets.fasta",
+  "max_variable_mods": 0,
+  "static_mods": {
+   "C": 57.021464
+  },
+  "variable_mods": {}
+ },
+ "dda_plus": false,
+ "deisotope": false,
+ "engine": {
+  "backend": "cuda"
+ },
+ "fragment_tol": {
+  "ppm": 20
+ },
+ "inputs": [
+  "020618_MS0745_PTB_H2.raw"
+ ],
+ "isotope_errors": [
+  0,
+  0
+ ],
+ "orphan": {
+  "per_scan_cap": 4
+ },
+ "precursor_charge": [
+  2,
+  5
+ ],
+ "precursor_tol": {
+  "ppm": 20
+ },
+ "rescore": {
+  "model": "lda"
+ },
+ "threads": 32
+}

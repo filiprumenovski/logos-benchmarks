@@ -1,0 +1,38 @@
+2026-10-31T01:38:25-0400 staged 2 files into in in 1 s: 3.5G
+2026-10-31T01:38:27-0400 inputs hashed: 2 files
+2026-10-31T01:38:29-0400 warm-ROOT-sweep rc=0 wall=1.75 cpu=811% rs=1.332934263s search=426.959541ms score_seconds=0.182 lookups=62439148  rss=1787144 ids=34d8c3cc9221
+2026-10-31T01:38:31-0400 warm-NEW-sweep rc=0 wall=1.63 cpu=777% rs=1.248837325s search=492.261593ms score_seconds=0.243 lookups=62403526  rss=1742312 ids=34d8c3cc9221
+2026-10-31T01:38:33-0400 warm-ROOT-fi rc=0 wall=1.52 cpu=851% rs=1.143379482s search=425.37518ms score_seconds=0.175 lookups=62439148  rss=1713852 ids=34d8c3cc9221
+2026-10-31T01:38:34-0400 warm-NEW-fi rc=0 wall=1.49 cpu=881% rs=1.122907567s search=413.320834ms score_seconds=0.172 lookups=62403526  rss=1840820 ids=34d8c3cc9221
+2026-10-31T01:38:36-0400 cpu-ROOT-sweep-1 rc=0 wall=1.44 cpu=889% rs=1.043030628s search=401.93851ms score_seconds=0.168 lookups=62439148  rss=1724440 ids=34d8c3cc9221
+2026-10-31T01:38:37-0400 cpu-NEW-sweep-1 rc=0 wall=1.56 cpu=824% rs=1.162816461s search=417.072519ms score_seconds=0.180 lookups=62403526  rss=1788588 ids=34d8c3cc9221
+2026-10-31T01:38:39-0400 cpu-ROOT-fi-1 rc=0 wall=1.43 cpu=881% rs=1.035530217s search=393.617769ms score_seconds=0.168 lookups=62439148  rss=1828640 ids=34d8c3cc9221
+2026-10-31T01:38:40-0400 cpu-NEW-fi-1 rc=0 wall=1.48 cpu=874% rs=1.115713992s search=415.576097ms score_seconds=0.180 lookups=62403526  rss=1873748 ids=34d8c3cc9221
+2026-10-31T01:38:42-0400 cpu-NEW-sweep-2 rc=0 wall=1.51 cpu=838% rs=1.140908442s search=414.355411ms score_seconds=0.176 lookups=62403526  rss=1716464 ids=34d8c3cc9221
+2026-10-31T01:38:43-0400 cpu-ROOT-sweep-2 rc=0 wall=1.51 cpu=851% rs=1.098344689s search=405.029173ms score_seconds=0.174 lookups=62439148  rss=1733132 ids=34d8c3cc9221
+2026-10-31T01:38:45-0400 cpu-NEW-fi-2 rc=0 wall=1.48 cpu=866% rs=1.107919555s search=390.313158ms score_seconds=0.161 lookups=62403526  rss=1777928 ids=34d8c3cc9221
+2026-10-31T01:38:47-0400 cpu-ROOT-fi-2 rc=0 wall=1.6 cpu=814% rs=1.186700756s search=427.572954ms score_seconds=0.180 lookups=62439148  rss=1759752 ids=34d8c3cc9221
+2026-10-31T01:38:48-0400 cpu-ROOT-fi-3 rc=0 wall=1.5 cpu=854% rs=1.088140811s search=415.24562ms score_seconds=0.178 lookups=62439148  rss=1719776 ids=34d8c3cc9221
+2026-10-31T01:38:50-0400 cpu-NEW-fi-3 rc=0 wall=1.55 cpu=862% rs=1.116504972s search=386.149028ms score_seconds=0.168 lookups=62403526  rss=1723084 ids=34d8c3cc9221
+2026-10-31T01:38:51-0400 cpu-ROOT-sweep-3 rc=0 wall=1.58 cpu=801% rs=1.260456736s search=502.861646ms score_seconds=0.214 lookups=62439148  rss=1719456 ids=34d8c3cc9221
+2026-10-31T01:38:53-0400 cpu-NEW-sweep-3 rc=0 wall=1.47 cpu=919% rs=1.06132302s search=375.632733ms score_seconds=0.163 lookups=62403526  rss=1913416 ids=34d8c3cc9221
+2026-10-31T01:38:55-0400 cpu-NEW-fi-4 rc=0 wall=1.47 cpu=876% rs=1.076286442s search=387.460232ms score_seconds=0.168 lookups=62403526  rss=1752920 ids=34d8c3cc9221
+2026-10-31T01:38:56-0400 cpu-ROOT-fi-4 rc=0 wall=1.55 cpu=845% rs=1.147765639s search=415.26633ms score_seconds=0.175 lookups=62439148  rss=1822040 ids=34d8c3cc9221
+2026-10-31T01:38:58-0400 cpu-NEW-sweep-4 rc=0 wall=1.51 cpu=846% rs=1.111240395s search=421.965261ms score_seconds=0.183 lookups=62403526  rss=1833648 ids=34d8c3cc9221
+2026-10-31T01:38:59-0400 cpu-ROOT-sweep-4 rc=0 wall=1.55 cpu=871% rs=1.140559066s search=396.667682ms score_seconds=0.167 lookups=62439148  rss=1874040 ids=34d8c3cc9221
+2026-10-31T01:39:01-0400 cpu-ROOT-sweep-5 rc=0 wall=1.49 cpu=861% rs=1.085012288s search=420.553568ms score_seconds=0.174 lookups=62439148  rss=1674396 ids=34d8c3cc9221
+2026-10-31T01:39:02-0400 cpu-NEW-sweep-5 rc=0 wall=1.39 cpu=929% rs=1.037550803s search=391.85571ms score_seconds=0.163 lookups=62403526  rss=1710848 ids=34d8c3cc9221
+2026-10-31T01:39:04-0400 cpu-ROOT-fi-5 rc=0 wall=1.59 cpu=787% rs=1.171117481s search=426.281729ms score_seconds=0.196 lookups=62439148  rss=1723628 ids=34d8c3cc9221
+2026-10-31T01:39:06-0400 cpu-NEW-fi-5 rc=0 wall=1.53 cpu=836% rs=1.112597246s search=404.162509ms score_seconds=0.177 lookups=62403526  rss=1653888 ids=34d8c3cc9221
+2026-10-31T01:39:07-0400 gpu-ROOT rc=0 wall=1.59 cpu=490% rs=1.009640314s search=142.884475ms score_seconds=0.020 lookups=0  rss=1785512 ids=34d8c3cc9221
+2026-10-31T01:39:09-0400 gpu-NEW rc=0 wall=1.56 cpu=504% rs=1.010861849s search=145.414805ms score_seconds=0.020 lookups=0  rss=1815084 ids=34d8c3cc9221
+2026-10-31T01:39:26-0400 ddaplus-ROOT-sweep rc=0 wall=17.25 cpu=1707% rs=16.815927438s search=11.542073482s score_seconds=7.306 lookups=3937105732  rss=14765412 ids=7bfb58a54798
+2026-10-31T01:39:43-0400 ddaplus-NEW-sweep rc=0 wall=16.32 cpu=1680% rs=15.859845155s search=10.653446513s score_seconds=6.401 lookups=2997177434  rss=14069464 ids=7bfb58a54798
+2026-10-31T01:40:00-0400 ddaplus-ROOT-fi rc=0 wall=17.26 cpu=1701% rs=16.781888904s search=11.600418615s score_seconds=7.286 lookups=3937803419  rss=14578880 ids=7bfb58a54798
+2026-10-31T01:40:16-0400 ddaplus-NEW-fi rc=0 wall=16.28 cpu=1685% rs=15.842081233s search=10.678378268s score_seconds=6.388 lookups=2998774677  rss=14431728 ids=7bfb58a54798
+2026-10-31T01:40:16-0400 backend ROOT-sweep: -> fragment_index
+2026-10-31T01:40:16-0400 backend NEW-sweep: -> fragment_index
+2026-10-31T01:40:16-0400 backend ROOT-fi: 
+2026-10-31T01:40:16-0400 backend NEW-fi: 
+2026-10-31T01:40:16-0400 MATRIX DONE
+2026-10-31T01:40:17-0400 cleanup done (exit 0); /dev/shm now: 21G

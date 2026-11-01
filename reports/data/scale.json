@@ -1,0 +1,60 @@
+{
+ "rows": [
+  {
+   "key": "hek",
+   "pillar": "Open search at scale",
+   "result": "HEK293 PXD001468, 24 files, 79.7 GB: 12.13 s on one GPU; 132,592 sequences at 1.03% entrapment FDP",
+   "comparator": "Capability; no engine run on the same files",
+   "hardware": "1x H200 NVL",
+   "status": "Recorded 2026-09-28; RAWs staged in RAM"
+  },
+  {
+   "key": "compil",
+   "pillar": "Metagenomic",
+   "result": "ComPIL 2.0: one gut run against 111.5 M target sequences in 20.26 s; 178.9 billion candidates scored",
+   "comparator": "No engine comparator at this scale",
+   "hardware": "1x L40S",
+   "status": "Recorded; performance settings, target-decoy FDR only"
+  },
+  {
+   "key": "compil-recovery",
+   "pillar": "Metagenomic",
+   "result": "80.2% of the published H2 peptide set recovered",
+   "comparator": "ProLuCID / DTASelect published H2 (7,565 peptides)",
+   "hardware": "\u2014",
+   "status": "Recorded; different settings from the speed run"
+  },
+  {
+   "key": "rts-latency",
+   "pillar": "Real time",
+   "result": "Acquisition decision in 0.925 ms p50 / 1.269 ms p99 per MS2; 0 decisions changed vs offline",
+   "comparator": "Thermo RTS budget: 80 ms",
+   "hardware": "RTX PRO 4500",
+   "status": "Recorded; replay at batch 1, RAW decode excluded"
+  },
+  {
+   "key": "rts-fdp",
+   "pillar": "Real time",
+   "result": "Replay of 24 Thermo RTS runs: entrapment FDP 0.556% with fewer MS3 scans in 24 of 24 files",
+   "comparator": "Thermo's recorded triggers: 2.947%",
+   "hardware": "RTX PRO 4500",
+   "status": "Recorded; replay of recorded streams"
+  },
+  {
+   "key": "tmt48",
+   "pillar": "Quantification depth",
+   "result": "Astral TMTpro PXD058160, 48 files: 1,700,508 PSMs at 0.997% entrapment FDP, ahead in 48 of 48 files",
+   "comparator": "Authors' deposited Comet + LDA: 1,333,804 PSMs",
+   "hardware": "RTX PRO 4500",
+   "status": "Recorded; PSM level only"
+  },
+  {
+   "key": "percolator",
+   "pillar": "Engineering",
+   "result": "Percolator rewritten in Rust: 18.88 s, 59,330 sequences",
+   "comparator": "C++ Percolator 3.09: 636.90 s, 59,451",
+   "hardware": "CPU",
+   "status": "Recorded; same PIN input"
+  }
+ ]
+}

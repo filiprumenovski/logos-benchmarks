@@ -1,0 +1,6 @@
+2026-10-30T21:31:23-0400 staged 3 files into in in 1 s: 1.3G
+2026-10-30T21:31:24-0400 inputs hashed: 4 files
+2026-10-30T21:31:46-0400 sage-default-E rc=0 wall=22.45 rss_gb=4.40 | [2026-10-31T01:31:44Z INFO  sage] discovered 57499 target peptide-spectrum matches at 1% FDR
+2026-10-30T21:31:47-0400 sage-default-E entrap seqlvl Nt 31489 Ne 202 fdp 0.0124
+2026-10-30T21:31:47-0400 B1E DONE
+2026-10-30T21:31:48-0400 cleanup done (exit 0); /dev/shm now: 21G

@@ -1,0 +1,194 @@
+{
+ "speedups": [
+  {
+   "group": "Rescoring and features",
+   "task": "MSBooster features, 533,242-row PIN",
+   "logos_s": 0.78,
+   "comp_s": 58.29,
+   "comparator": "MSBooster 1.3.31",
+   "parity": "output PIN byte-identical (SHA b6b5c211)",
+   "source": "2026-09-22 ledger; 3 runs 0.77-0.79 s; JVM start-up about 26 s of MSBooster's time",
+   "label": "Feature generation vs MSBooster 1.3.31"
+  },
+  {
+   "group": "Rescoring and features",
+   "task": "Percolator, 1,871,405-row PIN",
+   "logos_s": 18.88,
+   "comp_s": 636.9,
+   "comparator": "C++ Percolator 3.09",
+   "parity": "59,330 vs 59,451 sequences",
+   "source": "2026-09-18 ledger; one run per mode",
+   "label": "Percolator rescoring vs C++ Percolator 3.09"
+  },
+  {
+   "group": "Rescoring and features",
+   "task": "Rescoring, 8 mouse files",
+   "logos_s": 5.62,
+   "comp_s": 62.8,
+   "comparator": "C++ Percolator 3.09",
+   "parity": "252,745 vs 248,305 PSMs",
+   "source": "2026-09-18 ledger; GBDT rescorer vs Percolator on the same PIN",
+   "label": "GBDT rescoring vs C++ Percolator 3.09"
+  },
+  {
+   "group": "Whole pipeline",
+   "task": "RAW to identifications vs RAW to mzML",
+   "logos_s": 3.61,
+   "comp_s": 341.0,
+   "comparator": "ThermoRawFileParser 2.0.0-dev",
+   "parity": "LOGOS full search against conversion alone",
+   "source": "job 40913997",
+   "label": "RAW to IDs vs RAW-to-mzML conversion alone"
+  },
+  {
+   "group": "Whole pipeline",
+   "task": "Real-time search per MS2, median",
+   "logos_s": 0.002014,
+   "comp_s": 0.017,
+   "comparator": "Orbiter (published)",
+   "parity": "narrow window, CPU, 4,096 MS2 of PXD017823",
+   "source": "2026-10-20 ledger; Orbiter's 17 ms is its published median",
+   "label": "Real-time search per MS2 vs Orbiter (published)"
+  }
+ ],
+ "cascade": {
+  "total_ms2": 1121149,
+  "explained": 939455,
+  "fdp": 0.87,
+  "ne": 4025,
+  "layers": [
+   {
+    "name": "Closed tryptic search",
+    "n": 492297,
+    "fdp": 0.74
+   },
+   {
+    "name": "One open mass shift, -100 to +500 Da",
+    "n": 203307,
+    "fdp": 0.92
+   },
+   {
+    "name": "Co-isolated precursors (DDA+)",
+    "n": 156272,
+    "fdp": 1.06
+   },
+   {
+    "name": "Chimeric demixing",
+    "n": 58761,
+    "fdp": 1.04
+   },
+   {
+    "name": "Unimod mass offsets",
+    "n": 14503,
+    "fdp": 1.25
+   },
+   {
+    "name": "Missed cleavage, Met clip, N-acetyl",
+    "n": 6087,
+    "fdp": 1.39
+   },
+   {
+    "name": "Two open mass shifts",
+    "n": 5297,
+    "fdp": 0.77
+   },
+   {
+    "name": "Known modifications + open shift",
+    "n": 2211,
+    "fdp": 0.39
+   },
+   {
+    "name": "Co-isolated envelopes + open shift",
+    "n": 720,
+    "fdp": 1.0
+   }
+  ],
+  "source": "logos-notebook experiments/2026-09-29-dark-matter, Round 3 rerun r9"
+ },
+ "scale": [
+  {
+   "workload": "HEK293 open search, PXD001468: 24 RAW, 79.70 GB, 1,121,149 MS2",
+   "result": "12.13 s; 394 GB/min; 92,428 MS2/s",
+   "ids": "132,592 sequences, 688,428 PSMs at 1%; entrapment FDP 1.03%",
+   "hardware": "1x H200 NVL, 32 EPYC 9554 cores",
+   "note": "median of 3; RAWs in RAM"
+  },
+  {
+   "workload": "Same files, closed search",
+   "result": "7.89 s; 606 GB/min",
+   "ids": "--",
+   "hardware": "1x H200 NVL",
+   "note": "RAWs in RAM"
+  },
+  {
+   "workload": "Same open search on a workstation GPU",
+   "result": "20.30 s; 236 GB/min",
+   "ids": "--",
+   "hardware": "1x RTX PRO 4000, 32 EPYC 9454 cores",
+   "note": "RAWs in RAM"
+  },
+  {
+   "workload": "HEK293 cascade: every MS2 through nine layers",
+   "result": "939,455 of 1,121,149 MS2 explained (83.8%)",
+   "ids": "entrapment FDP 0.87% overall (Ne 4,025)",
+   "hardware": "1x L40S",
+   "note": "two layers above 1% alone; without them 81.96%"
+  },
+  {
+   "workload": "ComPIL 2.0 metaproteome: one gut RAW against 111,478,540 sequences (84 GB FASTA, 64.06 G residues)",
+   "result": "20.26 s; 178.9 billion candidates scored",
+   "ids": "38,649 PSMs, 10,326 peptides, 8,077 proteins at 1% (target-decoy)",
+   "hardware": "1x L40S, 32 EPYC 9554 cores",
+   "note": "recorded 2026-09-18, median of 2; performance settings; no entrapment arm"
+  },
+  {
+   "workload": "ComPIL 2.0, same search on the current build",
+   "result": "65.05 s (repeats 65.05, 65.11, 64.96); same 178.9 billion candidates",
+   "ids": "identical: 38,649 PSMs, 10,326 peptides, 8,077 proteins",
+   "hardware": "1x NVIDIA RTX PRO 4500 Blackwell, 32 EPYC 9454 cores",
+   "note": "run 2026-10-30-compil2; GPU-bound: the scan is 62.9 s of the run"
+  },
+  {
+   "workload": "ComPIL 2.0, published-protocol settings",
+   "result": "80.2% of the 7,565 published H2 peptides recovered",
+   "ids": "after I/L normalisation",
+   "hardware": "Apple GPU (Metal)",
+   "note": "separate run from the speed run"
+  },
+  {
+   "workload": "Astral TMTpro, PXD058160: 15 RAW, 39.5 GB",
+   "result": "20.91 s; 113 GB/min",
+   "ids": "392,305 PSMs, 97,666 sequences at 1%",
+   "hardware": "1x RTX PRO 4000",
+   "note": "median of 3; one process"
+  },
+  {
+   "workload": "Real-time acquisition decision, Thermo RTS replay (PXD043660)",
+   "result": "0.925 ms p50, 1.269 ms p99 per MS2",
+   "ids": "0 decisions changed against offline; budget 80 ms",
+   "hardware": "1x RTX PRO 4500",
+   "note": "batch 1; RAW decode excluded"
+  },
+  {
+   "workload": "Real-time decision, Astral (PXD058160), 135,711 MS2",
+   "result": "1.983 ms p50, 3.015 ms p99",
+   "ids": "recorded MS2 gap median 24.8 ms",
+   "hardware": "1x RTX PRO 4500",
+   "note": "flat replay of the full file"
+  },
+  {
+   "workload": "Real-time open search, -100 to +500 Da, 4,096 MS2",
+   "result": "32.7 ms p50 on GPU; 2,743 ms on CPU",
+   "ids": "--",
+   "hardware": "GPU; CPU",
+   "note": "PXD017823 replay"
+  },
+  {
+   "workload": "Replay of 24 Thermo RTS runs, causal policy",
+   "result": "entrapment FDP 0.556% against 2.947% for Thermo's recorded triggers",
+   "ids": "more author-pass scans with fewer MS3",
+   "hardware": "1x RTX PRO 4500",
+   "note": "replay of recorded streams"
+  }
+ ]
+}

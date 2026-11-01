@@ -1,0 +1,34 @@
+{
+ "rows": [
+  {
+   "key": "cpu-1",
+   "backend": "CPU",
+   "files": 1,
+   "wall_s": 3.61
+  },
+  {
+   "key": "cpu-4",
+   "backend": "CPU",
+   "files": 4,
+   "wall_s": 10.53
+  },
+  {
+   "key": "gpu-1",
+   "backend": "GPU",
+   "files": 1,
+   "wall_s": 2.48
+  },
+  {
+   "key": "gpu-4",
+   "backend": "GPU",
+   "files": 4,
+   "wall_s": 5.52
+  },
+  {
+   "key": "gpu-8",
+   "backend": "GPU",
+   "files": 8,
+   "wall_s": 8.68
+  }
+ ]
+}
