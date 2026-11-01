@@ -1,0 +1,55 @@
+{
+ "name": "2026-10-20-orbiter-replay",
+ "recorded": true,
+ "measured": "Replay of 12 Orbiter RTS acquisitions (PXD017823, Schweppe et al. 2020): LOGOS triggers against Orbiter's recorded triggers",
+ "method": "policy replay over frozen offline search scores; policies chosen retrospectively, not by the strict causal rule; different database from the authors'",
+ "policies": [
+  {
+   "policy": "c-open-k1-run-b100",
+   "author_pass": [
+    38169,
+    30815
+   ],
+   "ms3": [
+    40340,
+    41647
+   ],
+   "raw_accessions": [
+    8857,
+    9245
+   ],
+   "estimated_false_trigger_pct": [
+    2.713,
+    16.354
+   ]
+  },
+  {
+   "policy": "global-q05-k2-b100",
+   "ms3": [
+    39536,
+    41647
+   ],
+   "proteins_at_1pct_picked_protein_fdr": [
+    8710,
+    8315
+   ],
+   "proteins_with_2plus_peptides": [
+    6563,
+    5821
+   ],
+   "proteins_with_3plus_peptides": [
+    4316,
+    3617
+   ],
+   "raw_accessions": [
+    8870,
+    9245
+   ]
+  }
+ ],
+ "pairs": "each pair is LOGOS, Orbiter recorded",
+ "sources": [
+  "orbiter-headroom RESULT-Q2.md:225-226",
+  "orbiter-protfdr RESULT-P.md:9-11"
+ ]
+}

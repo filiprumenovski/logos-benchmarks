@@ -17,6 +17,7 @@ speed, ids, multi, conv = load("speed.json"), load("ids.json"), load("multifile.
 cover, scale, losses, catalog = load("coverage.json"), load("scale.json"), load("losses.json"), load("catalog.json")
 board, speedup = load("scoreboard.json"), load("speedup.json")
 power = json.load(open(DATA / "power.json"))
+rt = json.load(open(DATA / "realtime.json"))
 
 INK, MUTED, GRID = "#000000", "#333333", "#d9d9d9"
 C_CPU, C_GPU, C_SAGE = "#3a3a3a", "#9a9a9a", "#ffffff"
@@ -202,6 +203,65 @@ def fig_cascade(path):
     ax.tick_params(axis="y", length=0)
     fig.savefig(path, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
+
+
+def fig_realtime(path):
+    """(a) the median decision by stage; (b) each replay's p50 and p99 against its time budget."""
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.3, 1.75), gridspec_kw={"width_ratios": [1.05, 1], "wspace": 0.55})
+    names = [("search", "Candidate search"), ("xcorr", "XCorr"), ("prosit", "Predicted spectra"), ("rt", "Retention time"),
+             ("gbdt", "Score model"), ("policy", "Trigger policy")]
+    vals = [(label, rt["stages_ms"].get(k, 0.0)) for k, label in names]
+    ys = list(range(len(vals)))
+    a.barh(ys, [v for _, v in vals], height=0.6, color=C_WIN, edgecolor=INK, linewidth=0.5)
+    for y, (_, v) in zip(ys, vals):
+        a.text(v + 0.012, y, f"{v:.3f}", va="center", fontsize=6.4)
+    a.set_yticks(ys); a.set_yticklabels([mt(l) for l, _ in vals], fontsize=6.6); a.invert_yaxis()
+    a.set_xlim(0, 0.85)
+    a.set_xlabel(f"Median ms per stage; median whole decision {rt['stage_total_p50_ms']:.3f} ms", fontsize=7)
+    a.grid(axis="x", color=GRID, linewidth=0.4); a.set_axisbelow(True)
+    a.tick_params(axis="y", length=0)
+    for sp in ("top", "right"):
+        a.spines[sp].set_visible(False)
+    a.set_title("(a) One decision, by stage", loc="left", fontsize=8)
+    rows = rt["latency"]
+    for i, r in enumerate(rows):
+        b.plot([r["p50_ms"], r["p99_ms"]], [i, i], color=INK, linewidth=0.6)
+        b.plot(r["p50_ms"], i, "o", ms=3.4, mfc=INK, mec=INK)
+        b.plot(r["p99_ms"], i, "o", ms=3.4, mfc="white", mec=INK)
+        b.plot(r["budget_ms"], i, "|", ms=8, mew=1.2, color=INK)
+        b.text(r["budget_ms"] * 0.86, i - 0.28, f"{r['budget_ms']:.1f} ms", ha="right", va="center", fontsize=6.2)
+    b.axvline(rt["cap_ms"], color=INK, linewidth=0.6, linestyle=(0, (3, 2)))
+    b.text(rt["cap_ms"] * 1.08, len(rows) - 0.55, f"{rt['cap_ms']} ms cap", ha="left", fontsize=6.2)
+    b.set_xscale("log"); b.set_xlim(0.5, 300)
+    b.set_xticks([0.5, 1, 2, 5, 10, 20, 50, 100]); b.set_xticklabels(["0.5", "1", "2", "5", "10", "20", "50", "100"]); b.minorticks_off()
+    b.set_yticks(range(len(rows))); b.set_yticklabels([mt(r["replay"].split(" (")[0]) for r in rows], fontsize=6.6)
+    b.set_ylim(len(rows) - 0.4, -0.6)
+    b.set_xlabel("Milliseconds per MS2 decision (log scale)", fontsize=7)
+    b.grid(axis="x", color=GRID, linewidth=0.4); b.set_axisbelow(True)
+    for sp in ("top", "right"):
+        b.spines[sp].set_visible(False)
+    b.tick_params(axis="y", length=0)
+    b.set_title("(b) p50 (filled), p99 (open), budget (bar)", loc="left", fontsize=8)
+    fig.savefig(path, bbox_inches="tight", pad_inches=0.02)
+    plt.close(fig)
+
+
+def rt_latency_body():
+    out = []
+    for r in rt["latency"]:
+        match = f"{r['matching_reference']:,} of {r['decisions']:,}" if r["matching_reference"] is not None else f"{r['exact_rows']:,} exact of {r['decisions']:,}"
+        out.append(rf"{tex(r['replay'])} & {r['binary']} & {r['runs']} & {r['p50_ms']:.3f} & {r['p99_ms']:.3f} & {r['over_80_ms']} of {r['runs'] * r['decisions']:,} & {match} & {r['budget_ms']:.1f}\\")
+    return "\n".join(out)
+
+
+def rt_replay_body():
+    out = []
+    for g in rt["replay"]["regimes"]:
+        cell = lambda pair, f="{:,}": rf"\textbf{{{f.format(pair[0])}}} / {f.format(pair[1])}" if pair[0] > pair[1] else f"{f.format(pair[0])} / {f.format(pair[1])}"
+        fdp = g["entrapment_fdp_pct"]
+        out.append(rf"{tex(g['regime'])} & {cell(g['author_pass'])} & {cell(g['modified_peptides'])} & {cell(g['raw_proteins'])} & "
+                   rf"{g['ms3'][0]:,} / {g['ms3'][1]:,} & \textbf{{{fdp[0]:.2f}}} / {fdp[1]:.2f}\\")
+    return "\n".join(out)
 
 
 C_WIN, C_PAR, C_LOSS = "#3a3a3a", "#b5b5b5", "#ffffff"
@@ -395,13 +455,14 @@ DOC = DOC.replace("NEW_BODY_TOKEN", floats(BODY).replace("@@CLOSED@@", closed).r
      .replace("@@D_CLOSED@@", f'{bd["lfq-closed"]["delta_pct"]:.1f}').replace("@@D_ASTRAL@@", f'{bd["astral-tmt"]["delta_pct"]:.1f}')
      .replace("@@D_OPEN@@", f'{bd["lfq-open"]["delta_pct"]:.1f}'))
 DOC = (DOC.replace("BOARD_BODY", board_body).replace("SPEED_BODY", speed_body).replace("ID_BODY", id_table())
-       .replace("COVER_BODY", cover_body).replace("SCALE_BODY", scale_body))
+       .replace("COVER_BODY", cover_body).replace("RT_LATENCY_BODY", rt_latency_body()).replace("RT_REPLAY_BODY", rt_replay_body()).replace("SCALE_BODY", scale_body))
 with tempfile.TemporaryDirectory() as tmp:
     tmp = pathlib.Path(tmp)
     fig_force(tmp / "fig-force.pdf")
     fig_throughput(tmp / "fig-throughput.pdf")
     fig_power(tmp / "fig-power.pdf")
     fig_cascade(tmp / "fig-cascade.pdf")
+    fig_realtime(tmp / "fig-realtime.pdf")
     (tmp / "report.tex").write_text(zebra(DOC))
     for _ in range(2):
         r = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "report.tex"], cwd=tmp, capture_output=True, text=True)

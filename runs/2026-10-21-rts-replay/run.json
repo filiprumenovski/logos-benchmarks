@@ -1,0 +1,143 @@
+{
+ "name": "2026-10-21-rts-replay",
+ "recorded": true,
+ "measured": "Causal replay of 24 Thermo RTS acquisitions (PXD043660): LOGOS trigger decisions against the recorded triggers, authors' exact database",
+ "method": "policy replay over frozen offline search scores; rules (v11) chosen on other files; no timing",
+ "search": {
+  "slurm_job": 40697435,
+  "binary_sha256": "472ad7d7ab90150240c609e944fd81fd7cbb6bfb34e82b1d122c5daa5f687d1c",
+  "database_sha256": {
+   "authors_exact_human_yeast": "5b36945e269029a54b2369df2c4c69d0c382b7271dc748420e00f14c82399af8",
+   "tko": "c0de8e71f630296b8f97a7ee1ab024c06cb9ff0fdaf8e9cf37dd1428940389fd"
+  }
+ },
+ "fdp_note": "entrapment FDP of the triggered scans' winning identifications; the recorded triggers are classified by the same LOGOS scorer",
+ "regimes": [
+  {
+   "regime": "HYpro, Ascend (2 files)",
+   "author_pass": [
+    15954,
+    15950
+   ],
+   "modified_peptides": [
+    9542,
+    9390
+   ],
+   "raw_proteins": [
+    2322,
+    2332
+   ],
+   "ms3": [
+    20036,
+    20041
+   ],
+   "entrapment_fdp_pct": [
+    1.793,
+    6.966
+   ]
+  },
+  {
+   "regime": "HYpro, Eclipse (2 files)",
+   "author_pass": [
+    17408,
+    17194
+   ],
+   "modified_peptides": [
+    10581,
+    10473
+   ],
+   "raw_proteins": [
+    2673,
+    2675
+   ],
+   "ms3": [
+    20333,
+    20564
+   ],
+   "entrapment_fdp_pct": [
+    1.479,
+    6.202
+   ]
+  },
+  {
+   "regime": "TKO11, Ascend (10 files)",
+   "author_pass": [
+    67328,
+    67176
+   ],
+   "modified_peptides": [
+    16259,
+    15973
+   ],
+   "raw_proteins": [
+    2528,
+    2518
+   ],
+   "ms3": [
+    73561,
+    73645
+   ],
+   "entrapment_fdp_pct": [
+    0.271,
+    1.75
+   ]
+  },
+  {
+   "regime": "TKO11, Eclipse (10 files)",
+   "author_pass": [
+    67024,
+    66693
+   ],
+   "modified_peptides": [
+    16545,
+    16229
+   ],
+   "raw_proteins": [
+    2665,
+    2655
+   ],
+   "ms3": [
+    72999,
+    73202
+   ],
+   "entrapment_fdp_pct": [
+    0.245,
+    2.206
+   ]
+  },
+  {
+   "regime": "Pooled, 24 files",
+   "author_pass": [
+    167714,
+    167013
+   ],
+   "modified_peptides": [
+    30766,
+    30182
+   ],
+   "raw_proteins": [
+    5442,
+    5442
+   ],
+   "ms3": [
+    186929,
+    187452
+   ],
+   "entrapment_fdp_pct": [
+    0.556,
+    2.947
+   ]
+  }
+ ],
+ "per_file": {
+  "lower_fdp": "24 of 24 (sign test p = 1.2e-7)",
+  "fewer_ms3": "24 of 24 (p = 1.2e-7)",
+  "more_author_pass": "18 of 24",
+  "more_raw_proteins": "6 of 24"
+ },
+ "verdict_strict_rule": "loss: pooled raw proteins tie at 5,442, and a tie fails the rule that every count must be strictly higher",
+ "sources": [
+  "orbiter-fasta RESULT-FASTA-pre-addendum6.md:92-96",
+  "sign tests: two-sided binomial over the 24 per-file rows of the same replay"
+ ]
+}

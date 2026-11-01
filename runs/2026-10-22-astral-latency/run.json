@@ -1,0 +1,71 @@
+{
+ "name": "2026-10-22-astral-latency",
+ "measured": "Real-time decision latency on Orbitrap Astral, replay of PXD058160 az01263 (135,711 MS2)",
+ "slurm_job": 40703237,
+ "node": "ymh4",
+ "cpu": "AMD EPYC 9454 48-Core Processor",
+ "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+ "inputs": {
+  "raw": "az01263_02152024.raw",
+  "accession": "PXD058160",
+  "raw_sha256": "4d4e3f73b99ca25c76989f396390e483684068d199f2a03ab53242bd71b5b66e",
+  "fasta": "mouse-entrapment.fasta",
+  "fasta_sha256": "525a47b084e499142a1b7a6fb389c2acf053080d7719a016628280d30b9c8074"
+ },
+ "budgets": {
+  "recorded_ms2_gap_median_ms": 24.848,
+  "recorded_ms2_gap_min_ms": 2.848
+ },
+ "arms": {
+  "full-file-flat": {
+   "binary": "astral-opt",
+   "binary_sha256": "00ba14c959fa8b48242f9dd0504bdcca643ec916c8234c6806c6bea33245729b",
+   "repeats": 1,
+   "note": "one run; per-decision match not recorded, row exactness is; triggers equal the offline reference's (30,539)",
+   "samples_sha256": "8c5ed639fd16366ef47d7fe6829fd7f9383d61e69a7c4e7643cd86cf093eb35f",
+   "decisions": 135711,
+   "e2e_ms": {
+    "p50": 1.9826,
+    "p95": 2.6532,
+    "p99": 3.0146,
+    "max": 30.267
+   },
+   "stage_median_ms": {
+    "search": 1.7839,
+    "prosit": 0.1517,
+    "gbdt": 0.0272,
+    "policy": 0.0001,
+    "queue": 0.0
+   },
+   "over_5_ms": 213,
+   "over_80_ms": 0,
+   "exact_rows": 135704,
+   "decisions_matching_reference": null,
+   "triggers": 30539,
+   "finished_before_next_ms2": 135694
+  },
+  "slice-at-recorded-pace": {
+   "binary": "astral-opt3",
+   "binary_sha256": "199727df3795715bcce465373035f7fe3cb79de1385243e0ebecef6a5e95120d",
+   "repeats": 1,
+   "note": "scans 60,000 to 65,999 replayed at the recorded acquisition pace, one lane",
+   "samples_sha256": "2764201f63a464e50d5bed477c25a180ec5c6401645e9165d66c92549332ec21",
+   "decisions": 6000,
+   "e2e_ms": {
+    "p50": 1.9915,
+    "p95": 2.6094,
+    "p99": 2.8749,
+    "max": 4.039
+   },
+   "stage_median_ms": {
+    "queue": 0.0008
+   },
+   "over_5_ms": 0,
+   "over_80_ms": 0,
+   "exact_rows": 6000,
+   "decisions_matching_reference": null,
+   "triggers": 1494
+  }
+ },
+ "computed_by": "eval/latency.py over the raw per-MS2 samples"
+}

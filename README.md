@@ -33,9 +33,12 @@ every run, and the counting rule as open Python that gives the engine's own inte
 - **Against published searches.** On a 48-file Astral TMTpro study (PXD058160) LOGOS reports
   1,700,508 PSMs at 0.997% entrapment FDP against the authors' 1,333,804 from Comet with LDA,
   ahead in all 48 files.
-- **Real time.** Replaying Thermo real-time-search acquisitions, LOGOS decides whether to
-  trigger an MS3 in a median 0.925 ms per MS2 against the instrument's 80 ms budget, and its
-  triggers carry an entrapment FDP of 0.556% where the recorded ones carry 2.947%.
+- **Real time.** Replaying a recorded Thermo real-time-search acquisition one MS2 at a time,
+  LOGOS decides whether to trigger an MS3 in a median 0.884 ms (1.205 ms at the 99th percentile)
+  on one RTX PRO 4500, and all 27,674 decisions equal the offline reference. Thermo's budget is
+  80 ms. A separate replay of all 24 acquisitions in PXD043660, on the authors' own database,
+  triggers scans whose identifications carry an entrapment FDP of 0.56% against 2.95% for the
+  instrument's recorded triggers, lower in every file.
 
 ## How LOGOS works
 
@@ -67,6 +70,14 @@ at 0.98% entrapment FDP, and costs 17.00 s against 1.41 s.
 against 59,451 sequences. An optional stage adds predicted fragment intensities and retention
 times from AlphaPeptDeep models, run natively, and rescores with a small neural network.
 
+**Real-time decisions.** The same engine also runs one MS2 at a time as it arrives. Candidate
+search, XCorr, a predicted-spectrum lookup and a causal retention-time check feed a frozen score
+model, whose output the trigger policy turns into fire or skip. Candidate search takes 0.69 ms of the 0.88 ms median decision.
+Every percentile in [`runs/2026-10-22-rts-latency`](runs/2026-10-22-rts-latency) is recomputed from
+the replay's raw per-MS2 samples by [`eval/latency.py`](eval/latency.py), which reproduces the
+replay's own log to four decimals. One of 83,022 timed decisions missed the 80 ms budget, a single
+11.3 s host stall.
+
 **Error control.** Every count is at 1% FDR by target-decoy competition. Where a result says
 "entrapment", the search also ran against a second database of shuffled proteins that cannot be in
 the sample, so every accepted hit to it is a known false discovery and the error is measured
@@ -74,7 +85,7 @@ rather than estimated.
 
 ## Engineering rules
 
-The CPU implementation is the reference, and every GPU kernel is tested against it. The open
+Every GPU kernel is tested against the CPU implementation, which is the reference. The open
 search's identifications hash to `583ae51be609…` from either build.
 Results are deterministic, because reductions are order-independent, so the same binary, input and
 settings give the same output on every run, and an A/B comparison checks its outputs by hash; only
@@ -94,6 +105,9 @@ same care as the wins.
   low-resolution ion-trap spectra as it does on the Astral. It does the opposite: on twelve
   Orbitrap Ascend ion-trap files it keeps only 18 to 37% of the plain search's PSMs, most likely
   because a 0.3 Da fragment window lets too many competing candidates into each spectrum.
+- In the 24-file real-time replay LOGOS ties Thermo's recorded triggers on raw protein count
+  (5,442 each), which our own rule counts as a loss, trails on both HYpro regimes by up to 10
+  proteins, and has more proteins in only 6 of the 24 files.
 - On a search as short as the closed LFQ one, the GPU build (1.53 s) is slower than the CPU build
   (1.41 s): starting the device costs more than the work it saves.
 
@@ -151,8 +165,8 @@ databases/  manifest.tsv, build_entrap.py (the entrapment database generator)
 binaries/   BINARIES.tsv (every benchmarked LOGOS binary: SHA-256, source commit, runs)
 configs/    every configuration, named by hash
 runs/       one directory per Slurm job: run.json, stages.txt, summary.txt
-eval/       count.py, sage_to_pin.py, entrapment_ratio.py, checks and tests
-harness/    the Slurm drivers that produced the newest runs (cluster paths written as $RUN_ROOT, $SCRATCH), and collect.py, which writes run.json
+eval/       count.py, sage_to_pin.py, entrapment_ratio.py, latency.py, checks and tests
+harness/    the Slurm drivers that produced the newest runs (cluster paths written as $RUN_ROOT, $SCRATCH), and collect.py and collect_rt.py, which write run.json
 reports/    the PDF report and the script and data that build it
 ```
 

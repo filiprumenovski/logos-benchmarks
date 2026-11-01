@@ -1,0 +1,45 @@
+{
+ "name": "2026-10-20-broad-window-search",
+ "recorded": true,
+ "measured": "Per-MS2 search call at batch 1 with a broad closed precursor window, 4,096 MS2 of PXD017823 c06306",
+ "note": "search call only: no scoring model, policy or queueing; a symmetric closed window, not open search, which the live interface does not support",
+ "binary_sha256": "48e36dfec841dfe103b41ca5684a6eb572986f112496ca386dcf8fe9b4670514",
+ "source_commit": "45c200a3a38148b127f528b407c08fe8d4e01dd4 (branch claude/orbiter-rts-engine)",
+ "inputs": {
+  "raw": "c06306_qy_RTS_3cell_2_A1.raw",
+  "raw_sha256": "5b93136f3752a8784aae5c0b576b5e89c7134c6de2e61ff8d52d11e08deeb863",
+  "fasta": "human.fasta",
+  "fasta_sha256": "205f1626241074c9a3d1561f80990c008161190ecebfcd98269e7e2eff390609"
+ },
+ "arms": {
+  "pm500da-gpu": {
+   "slurm_job": 40651342,
+   "gpu": "NVIDIA A30",
+   "cpu": "AMD EPYC 9124",
+   "p50_ms": 32.734,
+   "p99_ms": 44.216
+  },
+  "pm500da-cpu": {
+   "slurm_job": "40651642_0..7",
+   "cpu": "AMD EPYC 7313, 8 shards",
+   "p50_ms": 2743.264,
+   "p99_ms": 3871.597
+  },
+  "pm50ppm-cpu": {
+   "slurm_job": "40651642_0..7",
+   "cpu": "AMD EPYC 7313, 8 shards",
+   "p50_ms": 2.014,
+   "p99_ms": 3.966
+  },
+  "pm50ppm-gpu": {
+   "slurm_job": 40651342,
+   "gpu": "NVIDIA A30",
+   "p50_ms": 3.792,
+   "p99_ms": 5.882
+  }
+ },
+ "comparator": "Orbiter's published median search time, 17 ms (Schweppe et al. 2020); different hardware",
+ "sources": [
+  "orbiter-openlive RESULT-Z.md:17-38"
+ ]
+}

@@ -73,10 +73,10 @@ Figure~\ref{fig:power} collects every speed comparison in the record in which LO
 
 \begin{figure}[H]\centering
 \includegraphics[width=\linewidth]{fig-power.pdf}\par
-\caption{Speed-up of LOGOS over each comparator, as the comparator's time divided by LOGOS's, on the same input and work. Search: wall time against Sage 0.14.7 on CPU on the same node, LOGOS on CPU (dark) or on one GPU (light). Rescoring and features: CPU, same PIN input; MSBooster's 58.29\,s includes about 26\,s of Java start-up. Whole pipeline: LOGOS's full search of one Astral file from RAW against ThermoRawFileParser converting that file alone; LOGOS's median real-time search per MS2 (narrow precursor window, CPU, 4,096 MS2 of PXD017823) against Orbiter's published 17\,ms median, on different hardware.}\label{fig:power}
+\caption{Speed-up of LOGOS over each comparator, as the comparator's time divided by LOGOS's, on the same input and work. Search: wall time against Sage 0.14.7 on CPU on the same node, LOGOS on CPU (dark) or on one GPU (light). Rescoring and features: CPU, same PIN input; MSBooster's 58.29\,s includes about 26\,s of Java start-up. Whole pipeline: LOGOS's full search of one Astral file from RAW against ThermoRawFileParser converting that file alone; LOGOS's median search call per MS2 (search only, $\pm$50\,ppm precursor window, CPU, 4,096 MS2 of PXD017823) against Orbiter's published 17\,ms median, on different hardware.}\label{fig:power}
 \end{figure}
 
-Where no other engine has been run on the same input, Table~\ref{tab:scale} reports absolute throughput. LOGOS searches the 24-file HEK293 deposit of Chick et al.\ (PXD001468, 79.70\,GB) in an open search in 12.13\,s on one GPU, reporting 132,592 sequences at an entrapment-measured 1.03\%. It searches one gut-metaproteome run against the 111.5 million sequences of ComPIL~2.0, scoring 178.9 billion candidates, in 20.26\,s on an L40S as recorded on 18 September; the current build takes 65.05\,s on an RTX PRO 4500 with identical identifications. It makes a real-time acquisition decision in a median 0.925\,ms per MS2, against an 80\,ms instrument budget.
+Where no other engine has been run on the same input, Table~\ref{tab:scale} reports absolute throughput. LOGOS searches the 24-file HEK293 deposit of Chick et al.\ (PXD001468, 79.70\,GB) in an open search in 12.13\,s on one GPU, reporting 132,592 sequences at an entrapment-measured 1.03\%. It searches one gut-metaproteome run against the 111.5 million sequences of ComPIL~2.0, scoring 178.9 billion candidates, in 20.26\,s on an L40S as recorded on 18 September; the current build takes 65.05\,s on an RTX PRO 4500 with identical identifications.
 
 \begin{table}[H]\centering
 \caption{Throughput at scale and latency in real time. Inputs staged in RAM; GPU counts are physical devices. Rows were recorded on earlier builds before 31 October 2026 and not rerun on the current build.}\label{tab:scale}
@@ -93,10 +93,6 @@ HEK293 cascade: every MS2 through nine layers & 939,455 of 1,121,149 MS2 explain
 ComPIL 2.0, same search on the current build & 65.05 s (repeats 65.05, 65.11, 64.96); same 178.9 billion candidates & identical: 38,649 PSMs, 10,326 peptides, 8,077 proteins & 1x NVIDIA RTX PRO 4500 Blackwell, 32 EPYC 9454 cores & run 2026-10-30-compil2; GPU-bound: the scan is 62.9 s of the run\\
 \rowcolor{zebra}ComPIL 2.0, published-protocol settings & 80.2\% of the 7,565 published H2 peptides recovered & after I/\allowbreak{}L normalisation & Apple GPU (Metal) & separate run from the speed run\\
 Astral TMTpro, PXD058160: 15 RAW, 39.5 GB & 20.91 s; 113 GB/\allowbreak{}min & 392,305 PSMs, 97,666 sequences at 1\% & 1x RTX PRO 4000 & median of 3; one process\\
-\rowcolor{zebra}Real-time acquisition decision, Thermo RTS replay (PXD043660) & 0.925 ms p50, 1.269 ms p99 per MS2 & 0 decisions changed against offline; budget 80 ms & 1x RTX PRO 4500 & batch 1; RAW decode excluded\\
-Real-time decision, Astral (PXD058160), 135,711 MS2 & 1.983 ms p50, 3.015 ms p99 & recorded MS2 gap median 24.8 ms & 1x RTX PRO 4500 & flat replay of the full file\\
-\rowcolor{zebra}Real-time open search, -100 to +500 Da, 4,096 MS2 & 32.7 ms p50 on GPU; 2,743 ms on CPU & -- & GPU; CPU & PXD017823 replay\\
-Replay of 24 Thermo RTS runs, causal policy & entrapment FDP 0.556\% against 2.947\% for Thermo's recorded triggers & more author-pass scans with fewer MS3 & 1x RTX PRO 4500 & replay of recorded streams\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -107,6 +103,50 @@ The cascade asks what share of every MS2 spectrum in PXD001468 can be explained 
 \includegraphics[width=\linewidth]{fig-cascade.pdf}\par
 \caption{The HEK293 cascade on all 24 files of PXD001468. Each bar is the share of all MS2 that a layer explains, placed after the layers before it; the label gives spectra explained and that layer's own entrapment FDP. Hatched layers run above 1\% on their own (1.04--1.39\%); without the two highest, Unimod offsets and missed cleavage, the cascade explains 918,865 spectra (82.0\%). Of the spectra left unexplained, about half are chimeric and a third carry too little information for any engine; well-formed spectra that stay unexplained are 3.3\% of the total (6-file subset).}\label{fig:cascade}
 \end{figure}
+
+\section{Real-time acquisition decisions}\label{sec:rt}
+In real-time search the instrument asks, for every MS2 it records, whether to spend an MS3 scan on that precursor. LOGOS answers with one pipeline per MS2: candidate search, XCorr, a lookup of predicted fragment spectra, a causal retention-time check, a frozen score model and a trigger policy. The measurements below replay recorded acquisitions of PXD043660 (Thermo real-time search on Orbitrap Ascend and Eclipse) and PXD058160 (Orbitrap Astral) one MS2 at a time, at batch 1, with RAW decoding excluded; every percentile is recomputed from the replay's raw per-MS2 samples by \texttt{eval/latency.py}.
+
+On the TKO file a decision takes a median 0.884\,ms and 1.205\,ms at the 99th percentile on one RTX PRO 4500, over three interleaved runs of 27,674 decisions, every one of which equals the offline reference. The previous binary measured 0.925\,ms in the same job. One of the 83,022 timed decisions exceeded the 80\,ms budget Thermo's implementation sets, a single 11.3\,s host stall; on the HYpro file 19 of 96,600 did. On the Astral file, whose recorded MS2 arrive a median 24.8\,ms apart, the median decision takes 1.98\,ms and none of 135,711 exceeds 80\,ms, from a single run.
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{fig-realtime.pdf}\par
+\caption{(a) The median time of each stage of a TKO decision; the stage medians sum to 0.87\,ms, slightly less than the median whole decision, as medians do. (b) Each replay's median (filled) and 99th-percentile (open) decision time against its own budget (bar): the median time to the next MS2 for the Orbitrap Ascend files, the median recorded MS2 gap for the Astral file. The dashed line is the 80\,ms cap of Thermo's real-time search.}\label{fig:rt}
+\end{figure}
+
+\begin{table}[H]\centering
+\caption{Decision latency, recomputed from raw per-MS2 samples (runs \texttt{2026-10-22-rts-latency}, \texttt{2026-10-22-astral-latency}; job 40703237, RTX PRO 4500, EPYC 9454). Times in ms; over-80\,ms counts are over all runs.}\label{tab:rtlat}
+\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}L l r r r r >{\raggedright\arraybackslash}m{1.05in} r@{}}
+\toprule
+Replay & Binary & Runs & p50 & p99 & Over 80\,ms & Matching the offline reference & Budget\\
+\midrule
+\rowcolor{zebra}TKO, Orbitrap Ascend (27,674 MS2) & s7 & 3 & 0.884 & 1.205 & 1 of 83,022 & 27,674 of 27,674 & 81.0\\
+HYpro, Orbitrap Ascend (32,200 MS2) & s7 & 3 & 1.237 & 1.868 & 19 of 96,600 & 32,200 of 32,200 & 73.8\\
+\rowcolor{zebra}Astral TMTpro (135,711 MS2) & astral-opt & 1 & 1.983 & 3.015 & 0 of 135,711 & 135,704 exact of 135,711 & 24.8\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Speed matters only if the decisions are good. Replaying all 24 PXD043660 acquisitions with the authors' own database, and trigger rules chosen on files other than the one being replayed, LOGOS triggers on more of the authors' passing scans with fewer MS3 scans, and the scans it triggers carry an entrapment-measured FDP of 0.56\% where Thermo's recorded triggers carry 2.95\%, lower in all 24 files (sign test $p = 1.2\times10^{-7}$). It does not win everywhere: raw protein counts tie at 5,442, which the rule we set ourselves counts as a loss, both HYpro regimes trail by up to 10 proteins, and LOGOS has more proteins in only 6 of the 24 files. This replay and the latency runs use different recipes (the authors' database and v11 rules here; an earlier database and v8 rules for the timing), so neither number is claimed for the other.
+
+\begin{table}[H]\centering
+\caption{Replay of 24 Thermo real-time-search acquisitions (PXD043660), LOGOS / Thermo recorded; bold where LOGOS is higher. Entrapment FDP in percent, of the triggered scans' identifications, both masks classified by the same scorer. Recorded 21 October 2026 (run \texttt{2026-10-21-rts-replay}).}\label{tab:rtreplay}
+\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}L r r r r r@{}}
+\toprule
+Regime & Author-pass scans & Modified peptides & Raw proteins & MS3 scans & Entrapment FDP\\
+\midrule
+\rowcolor{zebra}HYpro, Ascend (2 files) & \textbf{15,954} / 15,950 & \textbf{9,542} / 9,390 & 2,322 / 2,332 & 20,036 / 20,041 & \textbf{1.79} / 6.97\\
+HYpro, Eclipse (2 files) & \textbf{17,408} / 17,194 & \textbf{10,581} / 10,473 & 2,673 / 2,675 & 20,333 / 20,564 & \textbf{1.48} / 6.20\\
+\rowcolor{zebra}TKO11, Ascend (10 files) & \textbf{67,328} / 67,176 & \textbf{16,259} / 15,973 & \textbf{2,528} / 2,518 & 73,561 / 73,645 & \textbf{0.27} / 1.75\\
+TKO11, Eclipse (10 files) & \textbf{67,024} / 66,693 & \textbf{16,545} / 16,229 & \textbf{2,665} / 2,655 & 72,999 / 73,202 & \textbf{0.24} / 2.21\\
+\rowcolor{zebra}Pooled, 24 files & \textbf{167,714} / 167,013 & \textbf{30,766} / 30,182 & 5,442 / 5,442 & 186,929 / 187,452 & \textbf{0.56} / 2.95\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+On the 12 Orbiter acquisitions of PXD017823 the trigger rules were chosen retrospectively and the database differs from the authors', so these results are weaker evidence. One rule triggers 38,169 of the authors' passing scans against Orbiter's 30,815, with 40,340 MS3 scans against 41,647, at an estimated 2.7\% false-trigger rate against 16.4\%, but reaches fewer raw protein accessions (8,857 against 9,245). Another reaches 8,710 proteins at 1\% picked-protein FDR against 8,315, 6,563 of them with two or more peptides against 5,821, using 39,536 MS3 scans. A separate measurement times the search call alone with a broad closed precursor window of $\pm$500\,Da: 32.7\,ms per MS2 at the median on an NVIDIA A30, against 2.74\,s on CPU.
 
 \section{Head to head with Sage on the current build}\label{sec:sage}
 Both engines ran in the same Slurm job on the same node, interleaved with the order rotated between repeats; times are medians of three or more wall-clock measurements from input file to identifications, container start included. Sage's speed varies by a factor of 2.8 between these nodes, so every ratio is taken within one node.

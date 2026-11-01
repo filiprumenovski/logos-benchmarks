@@ -6,3 +6,8 @@ mouse-entrapment.fasta	31440634	525a47b084e499142a1b7a6fb389c2acf053080d7719a016
 target.fasta		c5bd5af6797009fb87dee5cc466cdd3e8077deea0650d5eb4991ceeb133f26e0	derived: records of mouse-entrapment.fasta without the entrap_ prefix
 target_entrap_human.fasta		6a5a82aeae17927c97cd066932a7a518c2281a2644c06e27584ee0078438e6a5	derived: target_human_contam.fasta followed by entrap_human.fasta
 target_human_contam.fasta	13835321	ef32e8b2e86f563e5e80770577055a52b292c0ec7344f08ac7b9b9c9a92c7798	LFQ human search database: 20,781 UniProt Swiss-Prot human entries
+rts-tko-search.fasta	7211112	57386a0e32d3f9a8be1bc78312050438b0070e7e03f79148f6a183caec6add3c	Real-time replay database for the TKO file: yeast proteome with entrapment (the replay's fold 4 source.fasta)
+rts-hypro-search.fasta	33733556	18f8477f12b11c83ca08f26d39aee5ab72340f880941c0ac8c921dfbf8dc9401	Real-time replay database for the HYpro file (fold 0 source.fasta)
+rts-authors-exact.fasta		5b36945e269029a54b2369df2c4c69d0c382b7271dc748420e00f14c82399af8	PXD043660 authors' human and yeast database, reconstructed, with entrapment; used by the 24-file replay
+rts-tko-exact.fasta		c0de8e71f630296b8f97a7ee1ab024c06cb9ff0fdaf8e9cf37dd1428940389fd	PXD043660 TKO database with entrapment; used by the 24-file replay
+orbiter-human.fasta		205f1626241074c9a3d1561f80990c008161190ecebfcd98269e7e2eff390609	Human database for the PXD017823 broad-window search timing

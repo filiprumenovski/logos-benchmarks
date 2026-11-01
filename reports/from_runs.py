@@ -128,6 +128,29 @@ def board(id_rows):
     return rows
 
 
+def realtime():
+    """realtime.json: latency from the replays' run records (recomputed from raw samples), replay outcomes as recorded."""
+    lat = RUNS["2026-10-22-rts-latency"]
+    by = {r["set"]: r for r in lat["summary"]}
+    stage_run = lat["arms"]["fullsel1-B-r1"]
+    ast = RUNS["2026-10-22-astral-latency"]
+    rows = []
+    for label, key, budget in (("TKO, Orbitrap Ascend (27,674 MS2)", "fullsel1-B", 81.0), ("HYpro, Orbitrap Ascend (32,200 MS2)", "hysel1-B", 73.8)):
+        r = by[key]
+        rows.append({"replay": label, "p50_ms": r["p50_ms_median"], "p99_ms": r["p99_ms_median"], "runs": r["runs"],
+                     "decisions": r["decisions"], "over_80_ms": r["over_80_ms_total"], "matching_reference": r["decisions_matching_reference_min"],
+                     "budget_ms": budget, "budget": "median time to the next MS2", "run": lat["name"], "binary": r["binary"]})
+    a = ast["arms"]["full-file-flat"]
+    rows.append({"replay": "Astral TMTpro (135,711 MS2)", "p50_ms": a["e2e_ms"]["p50"], "p99_ms": a["e2e_ms"]["p99"], "runs": 1,
+                 "decisions": a["decisions"], "over_80_ms": a["over_80_ms"], "matching_reference": None, "exact_rows": a["exact_rows"],
+                 "budget_ms": ast["budgets"]["recorded_ms2_gap_median_ms"], "budget": "median recorded MS2 gap", "run": ast["name"], "binary": a["binary"]})
+    prev = by["fullab3-B"]
+    return {"latency": rows, "previous_tko": {"p50_ms": prev["p50_ms_median"], "p99_ms": prev["p99_ms_median"], "binary": prev["binary"]},
+            "stages_ms": stage_run["stage_median_ms"], "stage_total_p50_ms": stage_run["e2e_ms"]["p50"],
+            "cap_ms": lat["budgets"]["thermo_rts_cap_ms"], "replay": RUNS["2026-10-21-rts-replay"], "orbiter": RUNS["2026-10-20-orbiter-replay"],
+            "broad_window": RUNS["2026-10-20-broad-window-search"]}
+
+
 def claims(sp, id_rows):
     """The README's head-to-head table, in markdown, from the same rows as the report."""
     ib = {r["key"]: r for r in id_rows}
@@ -149,7 +172,7 @@ def main(check=False):
     sp = speed()
     id_rows = ids()
     out = {"speed.json": {"rows": sp}, "ids.json": {"rows": id_rows}, "speedup.json": {"rows": speedups(sp)},
-           "scoreboard.json": {"rows": board(id_rows)}}
+           "scoreboard.json": {"rows": board(id_rows)}, "realtime.json": realtime()}
     bad = 0
     readme = ROOT / "README.md"
     text = readme.read_text()

@@ -81,6 +81,23 @@ LOGOS's engine counts with a Rust implementation of the same rule. The run
 on CPU, kept the outputs, and checked that the open counter, the engine's counter and
 the recorded counts agree on every integer.
 
+## Real-time latency
+
+The real-time replays feed a recorded acquisition to LOGOS one MS2 at a time, at batch 1 on one
+host thread, with RAW decoding excluded, and time every decision end to end and by stage. Each run
+writes one JSON line per MS2, with the decision's time, whether its scored rows equal the offline
+reference's (`exact`) and whether its trigger decision does (`decision_match`).
+[`eval/latency.py`](eval/latency.py) recomputes every percentile in the run records from those
+lines, with linear interpolation between order statistics, and reproduces the replay's own log to
+four decimals; its tests plant three errors, each of which fails. The raw samples are not stored
+here; their SHA-256 values are in the run records. Arms of an A/B pair ran interleaved and
+alternating in one Slurm job, three runs each. The 80 ms budget is the one reported for Thermo's
+real-time search, not a measurement.
+
+The decision-quality replays are policy replays over frozen search scores, with no timing; their
+outcomes are recorded from the cited result files, and their records say which database and which
+rules each used. The latency runs and the 24-file replay used different databases and rules.
+
 ## Error control
 
 Every identification count is at 1% FDR by target-decoy competition. Where a result
@@ -103,6 +120,12 @@ the CPU and GPU builds give byte-identical identifications to each other. Run re
 carry the SHA-256 of every `ids.json`, so a repeat that differs is visible.
 
 ## What is not here
+
+The recorded comparisons in [`reports/data/catalog.json`](reports/data/catalog.json) cite the project's
+private notebook and notes by file and line. Those sources are not public; each row carries the
+caveats that travel with its number, and the claims this repository makes on the current build rest
+on run records, not on the catalog.
+
 
 Search outputs (PIN files, score tables, Sage's `results.sage.tsv`) are not in the
 repository: they are hundreds of megabytes per run. Their SHA-256 values are in the

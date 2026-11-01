@@ -48,7 +48,7 @@
    "comparator": "Orbiter (published)",
    "parity": "narrow window, CPU, 4,096 MS2 of PXD017823",
    "source": "2026-10-20 ledger; Orbiter's 17 ms is its published median",
-   "label": "Real-time search per MS2 vs Orbiter (published)"
+   "label": "Search call per MS2 vs Orbiter (published)"
   }
  ],
  "cascade": {
@@ -161,34 +161,6 @@
    "ids": "392,305 PSMs, 97,666 sequences at 1%",
    "hardware": "1x RTX PRO 4000",
    "note": "median of 3; one process"
-  },
-  {
-   "workload": "Real-time acquisition decision, Thermo RTS replay (PXD043660)",
-   "result": "0.925 ms p50, 1.269 ms p99 per MS2",
-   "ids": "0 decisions changed against offline; budget 80 ms",
-   "hardware": "1x RTX PRO 4500",
-   "note": "batch 1; RAW decode excluded"
-  },
-  {
-   "workload": "Real-time decision, Astral (PXD058160), 135,711 MS2",
-   "result": "1.983 ms p50, 3.015 ms p99",
-   "ids": "recorded MS2 gap median 24.8 ms",
-   "hardware": "1x RTX PRO 4500",
-   "note": "flat replay of the full file"
-  },
-  {
-   "workload": "Real-time open search, -100 to +500 Da, 4,096 MS2",
-   "result": "32.7 ms p50 on GPU; 2,743 ms on CPU",
-   "ids": "--",
-   "hardware": "GPU; CPU",
-   "note": "PXD017823 replay"
-  },
-  {
-   "workload": "Replay of 24 Thermo RTS runs, causal policy",
-   "result": "entrapment FDP 0.556% against 2.947% for Thermo's recorded triggers",
-   "ids": "more author-pass scans with fewer MS3",
-   "hardware": "1x RTX PRO 4500",
-   "note": "replay of recorded streams"
   }
  ]
 }

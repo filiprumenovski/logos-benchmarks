@@ -1,0 +1,304 @@
+{
+ "latency": [
+  {
+   "replay": "TKO, Orbitrap Ascend (27,674 MS2)",
+   "p50_ms": 0.8842,
+   "p99_ms": 1.2049,
+   "runs": 3,
+   "decisions": 27674,
+   "over_80_ms": 1,
+   "matching_reference": 27674,
+   "budget_ms": 81.0,
+   "budget": "median time to the next MS2",
+   "run": "2026-10-22-rts-latency",
+   "binary": "s7"
+  },
+  {
+   "replay": "HYpro, Orbitrap Ascend (32,200 MS2)",
+   "p50_ms": 1.2373,
+   "p99_ms": 1.8677,
+   "runs": 3,
+   "decisions": 32200,
+   "over_80_ms": 19,
+   "matching_reference": 32200,
+   "budget_ms": 73.8,
+   "budget": "median time to the next MS2",
+   "run": "2026-10-22-rts-latency",
+   "binary": "s7"
+  },
+  {
+   "replay": "Astral TMTpro (135,711 MS2)",
+   "p50_ms": 1.9826,
+   "p99_ms": 3.0146,
+   "runs": 1,
+   "decisions": 135711,
+   "over_80_ms": 0,
+   "matching_reference": null,
+   "exact_rows": 135704,
+   "budget_ms": 24.848,
+   "budget": "median recorded MS2 gap",
+   "run": "2026-10-22-astral-latency",
+   "binary": "astral-opt"
+  }
+ ],
+ "previous_tko": {
+  "p50_ms": 0.9247,
+  "p99_ms": 1.2687,
+  "binary": "s3"
+ },
+ "stages_ms": {
+  "search": 0.6855,
+  "xcorr": 0.0394,
+  "prosit": 0.1088,
+  "rt": 0.008,
+  "gbdt": 0.0267,
+  "policy": 0.0021,
+  "ms1": 0.0,
+  "queue": 0.0
+ },
+ "stage_total_p50_ms": 0.8842,
+ "cap_ms": 80,
+ "replay": {
+  "name": "2026-10-21-rts-replay",
+  "recorded": true,
+  "measured": "Causal replay of 24 Thermo RTS acquisitions (PXD043660): LOGOS trigger decisions against the recorded triggers, authors' exact database",
+  "method": "policy replay over frozen offline search scores; rules (v11) chosen on other files; no timing",
+  "search": {
+   "slurm_job": 40697435,
+   "binary_sha256": "472ad7d7ab90150240c609e944fd81fd7cbb6bfb34e82b1d122c5daa5f687d1c",
+   "database_sha256": {
+    "authors_exact_human_yeast": "5b36945e269029a54b2369df2c4c69d0c382b7271dc748420e00f14c82399af8",
+    "tko": "c0de8e71f630296b8f97a7ee1ab024c06cb9ff0fdaf8e9cf37dd1428940389fd"
+   }
+  },
+  "fdp_note": "entrapment FDP of the triggered scans' winning identifications; the recorded triggers are classified by the same LOGOS scorer",
+  "regimes": [
+   {
+    "regime": "HYpro, Ascend (2 files)",
+    "author_pass": [
+     15954,
+     15950
+    ],
+    "modified_peptides": [
+     9542,
+     9390
+    ],
+    "raw_proteins": [
+     2322,
+     2332
+    ],
+    "ms3": [
+     20036,
+     20041
+    ],
+    "entrapment_fdp_pct": [
+     1.793,
+     6.966
+    ]
+   },
+   {
+    "regime": "HYpro, Eclipse (2 files)",
+    "author_pass": [
+     17408,
+     17194
+    ],
+    "modified_peptides": [
+     10581,
+     10473
+    ],
+    "raw_proteins": [
+     2673,
+     2675
+    ],
+    "ms3": [
+     20333,
+     20564
+    ],
+    "entrapment_fdp_pct": [
+     1.479,
+     6.202
+    ]
+   },
+   {
+    "regime": "TKO11, Ascend (10 files)",
+    "author_pass": [
+     67328,
+     67176
+    ],
+    "modified_peptides": [
+     16259,
+     15973
+    ],
+    "raw_proteins": [
+     2528,
+     2518
+    ],
+    "ms3": [
+     73561,
+     73645
+    ],
+    "entrapment_fdp_pct": [
+     0.271,
+     1.75
+    ]
+   },
+   {
+    "regime": "TKO11, Eclipse (10 files)",
+    "author_pass": [
+     67024,
+     66693
+    ],
+    "modified_peptides": [
+     16545,
+     16229
+    ],
+    "raw_proteins": [
+     2665,
+     2655
+    ],
+    "ms3": [
+     72999,
+     73202
+    ],
+    "entrapment_fdp_pct": [
+     0.245,
+     2.206
+    ]
+   },
+   {
+    "regime": "Pooled, 24 files",
+    "author_pass": [
+     167714,
+     167013
+    ],
+    "modified_peptides": [
+     30766,
+     30182
+    ],
+    "raw_proteins": [
+     5442,
+     5442
+    ],
+    "ms3": [
+     186929,
+     187452
+    ],
+    "entrapment_fdp_pct": [
+     0.556,
+     2.947
+    ]
+   }
+  ],
+  "per_file": {
+   "lower_fdp": "24 of 24 (sign test p = 1.2e-7)",
+   "fewer_ms3": "24 of 24 (p = 1.2e-7)",
+   "more_author_pass": "18 of 24",
+   "more_raw_proteins": "6 of 24"
+  },
+  "verdict_strict_rule": "loss: pooled raw proteins tie at 5,442, and a tie fails the rule that every count must be strictly higher",
+  "sources": [
+   "orbiter-fasta RESULT-FASTA-pre-addendum6.md:92-96",
+   "sign tests: two-sided binomial over the 24 per-file rows of the same replay"
+  ]
+ },
+ "orbiter": {
+  "name": "2026-10-20-orbiter-replay",
+  "recorded": true,
+  "measured": "Replay of 12 Orbiter RTS acquisitions (PXD017823, Schweppe et al. 2020): LOGOS triggers against Orbiter's recorded triggers",
+  "method": "policy replay over frozen offline search scores; policies chosen retrospectively, not by the strict causal rule; different database from the authors'",
+  "policies": [
+   {
+    "policy": "c-open-k1-run-b100",
+    "author_pass": [
+     38169,
+     30815
+    ],
+    "ms3": [
+     40340,
+     41647
+    ],
+    "raw_accessions": [
+     8857,
+     9245
+    ],
+    "estimated_false_trigger_pct": [
+     2.713,
+     16.354
+    ]
+   },
+   {
+    "policy": "global-q05-k2-b100",
+    "ms3": [
+     39536,
+     41647
+    ],
+    "proteins_at_1pct_picked_protein_fdr": [
+     8710,
+     8315
+    ],
+    "proteins_with_2plus_peptides": [
+     6563,
+     5821
+    ],
+    "proteins_with_3plus_peptides": [
+     4316,
+     3617
+    ],
+    "raw_accessions": [
+     8870,
+     9245
+    ]
+   }
+  ],
+  "pairs": "each pair is LOGOS, Orbiter recorded",
+  "sources": [
+   "orbiter-headroom RESULT-Q2.md:225-226",
+   "orbiter-protfdr RESULT-P.md:9-11"
+  ]
+ },
+ "broad_window": {
+  "name": "2026-10-20-broad-window-search",
+  "recorded": true,
+  "measured": "Per-MS2 search call at batch 1 with a broad closed precursor window, 4,096 MS2 of PXD017823 c06306",
+  "note": "search call only: no scoring model, policy or queueing; a symmetric closed window, not open search, which the live interface does not support",
+  "binary_sha256": "48e36dfec841dfe103b41ca5684a6eb572986f112496ca386dcf8fe9b4670514",
+  "source_commit": "45c200a3a38148b127f528b407c08fe8d4e01dd4 (branch claude/orbiter-rts-engine)",
+  "inputs": {
+   "raw": "c06306_qy_RTS_3cell_2_A1.raw",
+   "raw_sha256": "5b93136f3752a8784aae5c0b576b5e89c7134c6de2e61ff8d52d11e08deeb863",
+   "fasta": "human.fasta",
+   "fasta_sha256": "205f1626241074c9a3d1561f80990c008161190ecebfcd98269e7e2eff390609"
+  },
+  "arms": {
+   "pm500da-gpu": {
+    "slurm_job": 40651342,
+    "gpu": "NVIDIA A30",
+    "cpu": "AMD EPYC 9124",
+    "p50_ms": 32.734,
+    "p99_ms": 44.216
+   },
+   "pm500da-cpu": {
+    "slurm_job": "40651642_0..7",
+    "cpu": "AMD EPYC 7313, 8 shards",
+    "p50_ms": 2743.264,
+    "p99_ms": 3871.597
+   },
+   "pm50ppm-cpu": {
+    "slurm_job": "40651642_0..7",
+    "cpu": "AMD EPYC 7313, 8 shards",
+    "p50_ms": 2.014,
+    "p99_ms": 3.966
+   },
+   "pm50ppm-gpu": {
+    "slurm_job": 40651342,
+    "gpu": "NVIDIA A30",
+    "p50_ms": 3.792,
+    "p99_ms": 5.882
+   }
+  },
+  "comparator": "Orbiter's published median search time, 17 ms (Schweppe et al. 2020); different hardware",
+  "sources": [
+   "orbiter-openlive RESULT-Z.md:17-38"
+  ]
+ }
+}
